@@ -1,5 +1,9 @@
+[1]: http://aida.moe/puush/xn4u.png
+
 # PSO2TweakerV4
 A recoding and graphical overhaul of the original PSO2 Tweaker.
+
+![1]
 
 # Licenses (These are important, or something)
 
