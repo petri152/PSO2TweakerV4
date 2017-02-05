@@ -3,8 +3,8 @@ A recoding and graphical overhaul of the original PSO2 Tweaker.
 
 # Licenses (These are important, or something)
 
-                    PEOPLE ARE IDIOTS LICENSE
-                    Version 1a, December 2307
+PEOPLE ARE IDIOTS LICENSE
+Version 1a, December 2307
 
  Copyright (C) 2307 AD Aida Enna
 
@@ -12,7 +12,7 @@ A recoding and graphical overhaul of the original PSO2 Tweaker.
  copies of this license document, and changing it is allowed as long
  as the name is not changed.
 
-                    PEOPLE ARE IDIOTS LICENSE
+PEOPLE ARE IDIOTS LICENSE
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
  0. Anyone named Larry, who happens to be a lawyer, is not allowed to use this code in any way, shape or form.
