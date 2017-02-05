@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E0F0407-4299-4D79-96CB-34F17BD7E93C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PSO2TweakerVer2.My.MyApplication</StartupObject>
+    <RootNamespace>PSO2TweakerVer2</RootNamespace>
+    <AssemblyName>PSO2 Tweaker</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PSO2 Tweaker.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PSO2 Tweaker.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pso2 new icon 256.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArksLayer.Tweaker.Abstractions, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\ArksLayer.Tweaker.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ArksLayer.Tweaker.UpdateEngine, Version=0.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\ArksLayer.Tweaker.UpdateEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoUpdater.NET, Version=1.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.11.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="External.vb" />
+    <Compile Include="frmDiagnostic.Designer.vb">
+      <DependentUpon>frmDiagnostic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiagnostic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDownloader.designer.vb">
+      <DependentUpon>frmDownloader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDownloader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlugins.Designer.vb">
+      <DependentUpon>frmPlugins.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlugins.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPSO2Settingsv2.Designer.vb">
+      <DependentUpon>frmPSO2Settingsv2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPSO2Settingsv2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainv2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainv2.Designer.vb">
+      <DependentUpon>frmMainv2.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOptionsv2.Designer.vb">
+      <DependentUpon>frmOptionsv2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOptionsv2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTweaksv2.Designer.vb">
+      <DependentUpon>frmTweaksv2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTweaksv2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper.vb" />
+    <Compile Include="Languages.vb" />
+    <Compile Include="MD5Provider.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="My\ApplicationEvents.vb" />
+    <Compile Include="My\Program.vb" />
+    <Compile Include="My\Settings.vb" />
+    <Compile Include="Server.vb" />
+    <Compile Include="TweakerTrigger.vb" />
+    <Compile Include="VEDA.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmDiagnostic.resx">
+      <DependentUpon>frmDiagnostic.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloader.resx">
+      <DependentUpon>frmDownloader.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlugins.resx">
+      <DependentUpon>frmPlugins.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPSO2Settingsv2.resx">
+      <DependentUpon>frmPSO2Settingsv2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainv2.resx">
+      <DependentUpon>frmMainv2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOptionsv2.resx">
+      <DependentUpon>frmOptionsv2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTweaksv2.resx">
+      <DependentUpon>frmTweaksv2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\big button hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\big button normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\big button press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medium button hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medium button normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medium button press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__clicked.png" />
+    <EmbeddedResource Include="ddraw.dll" />
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="pso2 new icon 256.ico" />
+    <None Include="Resources\QUANTUMSYSTEM.png" />
+    <None Include="Resources\tp2.png" />
+    <None Include="Resources\tp1.png" />
+    <None Include="Resources\tp0.png" />
+    <None Include="Resources\err2.png" />
+    <None Include="Resources\err1.png" />
+    <None Include="Resources\err0.png" />
+    <None Include="Resources\layerdon2.png" />
+    <None Include="Resources\layerdon1.png" />
+    <None Include="Resources\layerdon0.png" />
+    <None Include="Resources\dicor0.png" />
+    <None Include="Resources\bumpdon2.png" />
+    <None Include="Resources\bumpdon1.png" />
+    <None Include="Resources\bumpdon0.png" />
+    <None Include="Resources\visio0.png" />
+    <None Include="Resources\visio2.png" />
+    <None Include="Resources\visio1.png" />
+    <None Include="Resources\discor2.png" />
+    <None Include="Resources\dicor1.png" />
+    <None Include="Resources\cmsback.png" />
+    <None Include="Resources\ddraw.dll" />
+    <None Include="Resources\subtab.png" />
+    <None Include="Resources\main menu.png" />
+    <None Include="Resources\main emergency menu2.png" />
+    <None Include="Resources\sub menu.png" />
+    <None Include="Resources\main emergency menu.png" />
+    <None Include="Resources\! press.png" />
+    <None Include="Resources\! normal.png" />
+    <None Include="Resources\! normal 20 opacity.png" />
+    <None Include="Resources\! hover.png" />
+    <None Include="Resources\progress bar2.png" />
+    <None Include="Resources\dropmenu3.png" />
+    <None Include="Resources\dropmenu2.png" />
+    <None Include="Resources\dropmenu4.png" />
+    <None Include="Resources\dropmenu1.png" />
+    <None Include="Resources\videosettings.png" />
+    <None Include="Resources\tweaks.png" />
+    <None Include="Resources\textureresolution.png" />
+    <None Include="Resources\simplerendersetting.png" />
+    <None Include="Resources\shaderquality.png" />
+    <None Include="Resources\overrides.png" />
+    <None Include="Resources\otheroptions.png" />
+    <None Include="Resources\hiddenoptions.png" />
+    <None Include="Resources\gameresolution.png" />
+    <None Include="Resources\after updating.png" />
+    <None Include="Resources\graphics settings box7.png" />
+    <None Include="Resources\graphics settings box6.png" />
+    <None Include="Resources\graphics settings box5.png" />
+    <None Include="Resources\graphics settings box4.png" />
+    <None Include="Resources\graphics settings box3.png" />
+    <None Include="Resources\graphics settings box2.png" />
+    <None Include="Resources\graphics settings box1.png" />
+    <None Include="Resources\graphics settings bigbox.png" />
+    <None Include="Resources\Cancel button press.png" />
+    <None Include="Resources\Cancel button normal.png" />
+    <None Include="Resources\Cancel button hover.png" />
+    <None Include="Resources\check no.png" />
+    <None Include="Resources\check yes.png" />
+    <None Include="Resources\small button blank.png" />
+    <None Include="Resources\notify.png" />
+    <None Include="Resources\big button blank.png" />
+    <None Include="Resources\patch settings box4.png" />
+    <None Include="Resources\patch settings box3.png" />
+    <None Include="Resources\patch settings box2.png" />
+    <None Include="Resources\patch settings box1.png" />
+    <None Include="Resources\patch settings big box.png" />
+    <None Include="Resources\rappy icon.png" />
+    <None Include="Resources\rappy icon press.png" />
+    <None Include="Resources\rappy icon hover.png" />
+    <None Include="Resources\small log.png" />
+    <None Include="Resources\big log.png" />
+    <None Include="Resources\psow.png" />
+    <None Include="Resources\psow press.png" />
+    <None Include="Resources\psow hover.png" />
+    <None Include="Resources\cirnopedia.png" />
+    <None Include="Resources\cirnopedia press.png" />
+    <None Include="Resources\cirnopedia hover.png" />
+    <None Include="Resources\bumped.png" />
+    <None Include="Resources\bumped press.png" />
+    <None Include="Resources\bumped hover.png" />
+    <None Include="Resources\arkive.png" />
+    <None Include="Resources\arkive press.png" />
+    <None Include="Resources\arkive hover.png" />
+    <None Include="Resources\Alayer.png" />
+    <EmbeddedResource Include="Resources\Alayer press.png" />
+    <None Include="Resources\Alayer hover.png" />
+    <None Include="Resources\TOTAL DOOM, does not work and there isnt an update yet.png" />
+    <None Include="Resources\status unknown.png" />
+    <None Include="Resources\status DOOM but update available.png" />
+    <None Include="Resources\status clear.png" />
+    <None Include="Resources\status clear but update available.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.4\build\dotnet\Fody.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
