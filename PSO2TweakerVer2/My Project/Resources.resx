@@ -160,20 +160,8 @@
   <data name="Alayer_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alayer hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="visio0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\visio0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="arkive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arkive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tweaks" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tweaks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="small_button_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\small button blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rappy_icon_press" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rappy icon press.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,14 +202,8 @@
   <data name="patch_settings_box3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\patch settings box3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tp0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tp0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="status_clear_but_update_available" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status clear but update available.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="err0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\err0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,9 +214,6 @@
   <data name="Cancel_button_press" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel button press.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="otheroptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\otheroptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -243,9 +222,6 @@
   </data>
   <data name="Alayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="textureresolution" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\textureresolution.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bumpdon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bumpdon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,26 +250,17 @@
   <data name="check_yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="visio2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\visio2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="dropmenu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dropmenu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bumpdon0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bumpdon0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="visio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\visio1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="medium_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medium button hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="layerdon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layerdon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="small_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\small log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,9 +313,6 @@
   <data name="big_button_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\big button normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="videosettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\videosettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rappy_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rappy icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -376,23 +340,8 @@
   <data name="rappy_icon_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rappy icon hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="status_clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="status_DOOM_but_update_available" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status DOOM but update available.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="main_emergency_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main emergency menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="subtab" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\subtab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ddraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ddraw.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="status_unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status unknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shaderquality" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shaderquality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -406,14 +355,8 @@
   <data name="main_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sub_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sub menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="arkive_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arkive hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TOTAL_DOOM__does_not_work_and_there_isnt_an_update_yet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TOTAL DOOM, does not work and there isnt an update yet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_press" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close press.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -426,6 +369,63 @@
   </data>
   <data name="simplerendersetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simplerendersetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ddraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ddraw.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="small_button_blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small button blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="small_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\small log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_clear_but_update_available" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status clear but update available.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_DOOM_but_update_available" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status DOOM but update available.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status unknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subtab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subtab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sub_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sub menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textureresolution" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\textureresolution.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TOTAL_DOOM__does_not_work_and_there_isnt_an_update_yet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TOTAL DOOM, does not work and there isnt an update yet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tp0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tp0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tweaks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tweaks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="videosettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\videosettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="visio0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visio0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="visio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visio1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="visio2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visio2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="__clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\__clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

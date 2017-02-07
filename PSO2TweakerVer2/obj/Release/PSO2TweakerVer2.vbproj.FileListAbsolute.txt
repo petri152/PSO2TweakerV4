@@ -1,0 +1,10 @@
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.vbprojResolveAssemblyReference.cache
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.FrmDiagnostic.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmDownloader.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmPlugins.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmPSO2Settingsv2.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmMainv2.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmOptionsv2.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmTweaksv2.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.vbproj.GenerateResource.Cache
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.Resources.resources
