@@ -506,8 +506,130 @@ Public Class frmMainv2
         End If
 
         While Not Program.IsPso2Installed
-            InstallPso2()
-            Program.Main()
+            Dim installFolder As String = ""
+            'Const installYesNo As MsgBoxResult = vbYes
+            'If installYesNo = vbNo Then
+            '    WriteDebugInfo("You can view more information about the installer at:" & vbCrLf & "http://arks-layer.com/setup.php")
+            '    Return
+            'End If
+            'If installYesNo = vbYes Then
+            MsgBox("This will install Phantasy Star Online EPISODE 4! Please select a folder to install into." & vbCrLf & "A folder called PHANTASYSTARONLINE2 will be created inside the folder you choose." & vbCrLf & "(For example, if you choose the C drive, it will install to C:\PHANTASYSTARONLINE2\)" & vbCrLf & "It is HIGHLY RECOMMENDED that you do NOT install into the Program Files folder, but a normal folder like C:\PHANTASYSTARONLINE\")
+            Dim installPso2 As Boolean = True
+            While installPso2
+                Dim myFolderBrowser As New FolderBrowserDialog With {.RootFolder = Environment.SpecialFolder.MyComputer, .Description = "Please select a folder (or drive) to install PSO2 into"}
+                Dim dlgResult As DialogResult = myFolderBrowser.ShowDialog()
+
+                If dlgResult = DialogResult.OK Then
+                    installFolder = myFolderBrowser.SelectedPath
+                End If
+                If dlgResult = DialogResult.Cancel Then
+                    WriteDebugInfo("Installation cancelled by user!")
+                    Return
+                End If
+                Dim correctYesNo As MsgBoxResult = MsgBox("You wish to install PSO2 into " & (installFolder & "\PHANTASYSTARONLINE2\. Is this correct?").Replace("\\", "\"), vbYesNoCancel)
+                If correctYesNo = vbCancel Then
+                    WriteDebugInfo("Installation cancelled by user!")
+                    Return
+                End If
+                If correctYesNo = vbNo Then
+                    Continue While
+                End If
+                If correctYesNo = vbYes Then
+                    For Each drive In DriveInfo.GetDrives()
+                        If (drive.DriveType = DriveType.Fixed) AndAlso (installFolder(0) = drive.Name(0)) Then
+                            If drive.TotalSize < 42000000000 Then
+                                MsgBox("There is not enough space on the selected disk to install PSO2. Please select a different drive. (Requires 41GB of free space)")
+                                Continue While
+                            End If
+                            If drive.AvailableFreeSpace < 42000000000 Then
+                                MsgBox("There is not enough free space on the selected disk to install PSO2. Please free up some space or select a different drive. (Requires 41GB of free space)")
+                                Continue While
+                            End If
+                        End If
+                    Next
+
+                    Dim finalYesNo As MsgBoxResult = MsgBox("The program will now install the necessary files, create the folders, and set up the game. Afterwards, the program will automatically begin patching. Click ""OK"" to start.", MsgBoxStyle.OkCancel)
+                    If finalYesNo = vbCancel Then
+                        WriteDebugInfo("Installation cancelled by user!")
+                    Else
+                        'set the pso2Dir to the install patch
+                        Program.PSO2RootDir = (installFolder & "\PHANTASYSTARONLINE2\pso2_bin").Replace("\\", "\")
+                        Helper.DeleteFile("client.json")
+                        WriteDebugInfoAndOk(("Program opened successfully! (Installing PSO2 variant) Version " & Application.Info.Version.ToString()))
+                        lblAppVersion.Text = Application.Info.Version.ToString()
+                        Dim remotejson As JObject = JObject.Parse(DownloadString("http://arks-layer.com/remote.json"))
+                        Program.InfoURL = remotejson.SelectToken("InfoURL").ToString()
+                        WebBrowser1.Navigate(Program.InfoURL)
+                        Show()
+                        Focus()
+                        Application.DoEvents()
+                        WriteDebugInfo("Downloading DirectX setup...")
+                        Try
+                            DownloadFile("http://arks-layer.com/docs/dxwebsetup.exe", "dxwebsetup.exe")
+                            WriteDebugInfoSameLine("Done!")
+                            WriteDebugInfo("Checking/Installing DirectX...")
+                            Dim processStartInfo As ProcessStartInfo = New ProcessStartInfo() With {.FileName = "dxwebsetup.exe", .Verb = "runas", .Arguments = "/Q", .UseShellExecute = True}
+                            Process.Start(processStartInfo).WaitForExit()
+                            WriteDebugInfoSameLine("Done!")
+                        Catch ex As Exception
+                            WriteDebugInfo("DirectX installation failed! Please install it later if neccessary!")
+                        End Try
+
+                        If File.Exists("dxwebsetup.exe") Then File.Delete("dxwebsetup.exe")
+                        'Make a data folder, and a win32 folder under that
+                        Directory.CreateDirectory(Program.PSO2RootDir & "\data\win32\")
+                        'Download required pso2 stuff
+                        WriteDebugInfo("Downloading PSO2 required files...")
+                        DownloadFile("http://download.pso2.jp/patch_prod/patches/pso2launcher.exe.pat", Program.PSO2RootDir & "\pso2launcher.exe")
+                        DownloadFile("http://download.pso2.jp/patch_prod/patches/pso2updater.exe.pat", Program.PSO2RootDir & "\pso2updater.exe")
+                        DownloadFile("http://download.pso2.jp/patch_prod/patches/pso2.exe.pat", Program.PSO2RootDir & "\pso2.exe")
+                        DownloadFile("http://download.pso2.jp/patch_prod/patches/PSO2JP.ini.pat", Program.PSO2RootDir & "\PSO2JP.ini")
+                        WriteDebugInfoSameLine("Done!")
+                        'Download Gameguard.des
+                        WriteDebugInfo("Downloading Latest Gameguard file...")
+                        DownloadFile("http://download.pso2.jp/patch_prod/patches/GameGuard.des.pat", Program.PSO2RootDir & "\GameGuard.des")
+                        WriteDebugInfoSameLine("Done!")
+                        Application.DoEvents()
+
+                        If File.Exists(Program.AppData & "/PSO2 Tweaker/settings.json") = False Then File.WriteAllText(Program.AppData & "/PSO2 Tweaker/settings.json", lblDefaults.Text)
+
+                        Program.SaveSetting("PSO2Dir", Program.PSO2RootDir)
+                        WriteDebugInfo(Program.PSO2RootDir & " set as your PSO2 Directory.")
+                        Program.PSO2WinDir = (Program.PSO2RootDir & "\data\win32")
+                        If String.IsNullOrEmpty(Program.GetSetting("StoryPatchVersion")) Then Program.SaveSetting("StoryPatchVersion", "Not Installed")
+                        If String.IsNullOrEmpty(Program.GetSetting("ENPatchVersion")) Then Program.SaveSetting("ENPatchVersion", "Not Installed")
+                        If String.IsNullOrEmpty(Program.GetSetting("LargeFilesVersion")) Then Program.SaveSetting("LargeFilesVersion", "Not Installed")
+
+                        RegKey.SetValue(Of String)("PSO2Dir", Program.GetSetting("PSO2Dir"))
+                        ' Use IOC Container in the main Tweaker project to deal with dependencies.
+                        'Dim output As New TweakerTrigger
+                        'Dim Settings = New JsonTweakerSettings(Program.AppData & "/PSO2 Tweaker/settings.json")
+                        'Dim updater = New UpdateManager(Settings, output)
+                        'Dim SkipClient As New WebClient
+                        'Helper.Log("Downloading the list of files to skip...")
+                        'SkipClient.DownloadFile(Program.FreedomUrl & "skip.txt", "skip.txt")
+                        'Await updater.CleanLegacyFiles()
+
+                        'Console.WriteLine(settings.GameDirectory)
+                        Try
+
+                            'frmDownloader.TopMost = True
+                            'Me.TopMost = False
+                        Catch ex As Exception
+                            Helper.LogWithException("Error - ", ex)
+                        End Try
+                        'frmDownloader.CleanupUI()
+                        'Await updater.Update(True, False)
+                        UpdatePSO2(False)
+
+                        WriteDebugInfo("PSO2 successfully installed!")
+                        Refresh()
+                    End If
+                End If
+
+                installPso2 = False
+                Program.IsPso2Installed = True
+            End While
         End While
 
         'lblStatus.Text = ""
@@ -1435,10 +1557,10 @@ Public Class frmMainv2
     Private Sub OnDownloadProgressChanged(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs) Handles Downloader.DownloadProgressChanged
         'Try
         '    If PBMainBar.InvokeRequired = False And lblStatus.InvokeRequired = False Then
-        '        Dim totalSize As Long = e.TotalBytesToReceive
-        '        _totalsize2 = totalSize
-        '        Dim downloadedBytes As Long = e.BytesReceived
-        '        Dim percentage As Integer = e.ProgressPercentage
+        Dim totalSize As Long = e.TotalBytesToReceive
+        _totalsize2 = totalSize
+        Dim downloadedBytes As Long = e.BytesReceived
+        'Dim percentage As Integer = e.ProgressPercentage
         '        Application.DoEvents()
         '        PBMainBar.Value = percentage
         '        Application.DoEvents()
@@ -1479,7 +1601,7 @@ Public Class frmMainv2
                 Application.DoEvents()
                 Thread.Sleep(16)
             End While
-
+            AddHandler Downloader.DownloadProgressChanged, AddressOf OnDownloadProgressChanged
             Downloader.DownloadFileAsync(New Uri(address), filename)
 
             While Downloader.IsBusy
@@ -2095,7 +2217,7 @@ Public Class frmMainv2
 
         WriteDebugInfo("Checking for missing/old files...")
         _cancelledFull = False
-        UpdatePSO2(True)
+        UpdatePSO2(False)
     End Sub
     Private Sub UpdatePSO2(comingFromOldFiles As Boolean)
         btnStartPSO2.Enabled = False

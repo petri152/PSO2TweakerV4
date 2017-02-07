@@ -114,7 +114,8 @@ Public Class TweakerTrigger
                 End If
 
             End If
-            If url.Contains(".exe") Then TotalDownloadedQuantum += FileLen(Program.Pso2RootDir & "\" & url.Replace("http://download.pso2.jp/patch_prod/patches/data/win32/", "").Replace("http://download.pso2.jp/patch_prod/patches_old/data/win32/", "").Replace(".pat", "").Replace("http://download.pso2.jp/patch_prod/patches/", ""))
+            If url.Contains(".exe") Then TotalDownloadedQuantum += FileLen(Program.PSO2RootDir & "\" & url.Replace("http://download.pso2.jp/patch_prod/patches/data/win32/", "").Replace("http://download.pso2.jp/patch_prod/patches_old/data/win32/", "").Replace(".pat", "").Replace("http://download.pso2.jp/patch_prod/patches/", ""))
+
             'frmMainv2.lblStatus.Text = "Downloaded " & _downloadedfilecount & " files"
             'Throw New NotImplementedException()
         Catch ex As Exception
@@ -129,6 +130,7 @@ Public Class TweakerTrigger
 
     Public Sub OnDownloadStart(url As String, client As WebClient) Implements ITrigger.OnDownloadStart
         Try
+
             If DoneDownloading = True Then Exit Sub
             If url.Contains(".txt") Or url.Contains(".ver") Then
                 If patchfilecount > 1 Then patchfilecount -= 1
@@ -193,7 +195,24 @@ Public Class TweakerTrigger
                             percentage = CInt(Math.Truncate(e.BytesReceived / CDbl(e.TotalBytesToReceive) * 100 * 100) / 100)
                             frmDownloader.ProgressBarX1.Value = percentage
                             frmDownloader.LabelX1.Text = "Downloading " & Filename & " (" & String.Format("{0:N2}%", Math.Truncate(e.BytesReceived / CDbl(e.TotalBytesToReceive) * 100 * 100) / 100) & ")"
-                            If frmDownloader.LabelX1.Text.Contains("version.ver") Then frmDownloader.LabelX1.Text = "Building list of files to download, please wait..."
+                            If frmDownloader.LabelX1.Text.Contains("launcherlist") Then
+                                frmDownloader.LabelX1.Text = "Building list of files to download, please wait..." & vbCrLf & "(This may take a while if you need to download a large number of files)"
+                                frmDownloader.lblTotal.Text = "Please wait..."
+                                frmDownloader.LabelX2.Text = ""
+                                frmDownloader.LabelX3.Text = ""
+                                frmDownloader.LabelX4.Text = ""
+                                frmDownloader.LabelX5.Text = ""
+                                frmDownloader.LabelX6.Text = ""
+                            End If
+                            If frmDownloader.LabelX1.Text.Contains("version.ver") Then
+                                frmDownloader.LabelX1.Text = "Building list of files to download, please wait..." & vbCrLf & "(This may take a while if you need to download a large number of files)"
+                                frmDownloader.lblTotal.Text = "Please wait..."
+                                frmDownloader.LabelX2.Text = ""
+                                frmDownloader.LabelX3.Text = ""
+                                frmDownloader.LabelX4.Text = ""
+                                frmDownloader.LabelX5.Text = ""
+                                frmDownloader.LabelX6.Text = ""
+                            End If
                         End If
                         If frmDownloader.ProgressBarX2.Text = url Then
                             percentage = CInt(Math.Truncate(e.BytesReceived / CDbl(e.TotalBytesToReceive) * 100 * 100) / 100)

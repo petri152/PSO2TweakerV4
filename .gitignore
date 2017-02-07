@@ -2,4 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/PSO2TweakerVer2/bin/Release/logfile.txt
+/PSO2TweakerVer2/bin/Release/*
+/PSO2TweakerVer2/obj/*
+/PSO2TweakerVer2/VEDA.vb
+/PSO2TweakerVer2/Server.vb

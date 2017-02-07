@@ -22,27 +22,24 @@ Partial Class frmDownloader
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ProgressBarX6 = New ProgressBar
-        Me.ProgressBarX5 = New ProgressBar
-        Me.ProgressBarX4 = New ProgressBar
-        Me.ProgressBarX3 = New ProgressBar
-        Me.ProgressBarX2 = New ProgressBar
-        Me.ProgressBarX1 = New ProgressBar
-        Me.lblTotal = New Label
-        Me.LabelX1 = New Label
-        Me.LabelX2 = New Label
-        Me.LabelX3 = New Label
-        Me.LabelX4 = New Label
-        Me.LabelX5 = New Label
-        Me.LabelX6 = New Label
+        Me.ProgressBarX6 = New System.Windows.Forms.ProgressBar()
+        Me.ProgressBarX5 = New System.Windows.Forms.ProgressBar()
+        Me.ProgressBarX4 = New System.Windows.Forms.ProgressBar()
+        Me.ProgressBarX3 = New System.Windows.Forms.ProgressBar()
+        Me.ProgressBarX2 = New System.Windows.Forms.ProgressBar()
+        Me.ProgressBarX1 = New System.Windows.Forms.ProgressBar()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.LabelX1 = New System.Windows.Forms.Label()
+        Me.LabelX2 = New System.Windows.Forms.Label()
+        Me.LabelX3 = New System.Windows.Forms.Label()
+        Me.LabelX4 = New System.Windows.Forms.Label()
+        Me.LabelX5 = New System.Windows.Forms.Label()
+        Me.LabelX6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ProgressBarX6
         '
         Me.ProgressBarX6.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.ProgressBarX6.Location = New System.Drawing.Point(12, 194)
         Me.ProgressBarX6.Name = "ProgressBarX6"
         Me.ProgressBarX6.Size = New System.Drawing.Size(417, 31)
@@ -51,9 +48,6 @@ Partial Class frmDownloader
         'ProgressBarX5
         '
         Me.ProgressBarX5.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.ProgressBarX5.Location = New System.Drawing.Point(12, 157)
         Me.ProgressBarX5.Name = "ProgressBarX5"
         Me.ProgressBarX5.Size = New System.Drawing.Size(417, 31)
@@ -62,9 +56,6 @@ Partial Class frmDownloader
         'ProgressBarX4
         '
         Me.ProgressBarX4.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.ProgressBarX4.Location = New System.Drawing.Point(12, 120)
         Me.ProgressBarX4.Name = "ProgressBarX4"
         Me.ProgressBarX4.Size = New System.Drawing.Size(417, 31)
@@ -73,9 +64,6 @@ Partial Class frmDownloader
         'ProgressBarX3
         '
         Me.ProgressBarX3.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.ProgressBarX3.Location = New System.Drawing.Point(12, 83)
         Me.ProgressBarX3.Name = "ProgressBarX3"
         Me.ProgressBarX3.Size = New System.Drawing.Size(417, 31)
@@ -84,9 +72,6 @@ Partial Class frmDownloader
         'ProgressBarX2
         '
         Me.ProgressBarX2.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.ProgressBarX2.Location = New System.Drawing.Point(12, 46)
         Me.ProgressBarX2.Name = "ProgressBarX2"
         Me.ProgressBarX2.Size = New System.Drawing.Size(417, 31)
@@ -96,9 +81,6 @@ Partial Class frmDownloader
         'ProgressBarX1
         '
         Me.ProgressBarX1.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.ProgressBarX1.Cursor = System.Windows.Forms.Cursors.Default
         Me.ProgressBarX1.Location = New System.Drawing.Point(12, 9)
         Me.ProgressBarX1.Name = "ProgressBarX1"
@@ -109,23 +91,16 @@ Partial Class frmDownloader
         'lblTotal
         '
         Me.lblTotal.BackColor = System.Drawing.Color.White
-        '
-        '
-        '
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.Black
         Me.lblTotal.Location = New System.Drawing.Point(12, 235)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(416, 57)
         Me.lblTotal.TabIndex = 19
-        Me.lblTotal.TextAlign = System.Drawing.StringAlignment.Center
         '
         'LabelX1
         '
         Me.LabelX1.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
         Me.LabelX1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX1.ForeColor = System.Drawing.Color.Black
         Me.LabelX1.Location = New System.Drawing.Point(435, 9)
@@ -136,9 +111,6 @@ Partial Class frmDownloader
         'LabelX2
         '
         Me.LabelX2.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
         Me.LabelX2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX2.ForeColor = System.Drawing.Color.Black
         Me.LabelX2.Location = New System.Drawing.Point(435, 46)
@@ -149,9 +121,6 @@ Partial Class frmDownloader
         'LabelX3
         '
         Me.LabelX3.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
         Me.LabelX3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX3.ForeColor = System.Drawing.Color.Black
         Me.LabelX3.Location = New System.Drawing.Point(435, 83)
@@ -162,9 +131,6 @@ Partial Class frmDownloader
         'LabelX4
         '
         Me.LabelX4.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
         Me.LabelX4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX4.ForeColor = System.Drawing.Color.Black
         Me.LabelX4.Location = New System.Drawing.Point(435, 120)
@@ -175,9 +141,6 @@ Partial Class frmDownloader
         'LabelX5
         '
         Me.LabelX5.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
         Me.LabelX5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX5.ForeColor = System.Drawing.Color.Black
         Me.LabelX5.Location = New System.Drawing.Point(435, 157)
@@ -188,9 +151,6 @@ Partial Class frmDownloader
         'LabelX6
         '
         Me.LabelX6.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
         Me.LabelX6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX6.ForeColor = System.Drawing.Color.Black
         Me.LabelX6.Location = New System.Drawing.Point(435, 194)
@@ -202,7 +162,7 @@ Partial Class frmDownloader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = My.Resources.Resources.QUANTUMSYSTEM
+        Me.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.QUANTUMSYSTEM
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(786, 331)
         Me.Controls.Add(Me.lblTotal)
@@ -222,7 +182,6 @@ Partial Class frmDownloader
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "frmDownloader"
-        Me.TopMost = True
         Me.ResumeLayout(False)
 
     End Sub

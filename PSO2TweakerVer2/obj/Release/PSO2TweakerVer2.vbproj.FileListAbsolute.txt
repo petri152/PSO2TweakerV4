@@ -1,4 +1,3 @@
-D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.vbprojResolveAssemblyReference.cache
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.FrmDiagnostic.resources
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmDownloader.resources
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmPlugins.resources
@@ -8,3 +7,16 @@ D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2Tweake
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.frmTweaksv2.resources
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.vbproj.GenerateResource.Cache
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.Resources.resources
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\PSO2 Tweaker.exe.config
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\PSO2 Tweaker.exe
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\PSO2 Tweaker.pdb
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\PSO2 Tweaker.xml
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\ArksLayer.Tweaker.Abstractions.dll
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\ArksLayer.Tweaker.UpdateEngine.dll
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\AutoUpdater.NET.dll
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\Newtonsoft.Json.dll
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\SharpCompress.dll
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\Newtonsoft.Json.xml
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.exe
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.xml
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.pdb
