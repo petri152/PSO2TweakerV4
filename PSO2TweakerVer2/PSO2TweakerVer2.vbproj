@@ -72,24 +72,25 @@
     <ApplicationIcon>pso2 new icon 256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArksLayer.Tweaker.Abstractions, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ArksLayer.Tweaker.Abstractions, Version=0.6.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PSO2TweakerVer2\PSO2TweakerVer2\libs\ArksLayer.Tweaker.Abstractions.dll</HintPath>
+      <HintPath>..\libs\ArksLayer.Tweaker.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="ArksLayer.Tweaker.UpdateEngine, Version=0.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ArksLayer.Tweaker.UpdateEngine, Version=0.6.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PSO2TweakerVer2\PSO2TweakerVer2\libs\ArksLayer.Tweaker.UpdateEngine.dll</HintPath>
+      <HintPath>..\libs\ArksLayer.Tweaker.UpdateEngine.dll</HintPath>
     </Reference>
     <Reference Include="AutoUpdater.NET, Version=1.3.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PSO2TweakerVer2\PSO2TweakerVer2\libs\AutoUpdater.NET.dll</HintPath>
+      <HintPath>..\libs\AutoUpdater.NET.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SharpCompress">
-      <HintPath>..\..\PSO2TweakerVer2\PSO2TweakerVer2\libs\SharpCompress.dll</HintPath>
+    <Reference Include="SharpCompress, Version=0.11.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
