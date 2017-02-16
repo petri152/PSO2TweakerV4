@@ -271,6 +271,9 @@ Namespace My
                 Catch ex As Exception
                     Exit Try
                 End Try
+                If Not File.Exists(Program.PSO2RootDir & "\translation.cfg") Then
+                    File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation.bin")
+                End If
 
                 Dim enabledplugins As String = ""
                         Dim disabledplugins As String = ""

@@ -1917,7 +1917,7 @@ Public Class frmMainv2
             If patchName = "Large Files" Then File.WriteAllText("filelist.txt", filelistjson.SelectToken("LargeFilesList").ToString.Replace("\n", vbCrLf))
             If patchName = "Story Patch" Then File.WriteAllText("filelist.txt", filelistjson.SelectToken("StoryList").ToString.Replace("\n", vbCrLf))
             If patchName = "Emergency Codes" Then File.WriteAllText("filelist.txt", "057aa975bdd2b372fe092614b0f4399e" & vbCrLf)
-            If patchName = "Enemy Names" Then File.WriteAllText("filelist.txt", "057aa975bdd2b372fe092614b0f4399e")
+            If patchName = "Enemy Names" Then File.WriteAllText("filelist.txt", "ceffe0e2386e8d39f188358303a92a7d")
             Dim missingfiles = File.ReadAllLines("filelist.txt")
 
             'Helper.DeleteFile(patchListFile)
@@ -2831,45 +2831,47 @@ Public Class frmMainv2
             WriteDebugInfo("New proxy URL is http://alam.srb2.org/PSO2/public_proxy/config-alt.json")
             jsonurl = "http://alam.srb2.org/PSO2/public_proxy/config-alt.json"
         End If
-
-        Using wc As New WebClient()
-            wc.Encoding = Encoding.UTF8
-            Dim json_text = wc.DownloadString(jsonurl)
-            Helper.Log("JSON was downloaded as: " & json_text.ToString)
-            Dim proxy_conf = JsonConvert.DeserializeObject(Of ProxyConfig)(json_text)
-            If File.Exists(Program.PSO2RootDir & "\plugins\disabled\TelepipeProxy.dll") Then
-                WriteDebugInfo("Auto-enabling the Telepipe Proxy plugin...")
-                File.Move(Program.PSO2RootDir & "\plugins\disabled\TelepipeProxy.dll", Path.Combine(Program.PSO2RootDir & "\plugins\TelepipeProxy.dll"))
-                WriteDebugInfoSameLine("Done!")
-            End If
-            Program.SaveSetting("ProxyJSONURL", jsonurl)
-
-            '[Revert]
-            Try
-                Dim builtFile = New List(Of String)
-                If Not File.Exists(Program.HostsFilePath) Then File.Create(Program.HostsFilePath).Dispose()
-
-                If File.ReadAllText(Program.HostsFilePath).Contains("pso2gs.net") Then
-                    For Each line In Helper.GetLines(Program.HostsFilePath)
-                        If Not line.Contains("pso2gs.net") Then builtFile.Add(line)
-                    Next
-
-                    WriteDebugInfo("Cleaning HOSTS file...")
-                    File.WriteAllLines(Program.HostsFilePath, builtFile.ToArray())
-                    WriteDebugInfoSameLine(" Done!")
+        Try
+            Using wc As New WebClient()
+                wc.Encoding = Encoding.UTF8
+                Dim json_text = wc.DownloadString(jsonurl)
+                Helper.Log("JSON was downloaded as: " & json_text.ToString)
+                Dim proxy_conf = JsonConvert.DeserializeObject(Of ProxyConfig)(json_text)
+                If File.Exists(Program.PSO2RootDir & "\plugins\disabled\TelepipeProxy.dll") Then
+                    WriteDebugInfo("Auto-enabling the Telepipe Proxy plugin...")
+                    File.Move(Program.PSO2RootDir & "\plugins\disabled\TelepipeProxy.dll", Path.Combine(Program.PSO2RootDir & "\plugins\TelepipeProxy.dll"))
+                    WriteDebugInfoSameLine("Done!")
                 End If
-            Catch ex As Exception
-                Helper.LogWithException("Error cleaning hosts file - ", ex)
-            End Try
+                Program.SaveSetting("ProxyJSONURL", jsonurl)
 
-            DownloadProxyInformation(jsonurl)
-            'If File.Exists(Program.Pso2RootDir & "\publickey.blob") Then Helper.DeleteFile(Program.Pso2RootDir & "\publickey.blob")
-            WriteDebugInfo("You can now connect to the " + proxy_conf.name + "!")
-            '          End If
+                '[Revert]
+                Try
+                    Dim builtFile = New List(Of String)
+                    If Not File.Exists(Program.HostsFilePath) Then File.Create(Program.HostsFilePath).Dispose()
 
-            If proxy_conf.version <> "1" And proxy_conf.version <> "2" Then WriteDebugInfoAndFailed("PSO2Proxy version was set incorrectly. Please check your JSON file.")
+                    If File.ReadAllText(Program.HostsFilePath).Contains("pso2gs.net") Then
+                        For Each line In Helper.GetLines(Program.HostsFilePath)
+                            If Not line.Contains("pso2gs.net") Then builtFile.Add(line)
+                        Next
 
-        End Using
+                        WriteDebugInfo("Cleaning HOSTS file...")
+                        File.WriteAllLines(Program.HostsFilePath, builtFile.ToArray())
+                        WriteDebugInfoSameLine(" Done!")
+                    End If
+                Catch ex As Exception
+                    Helper.LogWithException("Error cleaning hosts file - ", ex)
+                End Try
+
+                DownloadProxyInformation(jsonurl)
+                'If File.Exists(Program.Pso2RootDir & "\publickey.blob") Then Helper.DeleteFile(Program.Pso2RootDir & "\publickey.blob")
+                WriteDebugInfo("You can now connect to the " + proxy_conf.name + "!")
+                '          End If
+
+                If proxy_conf.version <> "1" And proxy_conf.version <> "2" Then WriteDebugInfoAndFailed("PSO2Proxy version was set incorrectly. Please check your JSON file.")
+            End Using
+        Catch ex As Exception
+            Helper.LogWithException("Error setting proxy information - ", ex)
+        End Try
     End Sub
     Private Function DownloadProxyInformation(url As String) As String
         Try

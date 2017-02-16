@@ -151,7 +151,7 @@ Public Class Helper
             client.Headers.Add("Content-Type", "application/x-www-form-urlencoded")
             Dim data As String = "?api_paste_private=1&api_option=paste&api_paste_name=Error Log report&api_paste_format=text&api_paste_expire_date=N&api_dev_key=ddc1e2efaca45d3df87e6b93ceb43c9f&api_paste_code=" & File.ReadAllText(fileToUpload)
             Dim responce = client.UploadString("http://pastebin.com/api/api_post.php", "POST", data)
-            MsgBox("Whoops, something went wrong! The Tweaker will now open a pastebin page with your log. Please join the Phantasy Star Fleet Discord chat's (The link is available on the right of the main window) #support and post it there so we can help you/fix the issue. Thanks! - AIDA")
+            MsgBox("Whoops, something went wrong! The Tweaker will now open a pastebin page with your log. Please join the Phantasy Star Fleet Discord chat's (The link is available on the right of the main window) #tech-support and post it there so we can help you/fix the issue. Thanks! - AIDA")
             Process.Start(responce)
         End Using
     End Sub
@@ -266,11 +266,11 @@ Public Class Helper
                 End If
             End If
 
-            'If Directory.Exists(myFolderBrowser.SelectedPath & "\pso2_bin\") And File.Exists(myFolderBrowser.SelectedPath & "\pso2_bin\pso2.exe") Then
-            'frmMainv2.WriteDebugInfo("Asking if they selected the wrong folder (PHANTASYSTARONLINE2 instead of pso2_bin)")
-            'Dim MsgBoxResultSrsly = MsgBox("It looks like you've selected an incorrect folder - Make sure you select the pso2_bin folder, not the PHANTASYSTARONLINE 2 folder." & vbCrLf & "If you're absolutely positively sure you selected the right folder, hit yes. Hit no to return to the folder selection and select your pso2_bin folder.", vbYesNo, "Did you select the right folder?")
-            'If MsgBoxResultSrsly = vbNo Then SelectPso2Directory()
-            'End If
+            If File.Exists(myFolderBrowser.SelectedPath & "\PSO2E4JP_SETUPEN-1a.bin") Then
+                frmMainv2.WriteDebugInfo("It seems the user selected a folder with a setup file in it (PSO2E4JP_SETUPEN-1a.bin). Informing.")
+                MsgBox("It looks like you've selected a folder containing the PSO2 setup files. Please run the setup.exe file and actually install the game, then select the installed game's pso2_bin folder.", vbOKOnly, "You haven't installed PSO2 yet")
+                SelectPso2Directory()
+            End If
 
             If myFolderBrowser.SelectedPath.EndsWith("\pso2_bin") Then
                 Program.SaveSetting("PSO2Dir", myFolderBrowser.SelectedPath)
