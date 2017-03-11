@@ -297,6 +297,11 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\button_tutorial2.png" />
+    <None Include="Resources\button_tutorial.gif" />
+    <None Include="Resources\Tweaker-tan.png" />
+    <None Include="Resources\leftarrow.gif" />
+    <None Include="Resources\rightarrow.gif" />
     <None Include="Resources\__clicked.png" />
     <EmbeddedResource Include="ddraw.dll" />
     <Content Include="FodyWeavers.xml" />

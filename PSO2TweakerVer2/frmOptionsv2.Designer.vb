@@ -53,8 +53,12 @@ Partial Class frmOptionsv2
         Me.Button7 = New System.Windows.Forms.Button()
         Me.TT = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnShip = New System.Windows.Forms.Button()
+        Me.btnChangeLogo = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbShip = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.chkSteamMode = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -368,7 +372,7 @@ Partial Class frmOptionsv2
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(568, 138)
+        Me.Label4.Location = New System.Drawing.Point(568, 152)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(154, 23)
         Me.Label4.TabIndex = 37
@@ -380,7 +384,7 @@ Partial Class frmOptionsv2
         Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Ask", "Always", "Never"})
-        Me.ComboBox3.Location = New System.Drawing.Point(572, 164)
+        Me.ComboBox3.Location = New System.Drawing.Point(572, 178)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(145, 21)
         Me.ComboBox3.TabIndex = 36
@@ -451,7 +455,7 @@ Partial Class frmOptionsv2
         Me.Button7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(572, 164)
+        Me.Button7.Location = New System.Drawing.Point(572, 178)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(145, 21)
         Me.Button7.TabIndex = 41
@@ -489,6 +493,25 @@ Partial Class frmOptionsv2
         Me.TT.SetToolTip(Me.btnShip, "Select your preference for backing up files when installing patches here")
         Me.btnShip.UseVisualStyleBackColor = False
         '
+        'btnChangeLogo
+        '
+        Me.btnChangeLogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.btnChangeLogo.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.Cancel_button_normal
+        Me.btnChangeLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnChangeLogo.FlatAppearance.BorderSize = 0
+        Me.btnChangeLogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.btnChangeLogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.btnChangeLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnChangeLogo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnChangeLogo.ForeColor = System.Drawing.Color.White
+        Me.btnChangeLogo.Location = New System.Drawing.Point(723, 217)
+        Me.btnChangeLogo.Name = "btnChangeLogo"
+        Me.btnChangeLogo.Size = New System.Drawing.Size(102, 40)
+        Me.btnChangeLogo.TabIndex = 98
+        Me.btnChangeLogo.Text = "Change logo"
+        Me.TT.SetToolTip(Me.btnChangeLogo, "Select a custom logo to replace the PSO2 star on the main window")
+        Me.btnChangeLogo.UseVisualStyleBackColor = False
+        '
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
@@ -511,6 +534,41 @@ Partial Class frmOptionsv2
         Me.cmbShip.Size = New System.Drawing.Size(145, 21)
         Me.cmbShip.TabIndex = 42
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(29, 33)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(468, 47)
+        Me.Label6.TabIndex = 97
+        Me.Label6.Text = "THESE OPTIONS ARE NOT FOR INSTALLING PATCHES. DO NOT USE THEM UNLESS YOU ARE SPEC" &
+    "IFICALLY TOLD TO."
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'chkSteamMode
+        '
+        Me.chkSteamMode.AutoSize = True
+        Me.chkSteamMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.chkSteamMode.FlatAppearance.BorderSize = 0
+        Me.chkSteamMode.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.chkSteamMode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.chkSteamMode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.chkSteamMode.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSteamMode.ForeColor = System.Drawing.Color.White
+        Me.chkSteamMode.Location = New System.Drawing.Point(572, 129)
+        Me.chkSteamMode.Name = "chkSteamMode"
+        Me.chkSteamMode.Size = New System.Drawing.Size(122, 25)
+        Me.chkSteamMode.TabIndex = 99
+        Me.chkSteamMode.Text = "Steam mode"
+        Me.TT.SetToolTip(Me.chkSteamMode, "If enabled, forces the Tweaker to stay open (but hidden) after launching PSO2 so " &
+        "people can see what game you're playing. ")
+        Me.chkSteamMode.UseVisualStyleBackColor = False
+        '
         'frmOptionsv2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -520,6 +578,8 @@ Partial Class frmOptionsv2
         Me.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(975, 653)
+        Me.Controls.Add(Me.chkSteamMode)
+        Me.Controls.Add(Me.btnChangeLogo)
         Me.Controls.Add(Me.btnShip)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cmbShip)
@@ -550,6 +610,7 @@ Partial Class frmOptionsv2
         Me.Controls.Add(Me.btnSaveChanges)
         Me.Controls.Add(Me.btnMainClose)
         Me.Controls.Add(Me.btnTitle)
+        Me.Controls.Add(Me.Label6)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -596,4 +657,8 @@ Partial Class frmOptionsv2
     Friend WithEvents btnShip As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents cmbShip As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btnChangeLogo As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents chkSteamMode As CheckBox
 End Class

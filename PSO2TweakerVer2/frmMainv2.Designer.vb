@@ -99,11 +99,17 @@ Partial Class frmMainv2
         Me.tmrWaitingforPSO2 = New System.Windows.Forms.Timer(Me.components)
         Me.TT = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblShipEQ = New System.Windows.Forms.Label()
+        Me.picLeftArrow = New System.Windows.Forms.PictureBox()
+        Me.picTweakerTan = New System.Windows.Forms.PictureBox()
+        Me.picButtonTutorialMessage = New System.Windows.Forms.PictureBox()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsTextBarOptions.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsORB.SuspendLayout()
+        CType(Me.picLeftArrow, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picTweakerTan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picButtonTutorialMessage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnMainClose
@@ -392,11 +398,14 @@ Partial Class frmMainv2
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Transparent
         Me.Button1.Location = New System.Drawing.Point(12, 38)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(64, 64)
         Me.Button1.TabIndex = 32
-        Me.TT.SetToolTip(Me.Button1, "Click this to access various tasks and features")
+        Me.TT.SetToolTip(Me.Button1, "Click this to access various tasks and features, including installing english pat" &
+        "ches")
         Me.Button1.UseVisualStyleBackColor = False
         '
         'cmsORB
@@ -950,6 +959,43 @@ Partial Class frmMainv2
         Me.lblShipEQ.Text = "ERROR RETRIEVING EQ INFO"
         Me.lblShipEQ.Visible = False
         '
+        'picLeftArrow
+        '
+        Me.picLeftArrow.BackColor = System.Drawing.Color.Transparent
+        Me.picLeftArrow.Image = Global.PSO2TweakerVer2.My.Resources.Resources.leftarrow
+        Me.picLeftArrow.Location = New System.Drawing.Point(71, 23)
+        Me.picLeftArrow.Name = "picLeftArrow"
+        Me.picLeftArrow.Size = New System.Drawing.Size(119, 92)
+        Me.picLeftArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLeftArrow.TabIndex = 47
+        Me.picLeftArrow.TabStop = False
+        Me.picLeftArrow.Visible = False
+        '
+        'picTweakerTan
+        '
+        Me.picTweakerTan.BackColor = System.Drawing.Color.Transparent
+        Me.picTweakerTan.Image = Global.PSO2TweakerVer2.My.Resources.Resources.Tweaker_tan
+        Me.picTweakerTan.Location = New System.Drawing.Point(134, 48)
+        Me.picTweakerTan.Name = "picTweakerTan"
+        Me.picTweakerTan.Size = New System.Drawing.Size(196, 279)
+        Me.picTweakerTan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picTweakerTan.TabIndex = 48
+        Me.picTweakerTan.TabStop = False
+        Me.TT.SetToolTip(Me.picTweakerTan, "Li li, lilili!")
+        Me.picTweakerTan.Visible = False
+        '
+        'picButtonTutorialMessage
+        '
+        Me.picButtonTutorialMessage.BackColor = System.Drawing.Color.Transparent
+        Me.picButtonTutorialMessage.Image = Global.PSO2TweakerVer2.My.Resources.Resources.button_tutorial2
+        Me.picButtonTutorialMessage.Location = New System.Drawing.Point(197, 0)
+        Me.picButtonTutorialMessage.Name = "picButtonTutorialMessage"
+        Me.picButtonTutorialMessage.Size = New System.Drawing.Size(354, 66)
+        Me.picButtonTutorialMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.picButtonTutorialMessage.TabIndex = 49
+        Me.picButtonTutorialMessage.TabStop = False
+        Me.picButtonTutorialMessage.Visible = False
+        '
         'frmMainv2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -958,6 +1004,11 @@ Partial Class frmMainv2
         Me.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(975, 653)
+        Me.Controls.Add(Me.picButtonTutorialMessage)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.picLeftArrow)
+        Me.Controls.Add(Me.picTweakerTan)
+        Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.lblShipEQ)
         Me.Controls.Add(Me.lblShipStatus)
         Me.Controls.Add(Me.lblAppVersion)
@@ -966,7 +1017,6 @@ Partial Class frmMainv2
         Me.Controls.Add(Me.btnPSO2DiscordShortcut)
         Me.Controls.Add(Me.btnVisiphoneShortcut)
         Me.Controls.Add(Me.btnTelepipe)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.rtbDebug)
@@ -979,7 +1029,6 @@ Partial Class frmMainv2
         Me.Controls.Add(Me.btnTweakerSettings)
         Me.Controls.Add(Me.btnTweaks)
         Me.Controls.Add(Me.btnPSO2Settings)
-        Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.btnMainMinimize)
         Me.Controls.Add(Me.btnMainClose)
         Me.Controls.Add(Me.btnTitle)
@@ -992,13 +1041,16 @@ Partial Class frmMainv2
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmMainv2"
-        Me.Text = "`x"
+        Me.Text = "PSO2 Tweaker"
         Me.TransparencyKey = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsTextBarOptions.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsORB.ResumeLayout(False)
+        CType(Me.picLeftArrow, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picTweakerTan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picButtonTutorialMessage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1078,4 +1130,7 @@ Partial Class frmMainv2
     Friend WithEvents CopyAllTextToClipboardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TT As ToolTip
     Friend WithEvents lblShipEQ As Label
+    Friend WithEvents picLeftArrow As PictureBox
+    Friend WithEvents picTweakerTan As PictureBox
+    Friend WithEvents picButtonTutorialMessage As PictureBox
 End Class

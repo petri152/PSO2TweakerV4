@@ -20,4 +20,3 @@ D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\bin\Release\Newtonsoft
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.exe
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.xml
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.pdb
-D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.vbprojResolveAssemblyReference.cache

@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("PSO2 Tweaker")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyTitle("PSO2 Tweaker")>
+<Assembly: AssemblyDescription("A tool to help you play (and fix!) Phantasy Star Online 2JP!")>
+<Assembly: AssemblyCompany("Arks-Layer")>
 <Assembly: AssemblyProduct("PSO2 Tweaker")>
-<Assembly: AssemblyCopyright("Copyright ©  2016")>
+<Assembly: AssemblyCopyright("Copyright ©  2017")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.0.2.3")>
-<Assembly: AssemblyFileVersion("4.0.2.3")>
+<Assembly: AssemblyVersion("4.0.2.4")>
+<Assembly: AssemblyFileVersion("4.0.2.4")>

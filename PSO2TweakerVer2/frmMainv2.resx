@@ -1288,10 +1288,12 @@
   "PSO2Dir": "",
   "PSO2PrecedeVersion": "",
   "PSO2RemoteVersion": "",
+  "SeenButtonTutorial": "False",
   "ShipStatus": "2",
-  "SteamMode": "False",
+  "SteamModeEnabled": "False",
   "StoryPatchVersion": "Not Installed",
-  "UseIcsHost": "False"
+  "UseIcsHost": "False",
+  "WaifuLink": "",
 }</value>
   </data>
   <data name="txtPSO2DefaultINI.Text" xml:space="preserve">

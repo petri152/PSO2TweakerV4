@@ -255,7 +255,7 @@ Namespace My
                 If String.IsNullOrEmpty(Program.GetSetting("PreDownloadedRar")) Then Program.SaveSetting("PreDownloadedRar", "Never")
                 If String.IsNullOrEmpty(Program.GetSetting("Pastebin")) Then Program.SaveSetting("Pastebin", "True")
                 If String.IsNullOrEmpty(Program.GetSetting("LatestStoryBase")) Then Program.SaveSetting("LatestStoryBase", "Unknown")
-                If String.IsNullOrEmpty(Program.GetSetting("SteamMode")) Then Program.SaveSetting("SteamMode", "False")
+                If String.IsNullOrEmpty(Program.GetSetting("SteamModeEnabled")) Then Program.SaveSetting("SteamModeEnabled", "False")
                 If String.IsNullOrEmpty(Program.GetSetting("UseIcsHost")) Then Program.SaveSetting("UseIcsHost", "False")
                 If Convert.ToBoolean(Program.GetSetting("UseIcsHost")) Then
                     HostsFilePath = Environment.SystemDirectory & "\drivers\etc\HOSTS.ics"
@@ -381,21 +381,117 @@ Namespace My
                 Dim rss As JObject = JObject.Parse(Settings)
                 Return rss.SelectToken(Token).ToString
             Catch ex As Exception
-                Helper.LogWithException("ERROR - ", ex)
-                Return "ERROR GETTING VALUE"
+                'Helper.LogWithException("ERROR - ", ex)
+                Helper.Log("Couldn't find a " & Token & " setting. Using default.")
+                Dim rss As JObject = JObject.Parse(Settings)
+                File.WriteAllText("defaults.txt", frmMainv2.lblDefaults.Text)
+                For Each line As String In File.ReadAllLines("defaults.txt")
+                    Dim part() As String = line.Split(":")
+                    If part(0).Contains(Token) Then
+                        'Clipboard.SetText(part(0).Replace("  ", "").Replace("""", ""))
+                        'MsgBox(part(0))
+                        'Clipboard.SetText(part(1).Replace(" """, "").Replace("""", "").Replace(",", ""))
+                        'MsgBox(part(1))
+                        rss.Add(part(0).Replace("  ", "").Replace("""", ""), part(1).Replace(" """, "").Replace("""", "").Replace(",", ""))
+                        File.WriteAllText(AppData & "/PSO2 Tweaker/settings.json", rss.ToString)
+                        Settings = rss.ToString
+                        Exit For
+                    End If
+                    'MsgBox("Default Settings: " & part(0))
+                Next
+                Helper.DeleteFile("defaults.txt")
+                Return GetSetting(Token)
             End Try
         End Function
         Public Shared Sub ReadSettingsInitial()
             If Directory.Exists(AppData & "/PSO2 Tweaker/") = False Then Directory.CreateDirectory(AppData & "/PSO2 Tweaker/")
             If File.Exists(AppData & "/PSO2 Tweaker/settings.json") = False Then File.WriteAllText(AppData & "/PSO2 Tweaker/settings.json", frmMainv2.lblDefaults.Text)
             Settings = File.ReadAllText(AppData & "/PSO2 Tweaker/settings.json")
-            Dim lineCount = File.ReadAllLines(AppData & "/PSO2 Tweaker/settings.json").Length
-            If lineCount < 26 Then
-                Helper.Log("Looks like we're missing some settings... reverting file to default!")
-                frmMainv2.WriteDebugInfoAndWarning("Failed to retrieve some settings - Settings file reverted to default!")
+            'Dim lineCount = File.ReadAllLines(AppData & "/PSO2 Tweaker/settings.json").Length
+            Dim JSONData As String = ""
+            Try
+                Using sr As New StreamReader(AppData & "/PSO2 Tweaker/settings.json")
+                    JSONData = sr.ReadToEnd()
+                End Using
+            Catch ex As FileNotFoundException
+                Helper.Log("Couldn't find settings, creating default ones!")
+                frmMainv2.WriteDebugInfoAndWarning("Couldn't find settings, creating default ones!")
                 File.WriteAllText(AppData & "/PSO2 Tweaker/settings.json", frmMainv2.lblDefaults.Text)
-                Settings = File.ReadAllText(AppData & "/PSO2 Tweaker/settings.json")
-            End If
+            End Try
+
+            Try
+                JObject.Parse(JSONData)
+            Catch ex As Exception
+                Helper.Log("There appears to be an issue with the settings file... reverting file to default!")
+                frmMainv2.WriteDebugInfoAndWarning("There appears to be an issue with the settings file... reverting file to default!")
+                File.WriteAllText(AppData & "/PSO2 Tweaker/settings.json", frmMainv2.lblDefaults.Text)
+            End Try
+            'If lineCount < 26 Then
+            '    'Settings = File.ReadAllText(AppData & "/PSO2 Tweaker/settings.json")
+            '    Dim UserSettings As New Dictionary(Of String, String)
+            '    Dim DefaultSettings As New Dictionary(Of String, String)
+
+            '    For Each line As String In File.ReadAllLines(AppData & "/PSO2 Tweaker/settings.json")
+            '        Dim part() As String = line.Split(":")
+            '        UserSettings.Add(part(0), line)
+            '        'MsgBox("User Settings: " & part(0))
+            '    Next
+
+            '    File.WriteAllText("defaults.txt", frmMainv2.lblDefaults.Text)
+
+            '    For Each line As String In File.ReadAllLines("defaults.txt")
+            '        Dim part() As String = line.Split(":")
+            '        DefaultSettings.Add(part(0), line)
+            '        'MsgBox("Default Settings: " & part(0))
+            '    Next
+
+            '    Dim TotalAdd As String = ""
+
+            '    For Each key As String In DefaultSettings.Keys
+            '        If UserSettings.ContainsKey(key) Then
+            '            'AddText(file2(key))
+            '        Else
+            '            'MsgBox(key)
+            '            'Now that we know what line Is missing
+            '            'We're going to grab -just- that line from the defaults and add it to the end
+            '            'For Each setting As String In key
+            '            For Each line As String In File.ReadAllLines("defaults.txt")
+            '                If line.Contains(key) Then
+            '                    TotalAdd += line & vbCrLf
+            '                    'MsgBox(line)
+            '                    Exit For
+            '                End If
+            '            Next
+            '            'Next
+            '            MsgBox(TotalAdd)
+            '        End If
+            '    Next
+
+            '    'Gotta delete the last line in the current settings first then add the missing settings (removing the last character, the comma)
+            '    'then put a } at the end and save
+
+            '    Dim text() As String
+            '    Dim lines As New List(Of String)
+
+            '    text = File.ReadAllLines(AppData & "/PSO2 Tweaker/settings.json")
+            '    lines.AddRange(text)
+            '    lines.RemoveAt(0)
+            '    lines.RemoveAt(lines.Count - 1)
+            '    text = lines.ToArray()
+            '    File.WriteAllLines("test.txt", text)
+            '    MsgBox("test")
+            '    'Man, this is probably the shittiest way to do this ever. [AIDA]
+            '    Dim TextBeforeAdd As String = File.ReadAllText("test.txt")
+            '    TextBeforeAdd += TotalAdd + "}"
+            '    File.WriteAllText("test.txt", TextBeforeAdd)
+            '    'Doing shitty code again! \ o / [AIDA]
+            '    Dim Settings() As String = File.ReadAllLines("test.txt")
+            '    Array.Sort(Settings)
+            '    File.WriteAllLines("test.txt", Settings)
+            '    File.WriteAllText("test.txt", "{" & vbCrLf & File.ReadAllText("test.txt"))
+            '    MsgBox("Done!")
+            'End If
+
             If String.IsNullOrEmpty(RegKey.GetValue(Of String)(RegKey.ImportedToV4)) Then
                 Helper.Log("Found legacy PSO2 Tweaker settings - Importing them now...")
                 'Backup

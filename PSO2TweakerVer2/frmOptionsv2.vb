@@ -85,6 +85,7 @@ Public Class frmOptionsv2
         If Not String.IsNullOrEmpty(Program.GetSetting("Backup")) Then Button7.Text = Program.GetSetting("Backup")
         If Not String.IsNullOrEmpty(Program.GetSetting("ShipStatus")) Then btnShip.Text = "Ship " & Program.GetSetting("ShipStatus")
         If Not String.IsNullOrEmpty(Program.GetSetting("Pastebin")) Then chkPastebinUploads.Checked = Convert.ToBoolean(Program.GetSetting("Pastebin"))
+        If Not String.IsNullOrEmpty(Program.GetSetting("SteamModeEnabled")) Then chkSteamMode.Checked = Convert.ToBoolean(Program.GetSetting("SteamModeEnabled"))
 
 
         'chkUseIcsHost.Checked = Convert.ToBoolean(RegKey.GetValue(Of String)(RegKey.UseIcsHost))
@@ -240,6 +241,50 @@ Public Class frmOptionsv2
     Private Sub cmbShip_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbShip.SelectedIndexChanged
         btnShip.Text = cmbShip.Text
         Program.SaveSetting("ShipStatus", btnShip.Text.Replace("Ship ", "").Replace("Ship 1", ""))
+    End Sub
+
+    Private Sub btnChangeLogo_Click(sender As Object, e As EventArgs) Handles btnChangeLogo.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+
+        fd.Title = "Choose a picture (Click cancel to reset the logo)"
+        fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
+        fd.Filter = "All files (*.*)|*.*"
+        fd.FilterIndex = 1
+        fd.RestoreDirectory = True
+        fd.Multiselect = False
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            Program.SaveSetting("WaifuLink", fd.FileName)
+            frmMainv2.picLogo.ImageLocation = Program.GetSetting("WaifuLink")
+            frmMainv2.picLogo.SizeMode = PictureBoxSizeMode.Zoom
+            TT.SetToolTip(frmMainv2.picLogo, "ur waifu a shit")
+            MsgBox("Logo changed successfully!")
+        Else
+            MsgBox("Logo set to default!")
+            Program.SaveSetting("WaifuLink", "")
+            TT.SetToolTip(frmMainv2.picLogo, "much logo very HD wow")
+            frmMainv2.picLogo.Image = Resources.logo
+        End If
+    End Sub
+
+    Private Sub btnChangeLogo_MouseDown(sender As Object, e As MouseEventArgs) Handles btnChangeLogo.MouseDown
+        btnChangeLogo.BackgroundImage = My.Resources.Cancel_button_press
+    End Sub
+
+    Private Sub btnChangeLogo_MouseHover(sender As Object, e As EventArgs) Handles btnChangeLogo.MouseHover
+        btnChangeLogo.BackgroundImage = My.Resources.Cancel_button_hover
+    End Sub
+
+    Private Sub btnChangeLogo_MouseLeave(sender As Object, e As EventArgs) Handles btnChangeLogo.MouseLeave
+        btnChangeLogo.BackgroundImage = My.Resources.Cancel_button_normal
+    End Sub
+
+    Private Sub btnChangeLogo_MouseMove(sender As Object, e As MouseEventArgs) Handles btnChangeLogo.MouseMove
+        btnChangeLogo.BackgroundImage = My.Resources.Cancel_button_hover
+    End Sub
+
+    Private Sub chkSteamMode_CheckedChanged(sender As Object, e As EventArgs) Handles chkSteamMode.CheckedChanged
+        Program.SaveSetting("SteamModeEnabled", chkSteamMode.Checked.ToString())
     End Sub
 #End Region
 

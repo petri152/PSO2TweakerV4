@@ -15,10 +15,8 @@ Imports System.Text.RegularExpressions
 Imports System.ComponentModel
 Imports Newtonsoft.Json.Linq
 Imports Newtonsoft.Json
-Imports SharpCompress.Archive
-Imports SharpCompress.Common
-Imports SharpCompress.Reader
 Imports Microsoft.Win32
+Imports SharpCompress.Readers
 
 Public Class frmMainv2
     'PSO2 Tweaker version 2 - Programmed by AIDA
@@ -308,6 +306,13 @@ Public Class frmMainv2
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Program.GetSetting("SeenButtonTutorial") = "False" Then
+            picLeftArrow.Visible = False
+            picLogo.Visible = True
+            picTweakerTan.Visible = False
+            picButtonTutorialMessage.Visible = False
+            Program.SaveSetting("SeenButtonTutorial", "True")
+        End If
         'cmsORB.Location = New Point(Me.Location.X + 12, Me.Location.Y + 38)
         cmsORB.Show(New Point(Me.Location.X + 13, Me.Location.Y + 39 + 64))
         cmsORB.SendToBack()
@@ -686,6 +691,12 @@ Public Class frmMainv2
             End
         End If
         'string path = Path.GetPathRoot(Environment.SystemDirectory);
+        If Program.GetSetting("WaifuLink") <> "" And File.Exists(Program.GetSetting("WaifuLink")) = True Then
+            picLogo.ImageLocation = Program.GetSetting("WaifuLink")
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom
+            TT.SetToolTip(picLogo, "ur waifu a shit")
+        End If
+
         Show()
 
         WriteDebugInfoAndOk(("Program opened successfully! Version " & Application.Info.Version.ToString()))
@@ -695,7 +706,6 @@ Public Class frmMainv2
         AutoUpdater.Start(Program.FreedomUrl & "version2.xml")
 
         ThreadPool.QueueUserWorkItem(AddressOf GetShipStatus)
-
         ThreadPool.QueueUserWorkItem(AddressOf GetShipEQs)
 
         Try
@@ -776,6 +786,7 @@ Public Class frmMainv2
             Helper.DeleteFile("patchlist_old.txt")
             Helper.DeleteFile("7za.exe")
             Helper.DeleteFile("UnRar.exe")
+            Helper.DeleteFile("defaults.txt")
 
             'Added in precede files. Stupid ass SEGA.
             Helper.DeleteFile("patchlist0.txt")
@@ -907,7 +918,16 @@ Public Class frmMainv2
         Helper.DeleteFile("PSO2 Tweaker Updater.exe")
         'PBMainBar.Value = 0
         'lblStatus.Text = ""
+        'TT.Show(String.Empty, Button1, 0)
+        'TT.ShowAlways = True
+        'TT.Show("Click this to access various tasks and features, including installing english patches (Click to dismiss this message)", Me, btnPSO2Settings.Location, 2000)
         WriteDebugInfo("All done - System ready!")
+        If Program.GetSetting("SeenButtonTutorial") = "False" Then
+            picLeftArrow.Visible = True
+            picLogo.Visible = False
+            picTweakerTan.Visible = True
+            picButtonTutorialMessage.Visible = True
+        End If
     End Sub
 
     Private Function GenerateELSName() As String
@@ -1875,7 +1895,9 @@ Public Class frmMainv2
                 Dim reader = ReaderFactory.Open(stream)
                 While reader.MoveToNextEntry()
                     If Not reader.Entry.IsDirectory Then
-                        reader.WriteEntryToDirectory(DirectoryWithoutTrailingSlash, ExtractOptions.Overwrite)
+                        Dim ExtractionOptionsFuckOff As New ExtractionOptions
+                        ExtractionOptionsFuckOff.Overwrite = True
+                        reader.WriteEntryToDirectory(DirectoryWithoutTrailingSlash, ExtractionOptionsFuckOff)
                     End If
                 End While
             End Using
@@ -3044,7 +3066,7 @@ Public Class frmMainv2
 
             If Not Program.transOverride Then Helper.DeleteFile(Program.PSO2RootDir & "\ddraw.dll")
             tmrWaitingforPSO2.Enabled = False
-            If Program.GetSetting("SteamMode") = "True" Then
+            If Program.GetSetting("SteamModeEnabled") = "True" Then
                 File.Copy(Program.PSO2RootDir & "\pso2.exe", Program.PSO2RootDir & "\pso2.exe_backup", True)
                 Do While Helper.IsFileInUse(Program.PSO2RootDir & "\pso2.exe")
                     Thread.Sleep(1000)
@@ -3183,6 +3205,11 @@ Public Class frmMainv2
 
     Private Sub PBMainBar_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub tsmRestoreStoryPatch_Click(sender As Object, e As EventArgs) Handles tsmRestoreStoryPatch.Click
+        If IsPso2WinDirMissing() Then Return
+        If MsgBox("Are you sure you wish to continue? This will restore your backup from before you applied this patch.", vbYesNo) = MsgBoxResult.Yes Then RestoreBackup("Story Patch")
     End Sub
 End Class
 Public Class PluginClass
