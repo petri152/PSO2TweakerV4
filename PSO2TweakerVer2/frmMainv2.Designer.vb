@@ -46,6 +46,7 @@ Partial Class frmMainv2
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cmsORB = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmsSelectFolder = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallEnglishPatchesNewMethod = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmsInstallUpdatePatches = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmInstallEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmInstallEnglishLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
@@ -98,17 +99,17 @@ Partial Class frmMainv2
         Me.txtPSO2DefaultINI = New System.Windows.Forms.TextBox()
         Me.tmrWaitingforPSO2 = New System.Windows.Forms.Timer(Me.components)
         Me.TT = New System.Windows.Forms.ToolTip(Me.components)
+        Me.picTweakerTan = New System.Windows.Forms.PictureBox()
         Me.lblShipEQ = New System.Windows.Forms.Label()
         Me.picLeftArrow = New System.Windows.Forms.PictureBox()
-        Me.picTweakerTan = New System.Windows.Forms.PictureBox()
         Me.picButtonTutorialMessage = New System.Windows.Forms.PictureBox()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsTextBarOptions.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsORB.SuspendLayout()
-        CType(Me.picLeftArrow, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picTweakerTan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLeftArrow, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picButtonTutorialMessage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -415,11 +416,11 @@ Partial Class frmMainv2
         Me.cmsORB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.cmsORB.DropShadowEnabled = False
         Me.cmsORB.ImageScalingSize = New System.Drawing.Size(0, 0)
-        Me.cmsORB.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmsSelectFolder, Me.cmsInstallUpdatePatches, Me.cmsRestoreBackups, Me.cmsUninstallPatches, Me.cmdTroubleshooting, Me.cmsOtherTasks, Me.ToolStripSeparator1, Me.tsmCheckForPSO2UpdatesWithQuantum, Me.tsmCheckForPrePatchData})
+        Me.cmsORB.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmsSelectFolder, Me.tsmInstallEnglishPatchesNewMethod, Me.cmsInstallUpdatePatches, Me.cmsRestoreBackups, Me.cmsUninstallPatches, Me.cmdTroubleshooting, Me.cmsOtherTasks, Me.ToolStripSeparator1, Me.tsmCheckForPSO2UpdatesWithQuantum, Me.tsmCheckForPrePatchData})
         Me.cmsORB.Name = "cmsORB"
         Me.cmsORB.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.cmsORB.ShowImageMargin = False
-        Me.cmsORB.Size = New System.Drawing.Size(202, 186)
+        Me.cmsORB.Size = New System.Drawing.Size(247, 208)
         '
         'cmsSelectFolder
         '
@@ -428,9 +429,19 @@ Partial Class frmMainv2
         Me.cmsSelectFolder.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsSelectFolder.ForeColor = System.Drawing.Color.White
         Me.cmsSelectFolder.Name = "cmsSelectFolder"
-        Me.cmsSelectFolder.Size = New System.Drawing.Size(201, 22)
+        Me.cmsSelectFolder.Size = New System.Drawing.Size(246, 22)
         Me.cmsSelectFolder.Text = "Select PSO2 Folder"
         Me.cmsSelectFolder.ToolTipText = "Use this to select your pso2_bin folder"
+        '
+        'tsmInstallEnglishPatchesNewMethod
+        '
+        Me.tsmInstallEnglishPatchesNewMethod.BackColor = System.Drawing.Color.Gray
+        Me.tsmInstallEnglishPatchesNewMethod.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishPatchesNewMethod.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallEnglishPatchesNewMethod.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.tsmInstallEnglishPatchesNewMethod.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallEnglishPatchesNewMethod.Name = "tsmInstallEnglishPatchesNewMethod"
+        Me.tsmInstallEnglishPatchesNewMethod.Size = New System.Drawing.Size(246, 22)
+        Me.tsmInstallEnglishPatchesNewMethod.Text = "Install English patches (New method)"
         '
         'cmsInstallUpdatePatches
         '
@@ -440,7 +451,7 @@ Partial Class frmMainv2
         Me.cmsInstallUpdatePatches.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsInstallUpdatePatches.ForeColor = System.Drawing.Color.White
         Me.cmsInstallUpdatePatches.Name = "cmsInstallUpdatePatches"
-        Me.cmsInstallUpdatePatches.Size = New System.Drawing.Size(201, 22)
+        Me.cmsInstallUpdatePatches.Size = New System.Drawing.Size(246, 22)
         Me.cmsInstallUpdatePatches.Text = "Install/Update Patches"
         '
         'tsmInstallEnglishPatch
@@ -528,7 +539,7 @@ Partial Class frmMainv2
         Me.cmsRestoreBackups.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsRestoreBackups.ForeColor = System.Drawing.Color.White
         Me.cmsRestoreBackups.Name = "cmsRestoreBackups"
-        Me.cmsRestoreBackups.Size = New System.Drawing.Size(201, 22)
+        Me.cmsRestoreBackups.Size = New System.Drawing.Size(246, 22)
         Me.cmsRestoreBackups.Text = "Restore Backup of JP Files"
         '
         'tsmRestoreEnglishPatch
@@ -565,7 +576,7 @@ Partial Class frmMainv2
         Me.cmsUninstallPatches.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsUninstallPatches.ForeColor = System.Drawing.Color.White
         Me.cmsUninstallPatches.Name = "cmsUninstallPatches"
-        Me.cmsUninstallPatches.Size = New System.Drawing.Size(201, 22)
+        Me.cmsUninstallPatches.Size = New System.Drawing.Size(246, 22)
         Me.cmsUninstallPatches.Text = "Redownload Original JP Files"
         '
         'tsmUninstallEnglishPatch
@@ -620,7 +631,7 @@ Partial Class frmMainv2
         Me.cmdTroubleshooting.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmdTroubleshooting.ForeColor = System.Drawing.Color.White
         Me.cmdTroubleshooting.Name = "cmdTroubleshooting"
-        Me.cmdTroubleshooting.Size = New System.Drawing.Size(201, 22)
+        Me.cmdTroubleshooting.Size = New System.Drawing.Size(246, 22)
         Me.cmdTroubleshooting.Text = "Troubleshooting"
         '
         'tsmAnalyzeInstall
@@ -729,7 +740,7 @@ Partial Class frmMainv2
         Me.cmsOtherTasks.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsOtherTasks.ForeColor = System.Drawing.Color.White
         Me.cmsOtherTasks.Name = "cmsOtherTasks"
-        Me.cmsOtherTasks.Size = New System.Drawing.Size(201, 22)
+        Me.cmsOtherTasks.Size = New System.Drawing.Size(246, 22)
         Me.cmsOtherTasks.Text = "Other Tasks"
         '
         'tsmStartChromeInCompatibilityMode
@@ -782,7 +793,7 @@ Partial Class frmMainv2
         '
         Me.ToolStripSeparator1.ForeColor = System.Drawing.Color.Black
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(198, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(243, 6)
         '
         'tsmCheckForPSO2UpdatesWithQuantum
         '
@@ -790,7 +801,7 @@ Partial Class frmMainv2
         Me.tsmCheckForPSO2UpdatesWithQuantum.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.tsmCheckForPSO2UpdatesWithQuantum.ForeColor = System.Drawing.Color.White
         Me.tsmCheckForPSO2UpdatesWithQuantum.Name = "tsmCheckForPSO2UpdatesWithQuantum"
-        Me.tsmCheckForPSO2UpdatesWithQuantum.Size = New System.Drawing.Size(201, 22)
+        Me.tsmCheckForPSO2UpdatesWithQuantum.Size = New System.Drawing.Size(246, 22)
         Me.tsmCheckForPSO2UpdatesWithQuantum.Text = "Check for PSO2 Updates"
         Me.tsmCheckForPSO2UpdatesWithQuantum.ToolTipText = "This will check for any files that need to be updated"
         '
@@ -800,7 +811,7 @@ Partial Class frmMainv2
         Me.tsmCheckForPrePatchData.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsmCheckForPrePatchData.ForeColor = System.Drawing.Color.White
         Me.tsmCheckForPrePatchData.Name = "tsmCheckForPrePatchData"
-        Me.tsmCheckForPrePatchData.Size = New System.Drawing.Size(201, 22)
+        Me.tsmCheckForPrePatchData.Size = New System.Drawing.Size(246, 22)
         Me.tsmCheckForPrePatchData.Text = "Check for Pre-Patch data"
         Me.tsmCheckForPrePatchData.ToolTipText = "Checks to see if there are any pre-patches available"
         '
@@ -946,6 +957,19 @@ Partial Class frmMainv2
         Me.TT.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.TT.ToolTipTitle = "Information"
         '
+        'picTweakerTan
+        '
+        Me.picTweakerTan.BackColor = System.Drawing.Color.Transparent
+        Me.picTweakerTan.Image = Global.PSO2TweakerVer2.My.Resources.Resources.Tweaker_tan
+        Me.picTweakerTan.Location = New System.Drawing.Point(134, 48)
+        Me.picTweakerTan.Name = "picTweakerTan"
+        Me.picTweakerTan.Size = New System.Drawing.Size(196, 279)
+        Me.picTweakerTan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picTweakerTan.TabIndex = 48
+        Me.picTweakerTan.TabStop = False
+        Me.TT.SetToolTip(Me.picTweakerTan, "Li li, lilili!")
+        Me.picTweakerTan.Visible = False
+        '
         'lblShipEQ
         '
         Me.lblShipEQ.AutoSize = True
@@ -970,19 +994,6 @@ Partial Class frmMainv2
         Me.picLeftArrow.TabIndex = 47
         Me.picLeftArrow.TabStop = False
         Me.picLeftArrow.Visible = False
-        '
-        'picTweakerTan
-        '
-        Me.picTweakerTan.BackColor = System.Drawing.Color.Transparent
-        Me.picTweakerTan.Image = Global.PSO2TweakerVer2.My.Resources.Resources.Tweaker_tan
-        Me.picTweakerTan.Location = New System.Drawing.Point(134, 48)
-        Me.picTweakerTan.Name = "picTweakerTan"
-        Me.picTweakerTan.Size = New System.Drawing.Size(196, 279)
-        Me.picTweakerTan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picTweakerTan.TabIndex = 48
-        Me.picTweakerTan.TabStop = False
-        Me.TT.SetToolTip(Me.picTweakerTan, "Li li, lilili!")
-        Me.picTweakerTan.Visible = False
         '
         'picButtonTutorialMessage
         '
@@ -1048,8 +1059,8 @@ Partial Class frmMainv2
         Me.cmsTextBarOptions.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsORB.ResumeLayout(False)
-        CType(Me.picLeftArrow, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picTweakerTan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLeftArrow, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picButtonTutorialMessage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1133,4 +1144,5 @@ Partial Class frmMainv2
     Friend WithEvents picLeftArrow As PictureBox
     Friend WithEvents picTweakerTan As PictureBox
     Friend WithEvents picButtonTutorialMessage As PictureBox
+    Friend WithEvents tsmInstallEnglishPatchesNewMethod As ToolStripMenuItem
 End Class

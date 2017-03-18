@@ -55,7 +55,7 @@ Namespace My
                     Thread.CurrentThread.CurrentCulture = New CultureInfo(locale)
                 End If
 
-                If File.Exists(StartPath & "\logfile.txt") AndAlso Helper.GetFileSize(StartPath & "\logfile.txt") > 500000 Then
+                If File.Exists(StartPath & "\logfile.txt") AndAlso Helper.GetFileSize(StartPath & "\logfile.txt") > 200000 Then
                     File.WriteAllText(StartPath & "\logfile.txt", "")
                 End If
 
