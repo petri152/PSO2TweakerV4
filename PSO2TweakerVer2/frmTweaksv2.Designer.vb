@@ -33,8 +33,6 @@ Partial Class frmTweaksv2
         Me.chkRemoveSEGA = New System.Windows.Forms.CheckBox()
         Me.chkRemoveNVidia = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnMainClose = New System.Windows.Forms.Button()
         Me.btnTitle = New System.Windows.Forms.Button()
         Me.chkRestoreSEGA = New System.Windows.Forms.CheckBox()
@@ -42,6 +40,10 @@ Partial Class frmTweaksv2
         Me.chkRestoreVita = New System.Windows.Forms.CheckBox()
         Me.chkRestorePC = New System.Windows.Forms.CheckBox()
         Me.TT = New System.Windows.Forms.ToolTip(Me.components)
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,7 +57,7 @@ Partial Class frmTweaksv2
         Me.chkRemoveVita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRemoveVita.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRemoveVita.ForeColor = System.Drawing.Color.White
-        Me.chkRemoveVita.Location = New System.Drawing.Point(78, 162)
+        Me.chkRemoveVita.Location = New System.Drawing.Point(78, 206)
         Me.chkRemoveVita.Name = "chkRemoveVita"
         Me.chkRemoveVita.Size = New System.Drawing.Size(188, 25)
         Me.chkRemoveVita.TabIndex = 26
@@ -72,7 +74,7 @@ Partial Class frmTweaksv2
         Me.chkRemovePC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRemovePC.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRemovePC.ForeColor = System.Drawing.Color.White
-        Me.chkRemovePC.Location = New System.Drawing.Point(78, 122)
+        Me.chkRemovePC.Location = New System.Drawing.Point(78, 166)
         Me.chkRemovePC.Name = "chkRemovePC"
         Me.chkRemovePC.Size = New System.Drawing.Size(179, 25)
         Me.chkRemovePC.TabIndex = 25
@@ -152,7 +154,7 @@ Partial Class frmTweaksv2
         Me.chkRemoveSEGA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRemoveSEGA.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRemoveSEGA.ForeColor = System.Drawing.Color.White
-        Me.chkRemoveSEGA.Location = New System.Drawing.Point(78, 242)
+        Me.chkRemoveSEGA.Location = New System.Drawing.Point(78, 286)
         Me.chkRemoveSEGA.Name = "chkRemoveSEGA"
         Me.chkRemoveSEGA.Size = New System.Drawing.Size(179, 25)
         Me.chkRemoveSEGA.TabIndex = 32
@@ -169,7 +171,7 @@ Partial Class frmTweaksv2
         Me.chkRemoveNVidia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRemoveNVidia.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRemoveNVidia.ForeColor = System.Drawing.Color.White
-        Me.chkRemoveNVidia.Location = New System.Drawing.Point(78, 202)
+        Me.chkRemoveNVidia.Location = New System.Drawing.Point(78, 246)
         Me.chkRemoveNVidia.Name = "chkRemoveNVidia"
         Me.chkRemoveNVidia.Size = New System.Drawing.Size(188, 25)
         Me.chkRemoveNVidia.TabIndex = 31
@@ -182,36 +184,12 @@ Partial Class frmTweaksv2
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(74, 333)
+        Me.Label1.Location = New System.Drawing.Point(74, 316)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(254, 63)
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "＊Note: Removing the videos will" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "display a black screen. Click a few" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "times to ge" &
     "t to the title screen."
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(74, 430)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(265, 21)
-        Me.Label3.TabIndex = 41
-        Me.Label3.Text = "Currently Selected PSO2 Directory:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(74, 453)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(374, 21)
-        Me.Label2.TabIndex = 42
-        Me.Label2.Text = "C:\FAKEPATH\PHANTASYSTARONLINE2\pso2_bin\"
         '
         'btnMainClose
         '
@@ -251,7 +229,7 @@ Partial Class frmTweaksv2
         Me.chkRestoreSEGA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRestoreSEGA.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRestoreSEGA.ForeColor = System.Drawing.Color.White
-        Me.chkRestoreSEGA.Location = New System.Drawing.Point(516, 242)
+        Me.chkRestoreSEGA.Location = New System.Drawing.Point(516, 286)
         Me.chkRestoreSEGA.Name = "chkRestoreSEGA"
         Me.chkRestoreSEGA.Size = New System.Drawing.Size(176, 25)
         Me.chkRestoreSEGA.TabIndex = 49
@@ -268,7 +246,7 @@ Partial Class frmTweaksv2
         Me.chkRestoreNVidia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRestoreNVidia.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRestoreNVidia.ForeColor = System.Drawing.Color.White
-        Me.chkRestoreNVidia.Location = New System.Drawing.Point(516, 202)
+        Me.chkRestoreNVidia.Location = New System.Drawing.Point(516, 246)
         Me.chkRestoreNVidia.Name = "chkRestoreNVidia"
         Me.chkRestoreNVidia.Size = New System.Drawing.Size(185, 25)
         Me.chkRestoreNVidia.TabIndex = 48
@@ -285,7 +263,7 @@ Partial Class frmTweaksv2
         Me.chkRestoreVita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRestoreVita.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRestoreVita.ForeColor = System.Drawing.Color.White
-        Me.chkRestoreVita.Location = New System.Drawing.Point(516, 162)
+        Me.chkRestoreVita.Location = New System.Drawing.Point(516, 206)
         Me.chkRestoreVita.Name = "chkRestoreVita"
         Me.chkRestoreVita.Size = New System.Drawing.Size(185, 25)
         Me.chkRestoreVita.TabIndex = 47
@@ -302,7 +280,7 @@ Partial Class frmTweaksv2
         Me.chkRestorePC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.chkRestorePC.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRestorePC.ForeColor = System.Drawing.Color.White
-        Me.chkRestorePC.Location = New System.Drawing.Point(516, 122)
+        Me.chkRestorePC.Location = New System.Drawing.Point(516, 166)
         Me.chkRestorePC.Name = "chkRestorePC"
         Me.chkRestorePC.Size = New System.Drawing.Size(176, 25)
         Me.chkRestorePC.TabIndex = 46
@@ -321,6 +299,61 @@ Partial Class frmTweaksv2
         Me.TT.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.TT.ToolTipTitle = "Information"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.CheckBox1.FlatAppearance.BorderSize = 0
+        Me.CheckBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.CheckBox1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.CheckBox1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.ForeColor = System.Drawing.Color.White
+        Me.CheckBox1.Location = New System.Drawing.Point(78, 394)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(210, 25)
+        Me.CheckBox1.TabIndex = 50
+        Me.CheckBox1.Text = "Enable modding support"
+        Me.CheckBox1.UseVisualStyleBackColor = False
+        Me.CheckBox1.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(74, 434)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(662, 63)
+        Me.Label4.TabIndex = 51
+        Me.Label4.Text = resources.GetString("Label4.Text")
+        Me.Label4.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(73, 127)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(374, 21)
+        Me.Label2.TabIndex = 53
+        Me.Label2.Text = "C:\FAKEPATH\PHANTASYSTARONLINE2\pso2_bin\"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(73, 104)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(265, 21)
+        Me.Label3.TabIndex = 52
+        Me.Label3.Text = "Currently Selected PSO2 Directory:"
+        '
         'frmTweaksv2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -330,13 +363,15 @@ Partial Class frmTweaksv2
         Me.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(975, 653)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.chkRestoreSEGA)
         Me.Controls.Add(Me.chkRestoreNVidia)
         Me.Controls.Add(Me.chkRestoreVita)
         Me.Controls.Add(Me.chkRestorePC)
         Me.Controls.Add(Me.btnMainClose)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.chkRemoveSEGA)
         Me.Controls.Add(Me.chkRemoveNVidia)
@@ -369,8 +404,6 @@ Partial Class frmTweaksv2
     Friend WithEvents chkRemoveSEGA As System.Windows.Forms.CheckBox
     Friend WithEvents chkRemoveNVidia As System.Windows.Forms.CheckBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnMainClose As System.Windows.Forms.Button
     Friend WithEvents btnTitle As System.Windows.Forms.Button
     Friend WithEvents chkRestoreSEGA As CheckBox
@@ -378,4 +411,8 @@ Partial Class frmTweaksv2
     Friend WithEvents chkRestoreVita As CheckBox
     Friend WithEvents chkRestorePC As CheckBox
     Friend WithEvents TT As ToolTip
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

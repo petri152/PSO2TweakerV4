@@ -1,4 +1,8 @@
-﻿Imports PSO2TweakerVer2.My
+﻿Imports System.Globalization
+Imports System.Net
+Imports Newtonsoft.Json
+Imports PSO2TweakerVer2.My
+Imports PSO2TweakerVer2.VEDA
 
 Public Class frmOptionsv2
     Private IsFormBeingDragged As Boolean = False
@@ -78,12 +82,30 @@ Public Class frmOptionsv2
     End Sub
 
     Private Sub frmOptions_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim JSONClient As New WebClient
+        If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+        Dim RaiserEntries As Dictionary(Of String, RaiserClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, RaiserClass))(JSONClient.DownloadString(Program.NewMethodJSON))
+        If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+        cmbPatchLanguage.Items.Clear()
+        For Each item As KeyValuePair(Of String, RaiserClass) In RaiserEntries
+            'Do stuff
+            If item.Value.Enabled = "true" Then
+                Dim culture = New CultureInfo(item.Key)
+                cmbPatchLanguage.Items.Add(culture.DisplayName & " (" & item.Key & ")")
+            End If
+        Next
+        cmbPatchLanguage.Sorted = True
+
         Me.Visible = False
         Me.AutoScaleMode = AutoScaleMode.Dpi
         Me.AutoSize = True
 
         If Not String.IsNullOrEmpty(Program.GetSetting("Backup")) Then Button7.Text = Program.GetSetting("Backup")
         If Not String.IsNullOrEmpty(Program.GetSetting("ShipStatus")) Then btnShip.Text = "Ship " & Program.GetSetting("ShipStatus")
+        If Not String.IsNullOrEmpty(Program.GetSetting("PatchLanguage")) Then
+            Dim culture = New CultureInfo(Program.GetSetting("PatchLanguage"))
+            btnPatchLanguage.Text = culture.DisplayName
+        End If
         If Not String.IsNullOrEmpty(Program.GetSetting("Pastebin")) Then chkPastebinUploads.Checked = Convert.ToBoolean(Program.GetSetting("Pastebin"))
         If Not String.IsNullOrEmpty(Program.GetSetting("SteamModeEnabled")) Then chkSteamMode.Checked = Convert.ToBoolean(Program.GetSetting("SteamModeEnabled"))
 
@@ -203,7 +225,7 @@ Public Class frmOptionsv2
 
         If yesNo = vbYes Then
             Dim VersionClient As New Net.WebClient
-            Program.SaveSetting("PSO2RemoteVersion", VersionClient.DownloadString("http://arks-layer.com/vanila/version.txt").Replace(" ", ""))
+            Program.SaveSetting("PSO2RemoteVersion", VersionClient.DownloadString("https://arks-layer.com/vanila/version.txt").Replace(" ", ""))
             frmMainv2.WriteDebugInfoAndOk("PSO2 Installed version set to the latest available!")
         End If
     End Sub
@@ -285,6 +307,17 @@ Public Class frmOptionsv2
 
     Private Sub chkSteamMode_CheckedChanged(sender As Object, e As EventArgs) Handles chkSteamMode.CheckedChanged
         Program.SaveSetting("SteamModeEnabled", chkSteamMode.Checked.ToString())
+    End Sub
+
+    Private Sub btnPatchLanguage_Click(sender As Object, e As EventArgs) Handles btnPatchLanguage.Click
+        cmbPatchLanguage.DroppedDown = True
+    End Sub
+
+    Private Sub cmbPatchLanguage_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPatchLanguage.SelectedIndexChanged
+        btnPatchLanguage.Text = cmbPatchLanguage.Text
+        Dim Cut As String() = btnPatchLanguage.Text.Split("(")
+        Dim ISOCode As String = Cut(1).Replace(")", "")
+        Program.SaveSetting("PatchLanguage", ISOCode)
     End Sub
 #End Region
 

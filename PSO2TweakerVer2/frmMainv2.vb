@@ -4,6 +4,7 @@ Imports System.IO
 Imports PSO2TweakerVer2.VEDA
 Imports PSO2TweakerVer2.My
 Imports PSO2TweakerVer2.Helper
+Imports PSO2TweakerVer2.MessageBoxCustom
 Imports AutoUpdaterDotNET
 Imports Microsoft.VisualBasic.FileIO
 Imports ArksLayer.Tweaker.Abstractions
@@ -17,6 +18,8 @@ Imports Newtonsoft.Json.Linq
 Imports Newtonsoft.Json
 Imports Microsoft.Win32
 Imports SharpCompress.Readers
+Imports PSO2TweakerVer2
+Imports System.Globalization
 
 Public Class frmMainv2
     'PSO2 Tweaker version 2 - Programmed by AIDA
@@ -37,6 +40,9 @@ Public Class frmMainv2
     Dim _restartplz As Boolean
     Dim NewInstall As Boolean = False
     Friend WithEvents Downloader As New WebClient
+    Public MyMsgBox As New MessageBoxCustom
+
+
 #Region "Layout stuff"
     Private Sub btnMainClose_Click(sender As Object, e As EventArgs) Handles btnMainClose.Click
         'Closing the form, duh
@@ -313,6 +319,8 @@ Public Class frmMainv2
             picButtonTutorialMessage.Visible = False
             Program.SaveSetting("SeenButtonTutorial", "True")
         End If
+        If Program.GetSetting("NewMethodEnabled") = "Yes" Then tsmUninstallEnglishPatchesNewMethod.Visible = True
+        If Program.GetSetting("NewMethodEnabled") = "No" Then tsmUninstallEnglishPatchesNewMethod.Visible = False
         'cmsORB.Location = New Point(Me.Location.X + 12, Me.Location.Y + 38)
         cmsORB.Show(New Point(Me.Location.X + 13, Me.Location.Y + 39 + 64))
         cmsORB.SendToBack()
@@ -360,7 +368,7 @@ Public Class frmMainv2
     End Sub
 
     Private Sub btnPSO2DiscordShortcut_Click(sender As Object, e As EventArgs) Handles btnPSO2DiscordShortcut.Click
-        Process.Start("https://discord.gg/KYc3Jyn")
+        Process.Start("https://discord.gg/PSO2")
     End Sub
 
     Private Sub btnPSO2DiscordShortcut_MouseDown(sender As Object, e As MouseEventArgs) Handles btnPSO2DiscordShortcut.MouseDown
@@ -503,6 +511,7 @@ Public Class frmMainv2
 #End Region
 
     Private Async Sub frmMainv2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Downloader.Headers("user-agent") = GetUserAgent()
 
         If Program.CloseMe = True Then
@@ -562,7 +571,7 @@ Public Class frmMainv2
                         Helper.DeleteFile("client.json")
                         WriteDebugInfoAndOk(("Program opened successfully! (Installing PSO2 variant) Version " & Application.Info.Version.ToString()))
                         lblAppVersion.Text = Application.Info.Version.ToString()
-                        Dim remotejson As JObject = JObject.Parse(DownloadString("http://arks-layer.com/remote.json"))
+                        Dim remotejson As JObject = JObject.Parse(DownloadString("https://arks-layer.com/remote.json"))
                         Program.InfoURL = remotejson.SelectToken("InfoURL").ToString()
                         WebBrowser1.Navigate(Program.InfoURL)
                         Show()
@@ -570,7 +579,7 @@ Public Class frmMainv2
                         Application.DoEvents()
                         WriteDebugInfo("Downloading DirectX setup...")
                         Try
-                            DownloadFile("http://arks-layer.com/docs/dxwebsetup.exe", "dxwebsetup.exe")
+                            DownloadFile("https://arks-layer.com/docs/dxwebsetup.exe", "dxwebsetup.exe")
                             WriteDebugInfoSameLine("Done!")
                             WriteDebugInfo("Checking/Installing DirectX...")
                             Dim processStartInfo As ProcessStartInfo = New ProcessStartInfo() With {.FileName = "dxwebsetup.exe", .Verb = "runas", .Arguments = "/Q", .UseShellExecute = True}
@@ -604,6 +613,9 @@ Public Class frmMainv2
                         If String.IsNullOrEmpty(Program.GetSetting("StoryPatchVersion")) Then Program.SaveSetting("StoryPatchVersion", "Not Installed")
                         If String.IsNullOrEmpty(Program.GetSetting("ENPatchVersion")) Then Program.SaveSetting("ENPatchVersion", "Not Installed")
                         If String.IsNullOrEmpty(Program.GetSetting("LargeFilesVersion")) Then Program.SaveSetting("LargeFilesVersion", "Not Installed")
+                        If String.IsNullOrEmpty(Program.GetSetting("EnglishMD5")) Then Program.SaveSetting("EnglishMD5", "None")
+                        If String.IsNullOrEmpty(Program.GetSetting("NewMethodEnabled")) Then Program.SaveSetting("NewMethodEnabled", "No")
+                        If String.IsNullOrEmpty(Program.GetSetting("PatchLanguage")) Then Program.SaveSetting("PatchLanguage", "EN")
 
                         RegKey.SetValue(Of String)("PSO2Dir", Program.GetSetting("PSO2Dir"))
                         ' Use IOC Container in the main Tweaker project to deal with dependencies.
@@ -696,6 +708,14 @@ Public Class frmMainv2
             picLogo.SizeMode = PictureBoxSizeMode.Zoom
             TT.SetToolTip(picLogo, "ur waifu a shit")
         End If
+        If String.IsNullOrEmpty(Program.GetSetting("EnglishMD5")) Then Program.SaveSetting("EnglishMD5", "None")
+        If String.IsNullOrEmpty(Program.GetSetting("AlwaysInstall")) Then Program.SaveSetting("AlwaysInstall", "No")
+        If String.IsNullOrEmpty(Program.GetSetting("NewMethodEnabled")) Then Program.SaveSetting("NewMethodEnabled", "No")
+        If String.IsNullOrEmpty(Program.GetSetting("PatchLanguage")) Then Program.SaveSetting("PatchLanguage", "EN")
+        Dim PatchLanguage As String = Program.GetSetting("PatchLanguage")
+        Dim culture = New CultureInfo(PatchLanguage)
+        tsmInstallEnglishPatchesNewMethod.Text = "Install " & culture.DisplayName & " Patch"
+        tsmUninstallEnglishPatchesNewMethod.Text = "Uninstall " & culture.DisplayName & " Patch"
 
         Show()
 
@@ -787,6 +807,11 @@ Public Class frmMainv2
             Helper.DeleteFile("7za.exe")
             Helper.DeleteFile("UnRar.exe")
             Helper.DeleteFile("defaults.txt")
+            Helper.DeleteFile(Program.PSO2RootDir & "\plugins\translator.dll")
+            Helper.DeleteFile(Program.PSO2RootDir & "\plugins\disabled\translator.dll")
+            Helper.DeleteFile(Program.PSO2RootDir & "\plugins\PSO2Proxy.dll")
+            Helper.DeleteFile(Program.PSO2RootDir & "\plugins\disabled\PSO2Proxy.dll")
+            Helper.DeleteFile(Program.PSO2RootDir & "\translation.bin")
 
             'Added in precede files. Stupid ass SEGA.
             Helper.DeleteFile("patchlist0.txt")
@@ -886,24 +911,28 @@ Public Class frmMainv2
             'Check for PSO2 Updates here, download the version.ver thingie
             'Check for PSO2 EN Patch updates here, parse the URL and see if it's different from the saved one
             'Check for EN Story Patch
+            If Program.GetSetting("NewMethodEnabled") = "No" Then
+                WriteDebugInfo("Checking for updates to patches...")
 
-            WriteDebugInfo("Checking for updates to patches...")
+                'Check for English Patches (Done! :D)
+                CheckForEnPatchUpdates()
+                WriteDebugInfo("Current EN Patch version is: " & Program.GetSetting("ENPatchVersion"))
+                Application.DoEvents()
 
-            'Check for English Patches (Done! :D)
-            CheckForEnPatchUpdates()
-            WriteDebugInfo("Current EN Patch version is: " & Program.GetSetting("ENPatchVersion"))
-            Application.DoEvents()
+                'Check for LargeFiles Update (Work-In-Progress!)
+                CheckForLargeFilesUpdates()
+                WriteDebugInfo("Current Large Files version is: " & Program.GetSetting("LargeFilesVersion"))
+                Application.DoEvents()
 
-            'Check for LargeFiles Update (Work-In-Progress!)
-            CheckForLargeFilesUpdates()
-            WriteDebugInfo("Current Large Files version is: " & Program.GetSetting("LargeFilesVersion"))
-            Application.DoEvents()
+                'Check for Story Patches (Done! :D)
+                Application.DoEvents()
+                CheckForStoryUpdates()
+                WriteDebugInfo("Current Story Patch version is: " & Program.GetSetting("StoryPatchVersion"))
+                Application.DoEvents()
 
-            'Check for Story Patches (Done! :D)
-            Application.DoEvents()
-            CheckForStoryUpdates()
-            WriteDebugInfo("Current Story Patch version is: " & Program.GetSetting("StoryPatchVersion"))
-            Application.DoEvents()
+            Else
+                CheckForNewMethodUpdates()
+            End If
 
             Helper.DeleteFile("version.ver")
 
@@ -958,7 +987,7 @@ Public Class frmMainv2
         TweakerTrigger.patchwriter.Close()
         'Final update steps - Set the version file, reset patches. [AIDA]
         'frmMainv2.WriteDebugInfo("Downloading " & "version file...")
-        DownloadFile("http://arks-layer.com/vanila/version.txt", "version.ver")
+        DownloadFile("https://arks-layer.com/vanila/version.txt", "version.ver")
 
 
         If File.Exists((_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver")) Then Helper.DeleteFile((_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver"))
@@ -1028,7 +1057,7 @@ Public Class frmMainv2
                     Application.DoEvents()
                     WriteDebugInfo("Downloading DirectX setup...")
                     Try
-                        DownloadFile("http://arks-layer.com/docs/dxwebsetup.exe", "dxwebsetup.exe")
+                        DownloadFile("https://arks-layer.com/docs/dxwebsetup.exe", "dxwebsetup.exe")
                         WriteDebugInfoSameLine("Done!")
                         WriteDebugInfo("Checking/Installing DirectX...")
                         Dim processStartInfo As ProcessStartInfo = New ProcessStartInfo() With {.FileName = "dxwebsetup.exe", .Verb = "runas", .Arguments = "/Q", .UseShellExecute = True}
@@ -1125,7 +1154,67 @@ Public Class frmMainv2
             Helper.LogWithException("ERROR - ", ex)
         End Try
     End Sub
-
+    Private Sub CheckForNewMethodUpdates()
+        Try
+            Dim PatchLanguage As String = Program.GetSetting("PatchLanguage")
+            Dim culture = New CultureInfo(PatchLanguage)
+            Dim PatchLanguageLong As String = culture.DisplayName
+            WriteDebugInfo("Checking for a new " & PatchLanguageLong & " patch...")
+            Dim FileCount As String = ""
+            Dim EnglishMD5 As String = ""
+            Dim PatchURL As String = ""
+            Dim JSONClient As New WebClient
+            If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+            Dim RaiserEntries As Dictionary(Of String, RaiserClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, RaiserClass))(JSONClient.DownloadString(Program.NewMethodJSON))
+            For Each item As KeyValuePair(Of String, RaiserClass) In RaiserEntries
+                'Do stuff
+                If item.Key = PatchLanguage Then
+                    FileCount = item.Value.FileCount
+                    EnglishMD5 = item.Value.PatchMD5.ToUpper
+                    PatchURL = item.Value.PatchURL
+                End If
+            Next
+            If EnglishMD5 = "" Then
+                WriteDebugInfoAndFailed("Couldn't get patch information!")
+                Return
+            End If
+            'Dim filelistjson As JArray = JArray.Parse(JSONClient.DownloadString(Program.NewMethodJSON))
+            'Dim EnglishMD5 As String = filelistjson(0).SelectToken(PatchLanguage).SelectToken("PatchMD5").ToString()
+            If Directory.Exists(Program.PSO2RootDir & "\patch\") = False Then
+                Dim ButtonPushed As String = ShowMessageBox("Uh oh!", "The patch directory in PSO2 has been deleted. The " & PatchLanguageLong & " patch" & vbCrLf & "will NOT work without this. Did you want to download and" & vbCrLf & "re-install the " & PatchLanguageLong & " patch?", 0)
+                If ButtonPushed = "No" Then Exit Sub
+                Helper.Log("Patch directory in PSO2 has been deleted! Let's re-create it and re-install the patch.")
+                WriteDebugInfoAndWarning("Couldn't find " & PatchLanguageLong & " patch files, re-installing...")
+                tsmInstallEnglishPatchesNewMethod.PerformClick()
+            End If
+            If Directory.Exists(Program.PSO2RootDir & "\patch\") = True And Directory.GetFiles(Program.PSO2RootDir & "\patch\").Length = 0 Then
+                Dim ButtonPushed As String = ShowMessageBox("Uh oh!", "The patch directory in PSO2 has been emptied (no files!). The" & vbCrLf & PatchLanguageLong & " patch will NOT work. Did you want to download" & vbCrLf & "and re-install the " & PatchLanguageLong & " patch?", 0)
+                If ButtonPushed = "No" Then Exit Sub
+                Helper.Log("Patch directory in PSO2 has been emptied (no files)! Let's re-install the patch.")
+                WriteDebugInfoAndWarning("Couldn't find " & PatchLanguageLong & " patch files, re-installing...")
+                tsmInstallEnglishPatchesNewMethod.PerformClick()
+            End If
+            If Program.GetSetting("EnglishMD5") <> EnglishMD5 Then
+                If Program.GetSetting("AlwaysInstall") <> "Yes" Then
+                    Helper.Log("A new " & PatchLanguageLong & " patch is available. Would you like to download and install it?")
+                    Dim ButtonPushed As String = ShowMessageBox("New " & PatchLanguageLong & " patch", "A new " & PatchLanguageLong & " patch is available. Would you like to download" & vbCrLf & "and install it?", 1, "Yes (Always)")
+                    If ButtonPushed = "Yes" Then tsmInstallEnglishPatchesNewMethod.PerformClick()
+                    If ButtonPushed = "No" Then Exit Sub
+                    If ButtonPushed = "Abort" Then
+                        Program.SaveSetting("AlwaysInstall", "Yes")
+                        tsmInstallEnglishPatchesNewMethod.PerformClick()
+                    End If
+                Else
+                    WriteDebugInfo("Autoinstalling new " & PatchLanguageLong & " patch...")
+                    tsmInstallEnglishPatchesNewMethod.PerformClick()
+                End If
+            Else
+                WriteDebugInfoAndOk("You have the latest " & PatchLanguageLong & " patch!")
+            End If
+        Catch ex As Exception
+            Helper.LogWithException("ERROR - ", ex)
+        End Try
+    End Sub
     Private Sub CheckForEnPatchUpdates()
         Try
             If Program.GetSetting("ENPatchVersion") = "Not Installed" Then Return
@@ -1357,7 +1446,7 @@ Public Class frmMainv2
 
             If Not comingFromPrePatch Then
                 Try
-                    Dim source As String = Program.AreYouAlive.DownloadString("http://arks-layer.com/vanila/version.txt")
+                    Dim source As String = Program.AreYouAlive.DownloadString("https://arks-layer.com/vanila/version.txt")
                     If String.IsNullOrEmpty(source) Then
                         Helper.Log("ERROR: Wasn't able to contact Arks Layer, help!")
                         WriteDebugInfo("Failed to get the PSO2 Version update information. The rest of the program will work fine, and this error will be fixed shortly.")
@@ -1368,7 +1457,7 @@ Public Class frmMainv2
                     WriteDebugInfo("Failed to get the PSO2 Version information. The rest of the program will work fine, and this error will be fixed shortly.")
                     Exit Function
                 End Try
-                DownloadFile("http://arks-layer.com/vanila/version.txt", "version.ver")
+                DownloadFile("https://arks-layer.com/vanila/version.txt", "version.ver")
                 Dim version = File.ReadAllLines("version.ver")(0)
                 If String.IsNullOrEmpty(Program.GetSetting("PSO2RemoteVersion")) Then
                     Program.SaveSetting("PSO2RemoteVersion", version)
@@ -1613,6 +1702,8 @@ Public Class frmMainv2
                 Downloader.Headers("user-agent") = "AQUA_HTTP"
             ElseIf address.Contains("arghlex") Then
                 Downloader.Credentials = New NetworkCredential(GetUsername, GetPassword)
+            ElseIf address.Contains("pso2.acf.me.uk") Then
+                Downloader.Headers("user-agent") = FuckOffKaze()
             Else
                 Downloader.Headers("user-agent") = GetUserAgent()
             End If
@@ -1633,6 +1724,12 @@ Public Class frmMainv2
         End Try
     End Sub
     Private Sub DownloadPatch(patchUrl As String, patchName As String, versionStr As String, msgBackup As String, msgSelectArchive As String)
+        If Program.GetSetting("NewMethodEnabled") = "Yes" Then
+            Helper.Log("Please note that installing the old patches will disable the new method. You do not need to install these if you installed using the new method. Are you sure you want to continue installing with the old method?")
+            Dim MsgBoxResultLol As MsgBoxResult = MsgBox("Please note that installing the old patches will disable the new method. You do not need to install these if you installed using the new method. Are you sure you want to continue installing with the old method?", vbYesNo, "For your information...")
+            If MsgBoxResultLol = vbNo Then Return
+        End If
+
         _cancelledFull = False
         Dim patchFile As String = ""
         Try
@@ -1761,6 +1858,12 @@ Public Class frmMainv2
             Next
 
             Helper.DeleteDirectory("TEMPPATCHAIDAFOOL")
+            Program.SaveSetting("NewMethodEnabled", "No")
+            If Directory.Exists(Program.PSO2RootDir & "\patch\") Then Directory.Delete(Program.PSO2RootDir & "\patch\", True)
+            If File.Exists(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll") = True Then
+                WriteDebugInfo("Auto-disabling RAISER System plugin!")
+                File.Move(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll", Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll")
+            End If
             If backupyesno = MsgBoxResult.No Then
                 External.FlashWindow(Handle, True)
                 WriteDebugInfo("Patch installed/updated!")
@@ -1778,7 +1881,7 @@ Public Class frmMainv2
         End Try
     End Sub
 
-    Private Sub tsmInstallEnglishPatch_Click(sender As Object, e As EventArgs) Handles tsmInstallEnglishPatch.Click
+    Private Sub tsmInstallEnglishPatch_Click(sender As Object, e As EventArgs)
         WriteDebugInfo("Beginning English Patch installation...")
         Dim filename As String = ""
         Dim URL As String = ""
@@ -1823,56 +1926,78 @@ Public Class frmMainv2
             Directory.CreateDirectory(Program.PSO2RootDir & "\plugins\")
         End If
         If Directory.Exists(Program.PSO2RootDir & "\plugins\disabled\") = False Then Directory.CreateDirectory(Program.PSO2RootDir & "\plugins\disabled\")
+        Dim DownloadClient As New WebClient
+        If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
         Dim JSONClient As New WebClient
-        Dim pluginEntries As Dictionary(Of String, PluginClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, PluginClass))(DownloadString(Program.PluginURL & "plugins.json"))
+        If Program.PluginURL.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+        Dim pluginEntries As Dictionary(Of String, PluginClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, PluginClass))(JSONClient.DownloadString(Program.PluginURL & "plugins.json"))
         Dim localfilename As String = "nowhere"
         Dim Count As Integer = 0
         For Each item As KeyValuePair(Of String, PluginClass) In pluginEntries
             localfilename = "nowhere"
-            If File.Exists(Program.PSO2RootDir & "\plugins\" & item.Value.Filename) = True Then
-                If item.Value.Toggleable = "No" Then
-                    Helper.Log("This file (" & item.Value.Filename & ") should not be in the plugins folder. We'll delete it.")
-                    File.Delete(Program.PSO2RootDir & "\plugins\" & item.Value.Filename)
-                Else
-                    localfilename = Program.PSO2RootDir & "\plugins\" & item.Value.Filename
-                End If
+            If File.Exists(Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename) = True Then
+                'If item.Value.Toggleable = "No" Then
+                '    Helper.Log("This file (" & item.Value.Filename & ") should not be in the plugins folder. We'll delete it.")
+                '    File.Delete(Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename)
+                'Else
+                localfilename = Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename
+                'End If
             End If
-
-            If File.Exists(Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename) = True Then
-                If item.Value.Toggleable = "No" Then
-                    Helper.Log("This file (" & item.Value.Filename & ") should not be in the plugins folder. We'll delete it.")
-                    File.Delete(Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename)
-                Else
-                    localfilename = Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename
-                End If
+            If File.Exists(Program.PSO2RootDir & item.Value.StorePath & "disabled\" & item.Value.Filename) = True Then
+                'If item.Value.Toggleable = "No" Then
+                '    Helper.Log("This file (" & item.Value.Filename & ") should not be in the plugins folder. We'll delete it.")
+                '    File.Delete(Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename)
+                'Else
+                localfilename = Program.PSO2RootDir & item.Value.StorePath & "disabled\" & item.Value.Filename
+                'End If
             End If
-            If File.Exists(Program.PSO2RootDir & "\" & item.Value.Filename) = True Then
-                If item.Value.Toggleable = "Yes" Then
-                    Helper.Log("This file (" & item.Value.Filename & ") should not be in the pso2_bin folder. We'll delete it.")
-                    File.Delete(Program.PSO2RootDir & "\" & item.Value.Filename)
-                Else
-                    localfilename = Program.PSO2RootDir & "\" & item.Value.Filename
-                End If
-            End If
+            'If File.Exists(Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename) = True Then
+            '    'If item.Value.Toggleable = "No" Then
+            '    '    Helper.Log("This file (" & item.Value.Filename & ") should not be in the plugins folder. We'll delete it.")
+            '    '    File.Delete(Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename)
+            '    'Else
+            '    localfilename = Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename
+            '    'End If
+            'End If
+            'If File.Exists(Program.PSO2RootDir & "\" & item.Value.Filename) = True Then
+            '    If item.Value.Toggleable = "Yes" Then
+            '        Helper.Log("This file (" & item.Value.Filename & ") should not be in the pso2_bin folder. We'll delete it.")
+            '        File.Delete(Program.PSO2RootDir & "\" & item.Value.Filename)
+            '    Else
+            '        localfilename = Program.PSO2RootDir & "\" & item.Value.Filename
+            '    End If
+            'End If
             If localfilename = "nowhere" Then
-                If item.Value.Toggleable = "Yes" And item.Value.MD5Hash <> "No" Then
-                    Helper.Log("Couldn't find " & item.Value.Filename & ", but it looks like it's an actual plugin. Let's put it in disabled!")
-                    DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename)
-                    localfilename = Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename
+                If item.Value.MD5Hash <> "No" Then
+                    Helper.Log("Couldn't find " & item.Value.Filename & ". Let's download it!")
+                    If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
+                    If item.Value.StorePath.Contains("plugins") = True Then
+                        DownloadClient.DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename)
+                        localfilename = Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename
+                    Else
+                        DownloadClient.DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename)
+                        localfilename = Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename
+                    End If
+                    If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
                     Count += 1
                 End If
-                If item.Value.Toggleable = "No" And item.Value.MD5Hash <> "No" Then
-                    Helper.Log("Couldn't find " & item.Value.Filename & ", but it looks like it's a plugin-related file. Let's put it in pso2_bin!")
-                    DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & "\" & item.Value.Filename)
-                    localfilename = Program.PSO2RootDir & "\" & item.Value.Filename
-                    Count += 1
-                End If
+                'If item.Value.Toggleable = "No" And item.Value.MD5Hash <> "No" Then
+                '    Helper.Log("Couldn't find " & item.Value.Filename & ", but it looks like it's a plugin-related file. Let's put it in pso2_bin!")
+                '    If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
+                '    DownloadClient.DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & "\" & item.Value.Filename)
+                '    If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
+                '    localfilename = Program.PSO2RootDir & "\" & item.Value.Filename
+                '    Count += 1
+                'End If
             End If
             If item.Value.MD5Hash <> "No" Then Helper.Log(item.Value.Filename & " should be: " & item.Value.MD5Hash & ". The local file (" & localfilename & ") is: " & Helper.GetMd5(localfilename).ToUpper)
             If item.Value.MD5Hash = "No" Then Helper.Log(item.Value.Filename & " should NOT be updated/checked. The local file is: " & localfilename & ".")
             If Helper.GetMd5(localfilename).ToUpper <> item.Value.MD5Hash And item.Value.MD5Hash <> "No" Then
                 Helper.Log("It didn't match! Downloading " & item.Value.Filename)
-                DownloadFile(Program.PluginURL & item.Value.Filename, localfilename)
+                'If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
+                If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
+                DownloadClient.DownloadFile(Program.PluginURL & item.Value.Filename, localfilename)
+                If Program.PluginURL.Contains("pso2.acf.me.uk") Then DownloadClient.Headers("user-agent") = FuckOffKaze()
                 Count += 1
             End If
         Next
@@ -1884,7 +2009,7 @@ Public Class frmMainv2
         If NewInstall = True Then
             If File.Exists(Program.PSO2RootDir & "\plugins\TelepipeProxy.dll") = False Then
                 Helper.Log("Auto enabling item/title patch since we had to recreate the plugin folder (and telepipe is disabled)")
-                If File.Exists(Program.PSO2RootDir & "\plugins\disabled\translator.dll") Then File.Move(Program.PSO2RootDir & "\plugins\disabled\translator.dll", Program.PSO2RootDir & "\plugins\translator.dll")
+                If File.Exists(Program.PSO2RootDir & "\plugins\disabled\PSO2ItemTranslator.dll") Then File.Move(Program.PSO2RootDir & "\plugins\disabled\PSO2ItemTranslator.dll", Program.PSO2RootDir & "\plugins\PSO2ItemTranslator.dll")
                 If File.Exists(Program.PSO2RootDir & "\plugins\disabled\PSO2TitleTranslator.dll") Then File.Move(Program.PSO2RootDir & "\plugins\disabled\PSO2TitleTranslator.dll", Program.PSO2RootDir & "\plugins\PSO2TitleTranslator.dll")
             End If
         End If
@@ -1906,11 +2031,33 @@ Public Class frmMainv2
         End Try
     End Sub
 
-    Private Sub tsmInstallEnglishLargeFiles_Click(sender As Object, e As EventArgs) Handles tsmInstallEnglishLargeFiles.Click
+    Private Sub tsmInstallEnglishLargeFiles_Click(sender As Object, e As EventArgs)
+        If Program.GetSetting("NewMethodEnabled") = "Yes" Then
+            Helper.Log("Please note that installing the old patches will disable the new method. You do not need to install these if you installed using the new method. Are you sure you want to continue installing with the old method?")
+            Dim MsgBoxResultLol As MsgBoxResult = MsgBox("Please note that installing the old patches will disable the new method. You do not need to install these if you installed using the new method. Are you sure you want to continue installing with the old method?", vbYesNo, "For your information...")
+            If MsgBoxResultLol = vbNo Then Return
+        End If
+        Program.SaveSetting("NewMethodEnabled", "No")
+        If Directory.Exists(Program.PSO2RootDir & "\patch\") Then Directory.Delete(Program.PSO2RootDir & "\patch\", True)
+        If File.Exists(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll") = True Then
+            WriteDebugInfo("Auto-disabling RAISER System plugin!")
+            File.Move(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll", Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll")
+        End If
         InstallLargeFiles()
     End Sub
 
-    Private Sub tsmInstallEnglishStoryPatch_Click(sender As Object, e As EventArgs) Handles tsmInstallEnglishStoryPatch.Click
+    Private Sub tsmInstallEnglishStoryPatch_Click(sender As Object, e As EventArgs)
+        If Program.GetSetting("NewMethodEnabled") = "Yes" Then
+            Helper.Log("Please note that installing the old patches will disable the new method. You do not need to install these if you installed using the new method. Are you sure you want to continue installing with the old method?")
+            Dim MsgBoxResultLol As MsgBoxResult = MsgBox("Please note that installing the old patches will disable the new method. You do not need to install these if you installed using the new method. Are you sure you want to continue installing with the old method?", vbYesNo, "For your information...")
+            If MsgBoxResultLol = vbNo Then Return
+        End If
+        Program.SaveSetting("NewMethodEnabled", "No")
+        If Directory.Exists(Program.PSO2RootDir & "\patch\") Then Directory.Delete(Program.PSO2RootDir & "\patch\", True)
+        If File.Exists(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll") = True Then
+            WriteDebugInfo("Auto-disabling RAISER System plugin!")
+            File.Move(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll", Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll")
+        End If
         InstallStoryPatchNew()
     End Sub
 
@@ -1918,12 +2065,12 @@ Public Class frmMainv2
         Process.Start(e.LinkText)
     End Sub
 
-    Private Sub tsmRestoreEnglishPatch_Click(sender As Object, e As EventArgs) Handles tsmRestoreEnglishPatch.Click
+    Private Sub tsmRestoreEnglishPatch_Click(sender As Object, e As EventArgs)
         If IsPso2WinDirMissing() Then Return
         If MsgBox("Are you sure you wish to continue? This will restore your backup from before you applied this patch.", vbYesNo) = MsgBoxResult.Yes Then RestoreBackup("English Patch")
     End Sub
 
-    Private Sub tsmRestoreLargeFiles_Click(sender As Object, e As EventArgs) Handles tsmRestoreLargeFiles.Click
+    Private Sub tsmRestoreLargeFiles_Click(sender As Object, e As EventArgs)
         If IsPso2WinDirMissing() Then Return
         If MsgBox("Are you sure you wish to continue? This will restore your backup from before you applied this patch.", vbYesNo) = MsgBoxResult.Yes Then RestoreBackup("Large Files")
     End Sub
@@ -1971,23 +2118,23 @@ Public Class frmMainv2
             Helper.LogWithException("ERROR - ", ex)
         End Try
     End Sub
-    Private Sub tsmUninstallEnglishPatch_Click(sender As Object, e As EventArgs) Handles tsmUninstallEnglishPatch.Click
+    Private Sub tsmUninstallEnglishPatch_Click(sender As Object, e As EventArgs)
         UninstallPatch("English Patch")
     End Sub
 
-    Private Sub tsmUninstallLargeFiles_Click(sender As Object, e As EventArgs) Handles tsmUninstallLargeFiles.Click
+    Private Sub tsmUninstallLargeFiles_Click(sender As Object, e As EventArgs)
         UninstallPatch("Large Files")
     End Sub
 
-    Private Sub tsmUninstallStory_Click(sender As Object, e As EventArgs) Handles tsmUninstallStory.Click
+    Private Sub tsmUninstallStory_Click(sender As Object, e As EventArgs)
         UninstallPatch("Story Patch")
     End Sub
 
-    Private Sub tsmRevertECodes_Click(sender As Object, e As EventArgs) Handles tsmRevertECodes.Click
+    Private Sub tsmRevertECodes_Click(sender As Object, e As EventArgs)
         UninstallPatch("Emergency Codes")
     End Sub
 
-    Private Sub tsmRevertENNames_Click(sender As Object, e As EventArgs) Handles tsmRevertENNames.Click
+    Private Sub tsmRevertENNames_Click(sender As Object, e As EventArgs)
         UninstallPatch("Enemy Names")
     End Sub
 
@@ -2029,7 +2176,7 @@ Public Class frmMainv2
         DownloadFile("http://download.pso2.jp/patch_prod/patches_old/patchlist.txt", "patchlist_old.txt")
         Helper.Log("Downloading Patch file #4...")
         Application.DoEvents()
-        DownloadFile("http://arks-layer.com/vanila/version.txt", "version.ver")
+        DownloadFile("https://arks-layer.com/vanila/version.txt", "version.ver")
         Application.DoEvents()
 
         Helper.Log("Opening patch file list...")
@@ -2286,7 +2433,7 @@ Public Class frmMainv2
         Helper.Log("Downloading Patch file #4...")
 
         Application.DoEvents()
-        Program.Client.DownloadFile("http://arks-layer.com/vanila/version.txt", "version.ver")
+        Program.Client.DownloadFile("https://arks-layer.com/vanila/version.txt", "version.ver")
         Application.DoEvents()
 
 
@@ -2362,7 +2509,7 @@ Public Class frmMainv2
             WriteDebugInfo("Downloading version file...")
             Application.DoEvents()
             _cancelled = False
-            Program.Client.DownloadFile("http://arks-layer.com/vanila/version.txt", "version.ver")
+            Program.Client.DownloadFile("https://arks-layer.com/vanila/version.txt", "version.ver")
             If _cancelled Then Return
             If File.Exists((_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver")) Then Helper.DeleteFile((_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver"))
             File.Copy("version.ver", (_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver"))
@@ -2529,7 +2676,7 @@ Public Class frmMainv2
         Dim directoryString As String = (Program.PSO2RootDir & "\")
         WriteDebugInfo("Downloading version file...")
         Application.DoEvents()
-        Program.Client.DownloadFile("http://arks-layer.com/vanila/version.txt", "version.ver")
+        Program.Client.DownloadFile("https://arks-layer.com/vanila/version.txt", "version.ver")
         If File.Exists((_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver")) Then Helper.DeleteFile((_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver"))
         File.Copy("version.ver", (_myDocuments & "\SEGA\PHANTASYSTARONLINE2\version.ver"))
         WriteDebugInfoAndOk(("Downloaded and installed version file"))
@@ -2841,17 +2988,21 @@ Public Class frmMainv2
     End Sub
 
     Private Sub tsmConfigureTelepipeProxy_Click(sender As Object, e As EventArgs) Handles tsmConfigureTelepipeProxy.Click
-        Dim jsonurl As String = InputBox("Please input the URL of the configuration JSON:", "Configuration JSON", "")
+        Dim jsonurl As String = InputBox("Please input the URL of the configuration JSON (including the HTTP://)" + vbCrLf + vbCrLf + "--Please note that many countries do not require a proxy to play PSO2JP--", "Configuration JSON", "")
         Helper.Log("User entered """ & jsonurl & """ as the config URL.")
         If String.IsNullOrEmpty(jsonurl) Or jsonurl.Contains(".json") = False Then
-            WriteDebugInfoAndFailed("Invalid URL! Please check the link and try again.")
+            WriteDebugInfoAndWarning("Invalid URL! Please check the link and try again.")
             Return
         End If
 
         If jsonurl = "http://cloud02.cyberkitsune.net:8080/config.json" Then
-            WriteDebugInfo("Changing PSO2Proxy Public URL -> Alam's URL to avoid GG issues with the hostname")
-            WriteDebugInfo("New proxy URL is http://alam.srb2.org/PSO2/public_proxy/config-alt.json")
-            jsonurl = "http://alam.srb2.org/PSO2/public_proxy/config-alt.json"
+            MsgBox("CyberKitsune's PSO2Proxy has been abandoned by its owner and is no longer available. Feel free to use http://arks-layer.com/telepipe if you need a proxy in order to play the game. (Many countries do not)")
+            WriteDebugInfoAndWarning("CyberKitsune's PSO2Proxy has been abandoned by its owner and is no longer available. Feel free to use http://arks-layer.com/telepipe if you need a proxy in order to play the game. (Many countries do not)")
+            Helper.Log("CyberKitsune's PSO2Proxy has been abandoned by its owner and is no longer available. Feel free to use http://arks-layer.com/telepipe if you need a proxy in order to play the game. (Many countries do not)")
+            'WriteDebugInfo("Changing PSO2Proxy Public URL -> Alam's URL to avoid GG issues with the hostname")
+            'WriteDebugInfo("New proxy URL is http://alam.srb2.org/PSO2/public_proxy/config-alt.json")
+            'jsonurl = "http://alam.srb2.org/PSO2/public_proxy/config-alt.json"
+            Return
         End If
         Try
             Using wc As New WebClient()
@@ -2960,6 +3111,56 @@ Public Class frmMainv2
     End Sub
 
     Private Sub btnStartPSO2_Click(sender As Object, e As EventArgs) Handles btnStartPSO2.Click
+        If File.Exists(Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll") = True And Program.GetSetting("NewMethodEnabled") = "Yes" Then
+            Helper.Log("You appear to have enabled the new English patch method, but have the required plugin (RAISER System) disabled. The new English patch will -not- work unless this plugin is turned on. Do you want to enabled the required plugin?")
+            Dim EnableYesNo As MsgBoxResult = MsgBox("You appear to have enabled the new English patch method, but have the required plugin (RAISER System) disabled. The new English patch will -not- work unless this plugin is turned on." + vbCrLf + vbCrLf + "Do you want to enabled the required plugin?", vbYesNo, "Required plugin is disabled!")
+            If EnableYesNo = MsgBoxResult.Yes Then
+                Helper.Log("Enabling the RAISER System plugin!")
+                File.Move(Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll", Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll")
+            End If
+        End If
+        'Dim PatchLanguage As String = Program.GetSetting("PatchLanguage")
+        'Dim culture = New CultureInfo(PatchLanguage)
+        'Dim PatchLanguageLong As String = culture.DisplayName
+        ''WriteDebugInfo("Checking for a new " & PatchLanguageLong & " patch...")
+        'Dim FileCount As String = ""
+        'Dim EnglishMD5 As String = ""
+        'Dim PatchURL As String = ""
+        'Dim JSONClient As New WebClient
+        'If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+        'Dim RaiserEntries As Dictionary(Of String, RaiserClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, RaiserClass))(JSONClient.DownloadString(Program.NewMethodJSON))
+        'For Each item As KeyValuePair(Of String, RaiserClass) In RaiserEntries
+        '    'Do stuff
+        '    If item.Key = PatchLanguage Then
+        '        FileCount = item.Value.FileCount
+        '        EnglishMD5 = item.Value.PatchMD5.ToUpper
+        '        PatchURL = item.Value.PatchURL
+        '    End If
+        'Next
+        'If Program.GetSetting("EnglishMD5") <> EnglishMD5 Then
+        '    If Program.GetSetting("AlwaysInstall") <> "Yes" Then
+        '        Helper.Log("The current " & PatchLanguageLong & " patch is outdated or corrupted. This can lead to blank text and other adverse effects.")
+        '        'The current Russian patch is outdated or corrupted. This can lead
+        '        'to blank text And other adverse effects. Would you Like to
+        '        'redownload the patch?
+        '        '
+        '        '
+        '        Dim ButtonPushed As String = ShowMessageBox("Error!", "The current " & PatchLanguageLong & " patch is outdated or corrupted. This can lead" & vbCrLf & "to blank text and other adverse effects. Would you like to" & vbCrLf & "redownload the patch?", 1, "Yes (Always Install)")
+        '        If ButtonPushed = "Yes" Then tsmInstallEnglishPatchesNewMethod.PerformClick()
+        '        If ButtonPushed = "No" Then
+        '            WriteDebugInfoAndWarning("PSO2 Launch aborted - Corrupted patch detected. Please re-install the " & PatchLanguageLong & " patch.")
+        '            Exit Sub
+        '        End If
+        '        If ButtonPushed = "Abort" Then
+        '            Program.SaveSetting("AlwaysInstall", "Yes")
+        '            tsmInstallEnglishPatchesNewMethod.PerformClick()
+        '            Exit Sub
+        '        End If
+        '    Else
+        '        WriteDebugInfo("Autoinstalling new " & PatchLanguageLong & " patch...")
+        '        tsmInstallEnglishPatchesNewMethod.PerformClick()
+        '    End If
+        'End If
         'Fuck SEGA. Stupid jerks.
         Helper.Log("Check if PSO2 is running")
         If Helper.CheckIfRunning("pso2") Then Return
@@ -2989,9 +3190,9 @@ Public Class frmMainv2
                 Helper.Log("DEBUG - ProxyJSONURL is: " & Program.GetSetting("ProxyJSONURL"))
                 If Program.GetSetting("ProxyJSONURL").Contains(".telepipe.io") And File.Exists(Program.PSO2RootDir & "\plugins\TelepipeProxy.dll") Then
                     Helper.Log("Detected Telepipe Proxy usage... Downloading information...")
-                    If File.Exists(Program.PSO2RootDir & "\plugins\translator.dll") And DownloadProxyInformation(Program.GetSetting("ProxyJSONURL")).Contains(".telepipe.io") = True Then
+                    If File.Exists(Program.PSO2RootDir & "\plugins\PSO2ItemTranslator.dll") And DownloadProxyInformation(Program.GetSetting("ProxyJSONURL")).Contains(".telepipe.io") = True Then
                         Helper.Log("Item translation is enabled, let's turn it off, since this proxy supports serverside translations.")
-                        File.Move(Program.PSO2RootDir & "\plugins\translator.dll", Program.PSO2RootDir & "\plugins\disabled\translator.dll")
+                        File.Move(Program.PSO2RootDir & "\plugins\PSO2ItemTranslator.dll", Program.PSO2RootDir & "\plugins\disabled\PSO2ItemTranslator.dll")
                     End If
                     If File.Exists(Program.PSO2RootDir & "\plugins\PSO2TitleTranslator.dll") And DownloadProxyInformation(Program.GetSetting("ProxyJSONURL")).Contains(".telepipe.io") = True Then
                         Helper.Log("Title translation is enabled, let's turn it off, since this proxy supports serverside translations.")
@@ -3106,15 +3307,36 @@ Public Class frmMainv2
         frmPlugins.Left += 50
         frmPlugins.ShowDialog()
     End Sub
+    Public Function ShowMessageBox(Title As String, Message As String, Type As Integer, Optional ThirdButtonText As String = "")
+        MyMsgBox.btnTitle.Text = Title
+        MyMsgBox.lblMessage.Text = Message
+        MyMsgBox.Size = New Size(MyMsgBox.Size.Width, MyMsgBox.lblMessage.Size.Height + 80)
+        If Type = 0 Then
+            'Yes/No
+            MyMsgBox.btnYes.Location = New Point(12, MyMsgBox.Size.Height - 45)
+            MyMsgBox.btnNo.Location = New Point(310, MyMsgBox.Size.Height - 45)
+            MyMsgBox.btnOther.Visible = False
+        End If
+        If Type = 1 Then
+            'Yes/No/Cancel
+            MyMsgBox.btnYes.Location = New Point(12, MyMsgBox.Size.Height - 45)
+            MyMsgBox.btnNo.Location = New Point(162, MyMsgBox.Size.Height - 45)
+            MyMsgBox.btnOther.Location = New Point(310, MyMsgBox.Size.Height - 45)
+            MyMsgBox.btnOther.Visible = True
+            MyMsgBox.btnOther.Text = ThirdButtonText
+        End If
+        Return MyMsgBox.ShowDialog().ToString
+    End Function
     Protected Sub GetShipEQs(state As Object)
         Try
             If lblShipEQ.InvokeRequired Then
                 lblShipEQ.Invoke(New Action(Of String)(AddressOf GetShipEQs), Text)
             Else
                 Dim Ship As String = Program.GetSetting("ShipStatus")
-                Dim JSONClient As New WebClient
-                JSONClient.Headers("user-agent") = "Tweaker EQ Checker"
-                Dim filelistjson As JArray = JArray.Parse(JSONClient.DownloadString("http://pso2.acf.me.uk/api/eq.json"))
+                Dim JSONClient As New MyWebClient
+                JSONClient.Timeout = 10000
+                JSONClient.Headers("user-agent") = FuckOffKaze()
+                Dim filelistjson As JArray = JArray.Parse(JSONClient.DownloadString("https://pso2.acf.me.uk/api/eq.json"))
                 'Check Ship first
                 'Check what's coming at :30 next
                 'Check in an hour
@@ -3165,7 +3387,8 @@ Public Class frmMainv2
                 lblShipStatus.Invoke(New Action(Of String)(AddressOf GetShipStatus), Text)
             Else
                 Dim Ship As String = "2"
-                Dim JSONClient As New WebClient
+                Dim JSONClient As New MyWebClient
+                JSONClient.Timeout = 10000
                 Dim filelistjson As JObject = JObject.Parse(JSONClient.DownloadString("http://kakia.org/pso2_status.json"))
                 If filelistjson.SelectToken(Ship).SelectToken("Status").ToString = "Online" Then
                     lblShipStatus.Text = "Servers are online"
@@ -3207,10 +3430,156 @@ Public Class frmMainv2
 
     End Sub
 
-    Private Sub tsmRestoreStoryPatch_Click(sender As Object, e As EventArgs) Handles tsmRestoreStoryPatch.Click
+    Private Sub tsmRestoreStoryPatch_Click(sender As Object, e As EventArgs)
         If IsPso2WinDirMissing() Then Return
         If MsgBox("Are you sure you wish to continue? This will restore your backup from before you applied this patch.", vbYesNo) = MsgBoxResult.Yes Then RestoreBackup("Story Patch")
     End Sub
+
+    Private Sub tsmInstallEnglishPatchesNewMethod_Click(sender As Object, e As EventArgs) Handles tsmInstallEnglishPatchesNewMethod.Click
+        Try
+            If Directory.Exists(BuildBackupPath("English Patch")) Then RestoreBackup("English Patch")
+            If Directory.Exists(BuildBackupPath("Large Files")) Then RestoreBackup("Large Files")
+            If Directory.Exists(BuildBackupPath("Story Patch")) Then RestoreBackup("Story Patch")
+            '1) Have it read from the server JSON where the Basic patch.zip, Large files.zip, and Story patch.zip archives are
+            Dim JSONClient As New WebClient
+            If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+            Dim PatchLanguage As String = Program.GetSetting("PatchLanguage")
+            Dim culture = New CultureInfo(PatchLanguage)
+            Dim PatchLanguageLong As String = culture.DisplayName
+            Dim FileCount As String = ""
+            Dim EnglishMD5 As String = ""
+            Dim EnglishURL As String = ""
+            Dim RaiserEntries As Dictionary(Of String, RaiserClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, RaiserClass))(JSONClient.DownloadString(Program.NewMethodJSON))
+            If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+            For Each item As KeyValuePair(Of String, RaiserClass) In RaiserEntries
+                'Do stuff
+                If item.Key = PatchLanguage Then
+                    FileCount = item.Value.FileCount
+                    EnglishMD5 = item.Value.PatchMD5.ToUpper
+                    EnglishURL = item.Value.PatchURL
+                End If
+            Next
+            If EnglishMD5 = "" Then
+                WriteDebugInfoAndFailed("Couldn't get patch information!")
+                Return
+            End If
+            If Directory.Exists(Program.PSO2RootDir & "\patch\") Then Directory.Delete(Program.PSO2RootDir & "\patch\", True)
+            '2) Download them into pso2_bin/patch/
+            'WriteDebugInfo("Downloading/extracting patches...")
+            WriteDebugInfo("Downloading patch file...")
+            If EnglishURL.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+            JSONClient.DownloadFile(EnglishURL, PatchLanguageLong & "_Patch.zip")
+            If EnglishMD5 <> Helper.GetMd5(PatchLanguageLong & "_Patch.zip") Then
+                WriteDebugInfoAndWarning(PatchLanguageLong & " patch did Not download correctly, retrying... (1 / 3)")
+                If EnglishURL.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+                JSONClient.DownloadFile(EnglishURL, PatchLanguageLong & "_Patch.zip")
+            End If
+            If EnglishMD5 <> Helper.GetMd5(PatchLanguageLong & "_Patch.zip") Then
+                WriteDebugInfoAndWarning(PatchLanguageLong & " patch did Not download correctly, retrying... (2 / 3)")
+                If EnglishURL.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+                JSONClient.DownloadFile(EnglishURL, PatchLanguageLong & "_Patch.zip")
+            End If
+            If EnglishMD5 <> Helper.GetMd5(PatchLanguageLong & "_Patch.zip") Then
+                WriteDebugInfoAndWarning(PatchLanguageLong & " patch did Not download correctly, retrying... (3 / 3)")
+                If EnglishURL.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = FuckOffKaze()
+                JSONClient.DownloadFile(EnglishURL, PatchLanguageLong & "_Patch.zip")
+            End If
+            If EnglishMD5 <> Helper.GetMd5(PatchLanguageLong & "_Patch.zip") Then
+                WriteDebugInfoAndFailed(PatchLanguageLong & " patch did Not download correctly, please check your internet!")
+                Exit Sub
+            End If
+            '3) Extract (Revert the old patch if necessary)
+            WriteDebugInfo("Installing patch...")
+            While Directory.Exists(Program.PSO2RootDir & "\patch\")
+            End While
+            Directory.CreateDirectory(Program.PSO2RootDir & "\patch\")
+            ExtractFiles(PatchLanguageLong & "_Patch.zip", Program.PSO2RootDir & "\patch\")
+            '4) Do versioning using an MP5 of the zip archive
+            Program.SaveSetting("EnglishMD5", EnglishMD5)
+            Program.SaveSetting("NewMethodEnabled", "Yes")
+            'Enable the plugin if it's disabled
+            If File.Exists(Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll") = True Then
+                WriteDebugInfo("Auto-enabling RAISER System plugin!")
+                File.Move(Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll", Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll")
+            End If
+            Helper.DeleteFile(PatchLanguageLong & "_Patch.zip")
+            WriteDebugInfo(PatchLanguageLong & " patch successfully installed!" + vbCrLf + "---If your game crashes/shows a black screen at start, please go to ""Troubleshooting -> check For old/missing files"" To fix it.---")
+        Catch ex As Exception
+            Helper.LogWithException("Error - ", ex)
+        End Try
+    End Sub
+
+    Private Sub tsmUninstallEnglishPatchesNewMethod_Click(sender As Object, e As EventArgs) Handles tsmUninstallEnglishPatchesNewMethod.Click
+        If Directory.Exists(Program.PSO2RootDir & "\patch\") Then Directory.Delete(Program.PSO2RootDir & "\patch\", True)
+        Program.SaveSetting("NewMethodEnabled", "No")
+        'Disable the plugin if it's enabled
+        If File.Exists(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll") = True Then
+            WriteDebugInfo("Auto-disabling RAISER System plugin!")
+            File.Move(Program.PSO2RootDir & "\plugins\PSO2RAISERSystem.dll", Program.PSO2RootDir & "\plugins\disabled\PSO2RAISERSystem.dll")
+        End If
+        WriteDebugInfoAndOk("Translation patch uninstalled!")
+    End Sub
+
+    Private Sub tsmEnableLargeAddressAware_Click(sender As Object, e As EventArgs) Handles tsmEnableLargeAddressAware.Click
+        Dim ButtonPushed As String = ShowMessageBox("Enable Large Address Aware (LAW)", "This will patch your PSO2 EXE To use more than the Default 2GB" & vbCrLf & "Of total memory. Only enable this -If- you have at least 3GB Of" & vbCrLf & "RAM (preferably more) And you're using a 64-bit version of" & vbCrLf & "Windows. This can fix numerous issues such as weird textures," & vbCrLf & "graphical issues, the game crashing when you alt + tab in" & vbCrLf & "fullscreen, and many more. This will also make your PSO2 game" & vbCrLf & "run smoother/faster. Are you sure you want to continue?", 0)
+        If ButtonPushed = "No" Then Return
+        WriteDebugInfo("Downloading LAW Tool...")
+        Downloader.DownloadFile("https://arks-layer.com/docs/LAW.zip", "LAW.zip")
+        ExtractFiles("LAW.zip", Program.PSO2RootDir)
+        WriteDebugInfo("Applying modification...")
+
+        Dim LAW As New ProcessStartInfo(Program.PSO2RootDir & "\EDITBIN.EXE")
+        LAW.RedirectStandardError = True
+        LAW.RedirectStandardOutput = True
+        LAW.CreateNoWindow = False
+        LAW.WindowStyle = ProcessWindowStyle.Hidden
+        LAW.UseShellExecute = False
+        LAW.WorkingDirectory = Program.PSO2RootDir
+        LAW.Arguments = "/LARGEADDRESSAWARE PSO2.EXE"
+        Dim process As Process = Process.Start(LAW)
+
+        process.WaitForExit()
+        'MsgBox(process.StandardOutput.ReadToEnd)
+        WriteDebugInfo("All done! If you find this causes issues, just go to ""Troubleshooting -> Fix PSO2 EXEs"". --Please note that you will need to install this manually each time you update PSO2--")
+    End Sub
+End Class
+Public Class RaiserClass
+    Public Property FileCount() As String
+        Get
+            Return m_FileCount
+        End Get
+        Set
+            m_FileCount = Value
+        End Set
+    End Property
+    Private m_FileCount As String
+    Public Property PatchMD5() As String
+        Get
+            Return m_PatchMD5
+        End Get
+        Set
+            m_PatchMD5 = Value
+        End Set
+    End Property
+    Private m_PatchMD5 As String
+    Public Property PatchURL() As String
+        Get
+            Return m_PatchURL
+        End Get
+        Set
+            m_PatchURL = Value
+        End Set
+    End Property
+    Private m_PatchURL As String
+    Public Property Enabled() As String
+        Get
+            Return m_Enabled
+        End Get
+        Set
+            m_Enabled = Value
+        End Set
+    End Property
+    Private m_Enabled As String
 End Class
 Public Class PluginClass
     Public Property Name() As String
@@ -3285,10 +3654,24 @@ Public Class PluginClass
         End Set
     End Property
     Private m_Toggleable As String
+    Public Property StorePath() As String
+        Get
+            Return m_StorePath
+        End Get
+        Set
+            m_StorePath = Value
+        End Set
+    End Property
+    Private m_StorePath As String
 End Class
 Friend Class ProxyConfig
     Public publickeyurl As String
     Public host As String
     Public version As String
     Public name As String
+End Class
+Public Class MessageBoxType
+    Public YesNo
+    Public YesNoCancel
+    Public InputString
 End Class

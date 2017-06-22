@@ -18,7 +18,7 @@ Namespace My
         Public Shared ReadOnly Client2 As MyWebClient = New MyWebClient() With {.Timeout = 10000, .Proxy = Nothing}
         Public Shared AppData As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
         Public Shared MainForm As frmMainv2
-        Public Shared FreedomUrl As String = "http://arks-layer.com/justice/"
+        Public Shared FreedomUrl As String = "https://arks-layer.com/justice/"
         Public Shared HostsFilePath As String
         Public Shared PSO2RootDir As String
         Public Shared PSO2WinDir As String
@@ -42,6 +42,7 @@ Namespace My
         Public Shared LargeFilesTransAmDate As String = ""
         Public Shared StoryDate As String = ""
         Public Shared StoryChangelogURL As String = ""
+        Public Shared NewMethodJSON As String = ""
         Public Shared Settings As String = ""
         Public Shared Sub Main()
 
@@ -55,7 +56,7 @@ Namespace My
                     Thread.CurrentThread.CurrentCulture = New CultureInfo(locale)
                 End If
 
-                If File.Exists(StartPath & "\logfile.txt") AndAlso Helper.GetFileSize(StartPath & "\logfile.txt") > 200000 Then
+                If File.Exists(StartPath & "\logfile.txt") AndAlso Helper.GetFileSize(StartPath & "\logfile.txt") > 50000 Then
                     File.WriteAllText(StartPath & "\logfile.txt", "")
                 End If
 
@@ -69,7 +70,7 @@ Namespace My
 
                 If String.IsNullOrEmpty(Program.GetSetting("PSO2Dir")) Or Program.GetSetting("PSO2Dir").Contains("ERROR GETTING VALUE") Then
                     Dim TutorialYesNo As MsgBoxResult = MsgBox("This appears to be the first time you've used the PSO2 Tweaker! Would you like to open a guide to help you through setting it up?", vbYesNo)
-                    If TutorialYesNo = vbYes Then Process.Start("http://arks-layer.com/tweaker_tutorial.php")
+                    If TutorialYesNo = vbYes Then Process.Start("https://arks-layer.com/tweaker_tutorial.php")
 
                     Dim alreadyInstalled As MsgBoxResult = MsgBox("Have you installed PSO2 already? If you select no, the PSO2 Tweaker will install it for you.", MsgBoxStyle.YesNo)
                     If alreadyInstalled = vbNo Then
@@ -111,7 +112,7 @@ Namespace My
                 Helper.Log("Reading remote config...")
                 Dim JSONClient As New WebClient
                 JSONClient.Headers("user-agent") = GetUserAgent()
-                Dim remotejson As JObject = JObject.Parse(JSONClient.DownloadString("http://arks-layer.com/remote.json"))
+                Dim remotejson As JObject = JObject.Parse(JSONClient.DownloadString("https://arks-layer.com/remote.json"))
                 GNFieldMD5 = remotejson.SelectToken("GNFieldMD5").ToString()
                 GNFieldStatus = remotejson.SelectToken("GNFieldStatus").ToString()
                 InfoURL = remotejson.SelectToken("InfoURL").ToString()
@@ -129,6 +130,9 @@ Namespace My
                 LargeFilesTransAmDate = patchesjson.SelectToken("LargeFilesTransAmDate").ToString()
                 StoryDate = patchesjson.SelectToken("StoryDate").ToString()
                 StoryChangelogURL = patchesjson.SelectToken("StoryChangelogURL").ToString()
+                'NewMethodJSON = patchesjson.SelectToken("NewMethodJSON").ToString()
+                NewMethodJSON = "https://pso2.acf.me.uk/Patches/patches.json"
+
 
                 Dim launchPso2 As Boolean = False
 
@@ -191,9 +195,9 @@ Namespace My
                                     Return
                                 End If
 
-                                If File.Exists(GetSetting("PSO2Dir") & "/plugins/translator.dll") Then
-                                    'Download the latest translator.dll and translation.bin
-                                    Dim dlLink2 As String = FreedomUrl & "translation.bin"
+                                If File.Exists(GetSetting("PSO2Dir") & "/plugins/PSO2ItemTranslator.dll") Then
+                                    'Download the latest PSO2ItemTranslator.dll and translation_items.bin
+                                    Dim dlLink2 As String = FreedomUrl & "translation_items.bin"
                                     Helper.Log("Downloading latest item translation files...")
 
                                     ' TODO: WTF is gonig on with this for loop
@@ -202,7 +206,7 @@ Namespace My
                                         Try
                                             Dim DLS As New MyWebClient
                                             DLS.Headers("user-agent") = GetUserAgent()
-                                            DLS.DownloadFile(Program.FreedomUrl & "translation.bin", (Program.PSO2RootDir & "\translation.bin"))
+                                            DLS.DownloadFile(Program.FreedomUrl & "translation_items.bin", (Program.PSO2RootDir & "\translation_items.bin"))
                                             Exit For
                                         Catch ex As Exception
                                             If tries = 4 Then
@@ -223,7 +227,7 @@ Namespace My
                                 External.ShellExecute(IntPtr.Zero, "open", (PSO2RootDir & "\pso2.exe"), "+0x33aca2b9 -pso2", "", 0)
 
                                 Helper.DeleteFile("LanguagePack.rar")
-                                If File.Exists(GetSetting("PSO2Dir") & "/plugins/translator.dll") Then
+                                If File.Exists(GetSetting("PSO2Dir") & "/plugins/PSO2ItemTranslator.dll") Then
                                     Do While File.Exists(PSO2RootDir & "\ddraw.dll")
                                         For Each proc As Process In Process.GetProcessesByName("pso2")
                                             If proc.MainWindowTitle = "Phantasy Star Online 2" AndAlso proc.MainModule.ToString() = "ProcessModule (pso2.exe)" Then
@@ -272,7 +276,7 @@ Namespace My
                     Exit Try
                 End Try
                 If Not File.Exists(Program.PSO2RootDir & "\translation.cfg") Then
-                    File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation.bin")
+                    File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation_items.bin")
                 End If
 
                 Dim enabledplugins As String = ""

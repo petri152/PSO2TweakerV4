@@ -47,25 +47,7 @@ Partial Class frmMainv2
         Me.cmsORB = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmsSelectFolder = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmInstallEnglishPatchesNewMethod = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmsInstallUpdatePatches = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInstallEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInstallEnglishLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInstallEnglishStoryPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmsInstallFrenchPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInstallGermanPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInstallRussianPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInstallRussianLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InstallSpanishPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmsRestoreBackups = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmRestoreEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmRestoreLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmRestoreStoryPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmsUninstallPatches = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmUninstallEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmUninstallLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmUninstallStory = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmRevertECodes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmRevertENNames = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmUninstallEnglishPatchesNewMethod = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmdTroubleshooting = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmAnalyzeInstall = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmCheckForDeletedOrEmptyFiles = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,12 +61,21 @@ Partial Class frmMainv2
         Me.tsmResetTweakerSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmTerminatePSO2Process = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmsOtherTasks = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmStartChromeInCompatibilityMode = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmConfigureTelepipeProxy = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmRevertSettingsToJP = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmClearSymbolArtCache = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmConfigureTelepipeProxy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmEnableLargeAddressAware = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmInstallPSO2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.cmsInstallUpdatePatches = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallEnglishLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallEnglishStoryPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsInstallFrenchPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallGermanPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallRussianPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInstallRussianLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallSpanishPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRevertSettingsToJP = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmStartChromeInCompatibilityMode = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmCheckForPSO2UpdatesWithQuantum = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmCheckForPrePatchData = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnTelepipe = New System.Windows.Forms.Button()
@@ -103,6 +94,16 @@ Partial Class frmMainv2
         Me.lblShipEQ = New System.Windows.Forms.Label()
         Me.picLeftArrow = New System.Windows.Forms.PictureBox()
         Me.picButtonTutorialMessage = New System.Windows.Forms.PictureBox()
+        Me.cmsRestoreBackups = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRestoreEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRestoreLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRestoreStoryPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsUninstallPatches = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmUninstallEnglishPatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmUninstallLargeFiles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmUninstallStory = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRevertECodes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmRevertENNames = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsTextBarOptions.SuspendLayout()
@@ -416,11 +417,11 @@ Partial Class frmMainv2
         Me.cmsORB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.cmsORB.DropShadowEnabled = False
         Me.cmsORB.ImageScalingSize = New System.Drawing.Size(0, 0)
-        Me.cmsORB.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmsSelectFolder, Me.tsmInstallEnglishPatchesNewMethod, Me.cmsInstallUpdatePatches, Me.cmsRestoreBackups, Me.cmsUninstallPatches, Me.cmdTroubleshooting, Me.cmsOtherTasks, Me.ToolStripSeparator1, Me.tsmCheckForPSO2UpdatesWithQuantum, Me.tsmCheckForPrePatchData})
+        Me.cmsORB.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmsSelectFolder, Me.tsmInstallEnglishPatchesNewMethod, Me.tsmUninstallEnglishPatchesNewMethod, Me.cmdTroubleshooting, Me.cmsOtherTasks, Me.tsmCheckForPSO2UpdatesWithQuantum, Me.tsmCheckForPrePatchData})
         Me.cmsORB.Name = "cmsORB"
         Me.cmsORB.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.cmsORB.ShowImageMargin = False
-        Me.cmsORB.Size = New System.Drawing.Size(247, 208)
+        Me.cmsORB.Size = New System.Drawing.Size(250, 180)
         '
         'cmsSelectFolder
         '
@@ -429,7 +430,7 @@ Partial Class frmMainv2
         Me.cmsSelectFolder.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsSelectFolder.ForeColor = System.Drawing.Color.White
         Me.cmsSelectFolder.Name = "cmsSelectFolder"
-        Me.cmsSelectFolder.Size = New System.Drawing.Size(246, 22)
+        Me.cmsSelectFolder.Size = New System.Drawing.Size(249, 22)
         Me.cmsSelectFolder.Text = "Select PSO2 Folder"
         Me.cmsSelectFolder.ToolTipText = "Use this to select your pso2_bin folder"
         '
@@ -440,189 +441,19 @@ Partial Class frmMainv2
         Me.tsmInstallEnglishPatchesNewMethod.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.tsmInstallEnglishPatchesNewMethod.ForeColor = System.Drawing.Color.White
         Me.tsmInstallEnglishPatchesNewMethod.Name = "tsmInstallEnglishPatchesNewMethod"
-        Me.tsmInstallEnglishPatchesNewMethod.Size = New System.Drawing.Size(246, 22)
-        Me.tsmInstallEnglishPatchesNewMethod.Text = "Install English patches (New method)"
+        Me.tsmInstallEnglishPatchesNewMethod.Size = New System.Drawing.Size(249, 22)
+        Me.tsmInstallEnglishPatchesNewMethod.Text = "Install English patch (New method)"
         '
-        'cmsInstallUpdatePatches
+        'tsmUninstallEnglishPatchesNewMethod
         '
-        Me.cmsInstallUpdatePatches.BackColor = System.Drawing.Color.Gray
-        Me.cmsInstallUpdatePatches.BackgroundImage = CType(resources.GetObject("cmsInstallUpdatePatches.BackgroundImage"), System.Drawing.Image)
-        Me.cmsInstallUpdatePatches.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmInstallEnglishPatch, Me.tsmInstallEnglishLargeFiles, Me.tsmInstallEnglishStoryPatch, Me.cmsInstallFrenchPatch, Me.tsmInstallGermanPatch, Me.tsmInstallRussianPatch, Me.tsmInstallRussianLargeFiles, Me.InstallSpanishPatch})
-        Me.cmsInstallUpdatePatches.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
-        Me.cmsInstallUpdatePatches.ForeColor = System.Drawing.Color.White
-        Me.cmsInstallUpdatePatches.Name = "cmsInstallUpdatePatches"
-        Me.cmsInstallUpdatePatches.Size = New System.Drawing.Size(246, 22)
-        Me.cmsInstallUpdatePatches.Text = "Install/Update Patches"
-        '
-        'tsmInstallEnglishPatch
-        '
-        Me.tsmInstallEnglishPatch.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.tsmInstallEnglishPatch.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishPatch.BackgroundImage"), System.Drawing.Image)
-        Me.tsmInstallEnglishPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsmInstallEnglishPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmInstallEnglishPatch.Name = "tsmInstallEnglishPatch"
-        Me.tsmInstallEnglishPatch.Size = New System.Drawing.Size(176, 22)
-        Me.tsmInstallEnglishPatch.Text = "English Patch"
-        Me.tsmInstallEnglishPatch.ToolTipText = "Install the core English patch"
-        '
-        'tsmInstallEnglishLargeFiles
-        '
-        Me.tsmInstallEnglishLargeFiles.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishLargeFiles.BackgroundImage"), System.Drawing.Image)
-        Me.tsmInstallEnglishLargeFiles.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsmInstallEnglishLargeFiles.ForeColor = System.Drawing.Color.White
-        Me.tsmInstallEnglishLargeFiles.Name = "tsmInstallEnglishLargeFiles"
-        Me.tsmInstallEnglishLargeFiles.Size = New System.Drawing.Size(176, 22)
-        Me.tsmInstallEnglishLargeFiles.Text = "English Large Files"
-        Me.tsmInstallEnglishLargeFiles.ToolTipText = "Install additional English files to enhance the core patch"
-        '
-        'tsmInstallEnglishStoryPatch
-        '
-        Me.tsmInstallEnglishStoryPatch.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishStoryPatch.BackgroundImage"), System.Drawing.Image)
-        Me.tsmInstallEnglishStoryPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsmInstallEnglishStoryPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmInstallEnglishStoryPatch.Name = "tsmInstallEnglishStoryPatch"
-        Me.tsmInstallEnglishStoryPatch.Size = New System.Drawing.Size(176, 22)
-        Me.tsmInstallEnglishStoryPatch.Text = "English Story Patch"
-        Me.tsmInstallEnglishStoryPatch.ToolTipText = "Install the English story patch, so you can understand the story"
-        '
-        'cmsInstallFrenchPatch
-        '
-        Me.cmsInstallFrenchPatch.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
-        Me.cmsInstallFrenchPatch.ForeColor = System.Drawing.Color.White
-        Me.cmsInstallFrenchPatch.Name = "cmsInstallFrenchPatch"
-        Me.cmsInstallFrenchPatch.Size = New System.Drawing.Size(176, 22)
-        Me.cmsInstallFrenchPatch.Text = "French Patch"
-        Me.cmsInstallFrenchPatch.Visible = False
-        '
-        'tsmInstallGermanPatch
-        '
-        Me.tsmInstallGermanPatch.BackgroundImage = CType(resources.GetObject("tsmInstallGermanPatch.BackgroundImage"), System.Drawing.Image)
-        Me.tsmInstallGermanPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsmInstallGermanPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmInstallGermanPatch.Name = "tsmInstallGermanPatch"
-        Me.tsmInstallGermanPatch.Size = New System.Drawing.Size(176, 22)
-        Me.tsmInstallGermanPatch.Text = "German Patch"
-        Me.tsmInstallGermanPatch.Visible = False
-        '
-        'tsmInstallRussianPatch
-        '
-        Me.tsmInstallRussianPatch.BackgroundImage = CType(resources.GetObject("tsmInstallRussianPatch.BackgroundImage"), System.Drawing.Image)
-        Me.tsmInstallRussianPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsmInstallRussianPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmInstallRussianPatch.Name = "tsmInstallRussianPatch"
-        Me.tsmInstallRussianPatch.Size = New System.Drawing.Size(176, 22)
-        Me.tsmInstallRussianPatch.Text = "Russian Patch"
-        Me.tsmInstallRussianPatch.Visible = False
-        '
-        'tsmInstallRussianLargeFiles
-        '
-        Me.tsmInstallRussianLargeFiles.BackgroundImage = CType(resources.GetObject("tsmInstallRussianLargeFiles.BackgroundImage"), System.Drawing.Image)
-        Me.tsmInstallRussianLargeFiles.ForeColor = System.Drawing.Color.White
-        Me.tsmInstallRussianLargeFiles.Name = "tsmInstallRussianLargeFiles"
-        Me.tsmInstallRussianLargeFiles.Size = New System.Drawing.Size(176, 22)
-        Me.tsmInstallRussianLargeFiles.Text = "Russian Large Files"
-        Me.tsmInstallRussianLargeFiles.Visible = False
-        '
-        'InstallSpanishPatch
-        '
-        Me.InstallSpanishPatch.BackgroundImage = CType(resources.GetObject("InstallSpanishPatch.BackgroundImage"), System.Drawing.Image)
-        Me.InstallSpanishPatch.ForeColor = System.Drawing.Color.White
-        Me.InstallSpanishPatch.Name = "InstallSpanishPatch"
-        Me.InstallSpanishPatch.Size = New System.Drawing.Size(176, 22)
-        Me.InstallSpanishPatch.Text = "Spanish Patch"
-        Me.InstallSpanishPatch.Visible = False
-        '
-        'cmsRestoreBackups
-        '
-        Me.cmsRestoreBackups.BackgroundImage = CType(resources.GetObject("cmsRestoreBackups.BackgroundImage"), System.Drawing.Image)
-        Me.cmsRestoreBackups.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmRestoreEnglishPatch, Me.tsmRestoreLargeFiles, Me.tsmRestoreStoryPatch})
-        Me.cmsRestoreBackups.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
-        Me.cmsRestoreBackups.ForeColor = System.Drawing.Color.White
-        Me.cmsRestoreBackups.Name = "cmsRestoreBackups"
-        Me.cmsRestoreBackups.Size = New System.Drawing.Size(246, 22)
-        Me.cmsRestoreBackups.Text = "Restore Backup of JP Files"
-        '
-        'tsmRestoreEnglishPatch
-        '
-        Me.tsmRestoreEnglishPatch.BackgroundImage = CType(resources.GetObject("tsmRestoreEnglishPatch.BackgroundImage"), System.Drawing.Image)
-        Me.tsmRestoreEnglishPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmRestoreEnglishPatch.Name = "tsmRestoreEnglishPatch"
-        Me.tsmRestoreEnglishPatch.Size = New System.Drawing.Size(176, 22)
-        Me.tsmRestoreEnglishPatch.Text = "English Patch"
-        Me.tsmRestoreEnglishPatch.ToolTipText = "Restore a backup of the English patch (if it exists)"
-        '
-        'tsmRestoreLargeFiles
-        '
-        Me.tsmRestoreLargeFiles.BackgroundImage = CType(resources.GetObject("tsmRestoreLargeFiles.BackgroundImage"), System.Drawing.Image)
-        Me.tsmRestoreLargeFiles.ForeColor = System.Drawing.Color.White
-        Me.tsmRestoreLargeFiles.Name = "tsmRestoreLargeFiles"
-        Me.tsmRestoreLargeFiles.Size = New System.Drawing.Size(176, 22)
-        Me.tsmRestoreLargeFiles.Text = "English Large Files"
-        Me.tsmRestoreLargeFiles.ToolTipText = "Restore a backup of the Large Files patch (if it exists)"
-        '
-        'tsmRestoreStoryPatch
-        '
-        Me.tsmRestoreStoryPatch.BackgroundImage = CType(resources.GetObject("tsmRestoreStoryPatch.BackgroundImage"), System.Drawing.Image)
-        Me.tsmRestoreStoryPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmRestoreStoryPatch.Name = "tsmRestoreStoryPatch"
-        Me.tsmRestoreStoryPatch.Size = New System.Drawing.Size(176, 22)
-        Me.tsmRestoreStoryPatch.Text = "English Story Patch"
-        Me.tsmRestoreStoryPatch.ToolTipText = "Restore a backup of the Story patch (if it exists)"
-        '
-        'cmsUninstallPatches
-        '
-        Me.cmsUninstallPatches.BackgroundImage = CType(resources.GetObject("cmsUninstallPatches.BackgroundImage"), System.Drawing.Image)
-        Me.cmsUninstallPatches.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmUninstallEnglishPatch, Me.tsmUninstallLargeFiles, Me.tsmUninstallStory, Me.tsmRevertECodes, Me.tsmRevertENNames})
-        Me.cmsUninstallPatches.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
-        Me.cmsUninstallPatches.ForeColor = System.Drawing.Color.White
-        Me.cmsUninstallPatches.Name = "cmsUninstallPatches"
-        Me.cmsUninstallPatches.Size = New System.Drawing.Size(246, 22)
-        Me.cmsUninstallPatches.Text = "Redownload Original JP Files"
-        '
-        'tsmUninstallEnglishPatch
-        '
-        Me.tsmUninstallEnglishPatch.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
-        Me.tsmUninstallEnglishPatch.ForeColor = System.Drawing.Color.White
-        Me.tsmUninstallEnglishPatch.Name = "tsmUninstallEnglishPatch"
-        Me.tsmUninstallEnglishPatch.Size = New System.Drawing.Size(215, 22)
-        Me.tsmUninstallEnglishPatch.Text = "English Patch"
-        Me.tsmUninstallEnglishPatch.ToolTipText = "Uninstall the core English patch"
-        '
-        'tsmUninstallLargeFiles
-        '
-        Me.tsmUninstallLargeFiles.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
-        Me.tsmUninstallLargeFiles.ForeColor = System.Drawing.Color.White
-        Me.tsmUninstallLargeFiles.Name = "tsmUninstallLargeFiles"
-        Me.tsmUninstallLargeFiles.Size = New System.Drawing.Size(215, 22)
-        Me.tsmUninstallLargeFiles.Text = "English Large Files"
-        Me.tsmUninstallLargeFiles.ToolTipText = "Uninstall the English large files patch"
-        '
-        'tsmUninstallStory
-        '
-        Me.tsmUninstallStory.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
-        Me.tsmUninstallStory.ForeColor = System.Drawing.Color.White
-        Me.tsmUninstallStory.Name = "tsmUninstallStory"
-        Me.tsmUninstallStory.Size = New System.Drawing.Size(215, 22)
-        Me.tsmUninstallStory.Text = "English Story Patch"
-        Me.tsmUninstallStory.ToolTipText = "Uninstall the English story patch"
-        '
-        'tsmRevertECodes
-        '
-        Me.tsmRevertECodes.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.cmsback
-        Me.tsmRevertECodes.ForeColor = System.Drawing.Color.White
-        Me.tsmRevertECodes.Name = "tsmRevertECodes"
-        Me.tsmRevertECodes.Size = New System.Drawing.Size(215, 22)
-        Me.tsmRevertECodes.Text = "Revert E-Codes to JP"
-        Me.tsmRevertECodes.ToolTipText = """Unpatch"" emergency codes/trials to be in Japanese"
-        '
-        'tsmRevertENNames
-        '
-        Me.tsmRevertENNames.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.cmsback
-        Me.tsmRevertENNames.ForeColor = System.Drawing.Color.White
-        Me.tsmRevertENNames.Name = "tsmRevertENNames"
-        Me.tsmRevertENNames.Size = New System.Drawing.Size(215, 22)
-        Me.tsmRevertENNames.Text = "Revert Enemy Names to JP"
-        Me.tsmRevertENNames.ToolTipText = """Unpatch"" enemy names to be in Japanese"
+        Me.tsmUninstallEnglishPatchesNewMethod.BackColor = System.Drawing.Color.Gray
+        Me.tsmUninstallEnglishPatchesNewMethod.BackgroundImage = CType(resources.GetObject("tsmUninstallEnglishPatchesNewMethod.BackgroundImage"), System.Drawing.Image)
+        Me.tsmUninstallEnglishPatchesNewMethod.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.tsmUninstallEnglishPatchesNewMethod.ForeColor = System.Drawing.Color.White
+        Me.tsmUninstallEnglishPatchesNewMethod.Name = "tsmUninstallEnglishPatchesNewMethod"
+        Me.tsmUninstallEnglishPatchesNewMethod.Size = New System.Drawing.Size(249, 22)
+        Me.tsmUninstallEnglishPatchesNewMethod.Text = "Uninstall English patch (New method)"
+        Me.tsmUninstallEnglishPatchesNewMethod.Visible = False
         '
         'cmdTroubleshooting
         '
@@ -631,7 +462,7 @@ Partial Class frmMainv2
         Me.cmdTroubleshooting.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmdTroubleshooting.ForeColor = System.Drawing.Color.White
         Me.cmdTroubleshooting.Name = "cmdTroubleshooting"
-        Me.cmdTroubleshooting.Size = New System.Drawing.Size(246, 22)
+        Me.cmdTroubleshooting.Size = New System.Drawing.Size(249, 22)
         Me.cmdTroubleshooting.Text = "Troubleshooting"
         '
         'tsmAnalyzeInstall
@@ -736,40 +567,12 @@ Partial Class frmMainv2
         'cmsOtherTasks
         '
         Me.cmsOtherTasks.BackgroundImage = CType(resources.GetObject("cmsOtherTasks.BackgroundImage"), System.Drawing.Image)
-        Me.cmsOtherTasks.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmStartChromeInCompatibilityMode, Me.tsmConfigureTelepipeProxy, Me.tsmRevertSettingsToJP, Me.tsmClearSymbolArtCache, Me.tsmInstallPSO2})
+        Me.cmsOtherTasks.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmClearSymbolArtCache, Me.tsmConfigureTelepipeProxy, Me.tsmEnableLargeAddressAware, Me.tsmInstallPSO2, Me.cmsInstallUpdatePatches, Me.cmsUninstallPatches, Me.cmsRestoreBackups, Me.tsmRevertSettingsToJP, Me.tsmStartChromeInCompatibilityMode})
         Me.cmsOtherTasks.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.cmsOtherTasks.ForeColor = System.Drawing.Color.White
         Me.cmsOtherTasks.Name = "cmsOtherTasks"
-        Me.cmsOtherTasks.Size = New System.Drawing.Size(246, 22)
+        Me.cmsOtherTasks.Size = New System.Drawing.Size(249, 22)
         Me.cmsOtherTasks.Text = "Other Tasks"
-        '
-        'tsmStartChromeInCompatibilityMode
-        '
-        Me.tsmStartChromeInCompatibilityMode.BackgroundImage = CType(resources.GetObject("tsmStartChromeInCompatibilityMode.BackgroundImage"), System.Drawing.Image)
-        Me.tsmStartChromeInCompatibilityMode.ForeColor = System.Drawing.Color.White
-        Me.tsmStartChromeInCompatibilityMode.Name = "tsmStartChromeInCompatibilityMode"
-        Me.tsmStartChromeInCompatibilityMode.Size = New System.Drawing.Size(312, 22)
-        Me.tsmStartChromeInCompatibilityMode.Text = "Launch Chrome in PSO2 Compatibility Mode"
-        Me.tsmStartChromeInCompatibilityMode.ToolTipText = "Launches Chrome without the built-in sandbox feature"
-        '
-        'tsmConfigureTelepipeProxy
-        '
-        Me.tsmConfigureTelepipeProxy.BackgroundImage = CType(resources.GetObject("tsmConfigureTelepipeProxy.BackgroundImage"), System.Drawing.Image)
-        Me.tsmConfigureTelepipeProxy.ForeColor = System.Drawing.Color.White
-        Me.tsmConfigureTelepipeProxy.Name = "tsmConfigureTelepipeProxy"
-        Me.tsmConfigureTelepipeProxy.Size = New System.Drawing.Size(312, 22)
-        Me.tsmConfigureTelepipeProxy.Text = "Configure Telepipe/PSO2Proxy settings"
-        Me.tsmConfigureTelepipeProxy.ToolTipText = "Configure and set up your Telepipe/PSO2Proxy stuff here"
-        '
-        'tsmRevertSettingsToJP
-        '
-        Me.tsmRevertSettingsToJP.BackgroundImage = CType(resources.GetObject("tsmRevertSettingsToJP.BackgroundImage"), System.Drawing.Image)
-        Me.tsmRevertSettingsToJP.ForeColor = System.Drawing.Color.White
-        Me.tsmRevertSettingsToJP.Name = "tsmRevertSettingsToJP"
-        Me.tsmRevertSettingsToJP.Size = New System.Drawing.Size(312, 22)
-        Me.tsmRevertSettingsToJP.Text = "Revert PSO2Proxy Settings to JP"
-        Me.tsmRevertSettingsToJP.ToolTipText = "Reverts your Telepipe/PSO2Proxy settings back to the original non-proxied setting" &
-    "s"
         '
         'tsmClearSymbolArtCache
         '
@@ -780,6 +583,24 @@ Partial Class frmMainv2
         Me.tsmClearSymbolArtCache.Text = "Clear Symbol Art Cache"
         Me.tsmClearSymbolArtCache.ToolTipText = "Clears out your Symbol Art Cache"
         '
+        'tsmConfigureTelepipeProxy
+        '
+        Me.tsmConfigureTelepipeProxy.BackgroundImage = CType(resources.GetObject("tsmConfigureTelepipeProxy.BackgroundImage"), System.Drawing.Image)
+        Me.tsmConfigureTelepipeProxy.ForeColor = System.Drawing.Color.White
+        Me.tsmConfigureTelepipeProxy.Name = "tsmConfigureTelepipeProxy"
+        Me.tsmConfigureTelepipeProxy.Size = New System.Drawing.Size(312, 22)
+        Me.tsmConfigureTelepipeProxy.Text = "Configure Telepipe/PSO2Proxy settings"
+        Me.tsmConfigureTelepipeProxy.ToolTipText = "Configure and set up your Telepipe/PSO2Proxy stuff here"
+        '
+        'tsmEnableLargeAddressAware
+        '
+        Me.tsmEnableLargeAddressAware.BackgroundImage = CType(resources.GetObject("tsmEnableLargeAddressAware.BackgroundImage"), System.Drawing.Image)
+        Me.tsmEnableLargeAddressAware.ForeColor = System.Drawing.Color.White
+        Me.tsmEnableLargeAddressAware.Name = "tsmEnableLargeAddressAware"
+        Me.tsmEnableLargeAddressAware.Size = New System.Drawing.Size(312, 22)
+        Me.tsmEnableLargeAddressAware.Text = "Enable Large Address Aware (Read tooltip!)"
+        Me.tsmEnableLargeAddressAware.ToolTipText = "This allows PSO2 to use more than 2GB of RAM on 64-bit systems"
+        '
         'tsmInstallPSO2
         '
         Me.tsmInstallPSO2.BackgroundImage = CType(resources.GetObject("tsmInstallPSO2.BackgroundImage"), System.Drawing.Image)
@@ -789,11 +610,113 @@ Partial Class frmMainv2
         Me.tsmInstallPSO2.Text = "Install Phantasy Star Online 2"
         Me.tsmInstallPSO2.ToolTipText = "Begins the installation process for the game"
         '
-        'ToolStripSeparator1
+        'cmsInstallUpdatePatches
         '
-        Me.ToolStripSeparator1.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(243, 6)
+        Me.cmsInstallUpdatePatches.BackColor = System.Drawing.Color.Gray
+        Me.cmsInstallUpdatePatches.BackgroundImage = CType(resources.GetObject("cmsInstallUpdatePatches.BackgroundImage"), System.Drawing.Image)
+        Me.cmsInstallUpdatePatches.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmInstallEnglishPatch, Me.tsmInstallEnglishLargeFiles, Me.tsmInstallEnglishStoryPatch, Me.cmsInstallFrenchPatch, Me.tsmInstallGermanPatch, Me.tsmInstallRussianPatch, Me.tsmInstallRussianLargeFiles, Me.InstallSpanishPatch})
+        Me.cmsInstallUpdatePatches.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.cmsInstallUpdatePatches.ForeColor = System.Drawing.Color.White
+        Me.cmsInstallUpdatePatches.Name = "cmsInstallUpdatePatches"
+        Me.cmsInstallUpdatePatches.Size = New System.Drawing.Size(312, 22)
+        Me.cmsInstallUpdatePatches.Text = "Install/Update Patches (Old method)"
+        '
+        'tsmInstallEnglishPatch
+        '
+        Me.tsmInstallEnglishPatch.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tsmInstallEnglishPatch.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishPatch.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallEnglishPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsmInstallEnglishPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallEnglishPatch.Name = "tsmInstallEnglishPatch"
+        Me.tsmInstallEnglishPatch.Size = New System.Drawing.Size(176, 22)
+        Me.tsmInstallEnglishPatch.Text = "English Patch"
+        Me.tsmInstallEnglishPatch.ToolTipText = "Install the core English patch"
+        '
+        'tsmInstallEnglishLargeFiles
+        '
+        Me.tsmInstallEnglishLargeFiles.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishLargeFiles.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallEnglishLargeFiles.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsmInstallEnglishLargeFiles.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallEnglishLargeFiles.Name = "tsmInstallEnglishLargeFiles"
+        Me.tsmInstallEnglishLargeFiles.Size = New System.Drawing.Size(176, 22)
+        Me.tsmInstallEnglishLargeFiles.Text = "English Large Files"
+        Me.tsmInstallEnglishLargeFiles.ToolTipText = "Install additional English files to enhance the core patch"
+        '
+        'tsmInstallEnglishStoryPatch
+        '
+        Me.tsmInstallEnglishStoryPatch.BackgroundImage = CType(resources.GetObject("tsmInstallEnglishStoryPatch.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallEnglishStoryPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsmInstallEnglishStoryPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallEnglishStoryPatch.Name = "tsmInstallEnglishStoryPatch"
+        Me.tsmInstallEnglishStoryPatch.Size = New System.Drawing.Size(176, 22)
+        Me.tsmInstallEnglishStoryPatch.Text = "English Story Patch"
+        Me.tsmInstallEnglishStoryPatch.ToolTipText = "Install the English story patch, so you can understand the story"
+        '
+        'cmsInstallFrenchPatch
+        '
+        Me.cmsInstallFrenchPatch.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
+        Me.cmsInstallFrenchPatch.ForeColor = System.Drawing.Color.White
+        Me.cmsInstallFrenchPatch.Name = "cmsInstallFrenchPatch"
+        Me.cmsInstallFrenchPatch.Size = New System.Drawing.Size(176, 22)
+        Me.cmsInstallFrenchPatch.Text = "French Patch"
+        Me.cmsInstallFrenchPatch.Visible = False
+        '
+        'tsmInstallGermanPatch
+        '
+        Me.tsmInstallGermanPatch.BackgroundImage = CType(resources.GetObject("tsmInstallGermanPatch.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallGermanPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsmInstallGermanPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallGermanPatch.Name = "tsmInstallGermanPatch"
+        Me.tsmInstallGermanPatch.Size = New System.Drawing.Size(176, 22)
+        Me.tsmInstallGermanPatch.Text = "German Patch"
+        Me.tsmInstallGermanPatch.Visible = False
+        '
+        'tsmInstallRussianPatch
+        '
+        Me.tsmInstallRussianPatch.BackgroundImage = CType(resources.GetObject("tsmInstallRussianPatch.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallRussianPatch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsmInstallRussianPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallRussianPatch.Name = "tsmInstallRussianPatch"
+        Me.tsmInstallRussianPatch.Size = New System.Drawing.Size(176, 22)
+        Me.tsmInstallRussianPatch.Text = "Russian Patch"
+        Me.tsmInstallRussianPatch.Visible = False
+        '
+        'tsmInstallRussianLargeFiles
+        '
+        Me.tsmInstallRussianLargeFiles.BackgroundImage = CType(resources.GetObject("tsmInstallRussianLargeFiles.BackgroundImage"), System.Drawing.Image)
+        Me.tsmInstallRussianLargeFiles.ForeColor = System.Drawing.Color.White
+        Me.tsmInstallRussianLargeFiles.Name = "tsmInstallRussianLargeFiles"
+        Me.tsmInstallRussianLargeFiles.Size = New System.Drawing.Size(176, 22)
+        Me.tsmInstallRussianLargeFiles.Text = "Russian Large Files"
+        Me.tsmInstallRussianLargeFiles.Visible = False
+        '
+        'InstallSpanishPatch
+        '
+        Me.InstallSpanishPatch.BackgroundImage = CType(resources.GetObject("InstallSpanishPatch.BackgroundImage"), System.Drawing.Image)
+        Me.InstallSpanishPatch.ForeColor = System.Drawing.Color.White
+        Me.InstallSpanishPatch.Name = "InstallSpanishPatch"
+        Me.InstallSpanishPatch.Size = New System.Drawing.Size(176, 22)
+        Me.InstallSpanishPatch.Text = "Spanish Patch"
+        Me.InstallSpanishPatch.Visible = False
+        '
+        'tsmRevertSettingsToJP
+        '
+        Me.tsmRevertSettingsToJP.BackgroundImage = CType(resources.GetObject("tsmRevertSettingsToJP.BackgroundImage"), System.Drawing.Image)
+        Me.tsmRevertSettingsToJP.ForeColor = System.Drawing.Color.White
+        Me.tsmRevertSettingsToJP.Name = "tsmRevertSettingsToJP"
+        Me.tsmRevertSettingsToJP.Size = New System.Drawing.Size(312, 22)
+        Me.tsmRevertSettingsToJP.Text = "Revert Telepipe/PSO2Proxy Settings to JP"
+        Me.tsmRevertSettingsToJP.ToolTipText = "Reverts your Telepipe/PSO2Proxy settings back to the original non-proxied setting" &
+    "s"
+        '
+        'tsmStartChromeInCompatibilityMode
+        '
+        Me.tsmStartChromeInCompatibilityMode.BackgroundImage = CType(resources.GetObject("tsmStartChromeInCompatibilityMode.BackgroundImage"), System.Drawing.Image)
+        Me.tsmStartChromeInCompatibilityMode.ForeColor = System.Drawing.Color.White
+        Me.tsmStartChromeInCompatibilityMode.Name = "tsmStartChromeInCompatibilityMode"
+        Me.tsmStartChromeInCompatibilityMode.Size = New System.Drawing.Size(312, 22)
+        Me.tsmStartChromeInCompatibilityMode.Text = "Launch Chrome in PSO2 Compatibility Mode"
+        Me.tsmStartChromeInCompatibilityMode.ToolTipText = "Launches Chrome without the built-in sandbox feature"
         '
         'tsmCheckForPSO2UpdatesWithQuantum
         '
@@ -801,7 +724,7 @@ Partial Class frmMainv2
         Me.tsmCheckForPSO2UpdatesWithQuantum.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
         Me.tsmCheckForPSO2UpdatesWithQuantum.ForeColor = System.Drawing.Color.White
         Me.tsmCheckForPSO2UpdatesWithQuantum.Name = "tsmCheckForPSO2UpdatesWithQuantum"
-        Me.tsmCheckForPSO2UpdatesWithQuantum.Size = New System.Drawing.Size(246, 22)
+        Me.tsmCheckForPSO2UpdatesWithQuantum.Size = New System.Drawing.Size(249, 22)
         Me.tsmCheckForPSO2UpdatesWithQuantum.Text = "Check for PSO2 Updates"
         Me.tsmCheckForPSO2UpdatesWithQuantum.ToolTipText = "This will check for any files that need to be updated"
         '
@@ -811,7 +734,7 @@ Partial Class frmMainv2
         Me.tsmCheckForPrePatchData.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsmCheckForPrePatchData.ForeColor = System.Drawing.Color.White
         Me.tsmCheckForPrePatchData.Name = "tsmCheckForPrePatchData"
-        Me.tsmCheckForPrePatchData.Size = New System.Drawing.Size(246, 22)
+        Me.tsmCheckForPrePatchData.Size = New System.Drawing.Size(249, 22)
         Me.tsmCheckForPrePatchData.Text = "Check for Pre-Patch data"
         Me.tsmCheckForPrePatchData.ToolTipText = "Checks to see if there are any pre-patches available"
         '
@@ -1007,6 +930,98 @@ Partial Class frmMainv2
         Me.picButtonTutorialMessage.TabStop = False
         Me.picButtonTutorialMessage.Visible = False
         '
+        'cmsRestoreBackups
+        '
+        Me.cmsRestoreBackups.BackgroundImage = CType(resources.GetObject("cmsRestoreBackups.BackgroundImage"), System.Drawing.Image)
+        Me.cmsRestoreBackups.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmRestoreEnglishPatch, Me.tsmRestoreLargeFiles, Me.tsmRestoreStoryPatch})
+        Me.cmsRestoreBackups.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.cmsRestoreBackups.ForeColor = System.Drawing.Color.White
+        Me.cmsRestoreBackups.Name = "cmsRestoreBackups"
+        Me.cmsRestoreBackups.Size = New System.Drawing.Size(312, 22)
+        Me.cmsRestoreBackups.Text = "Restore Backup of JP Files"
+        '
+        'tsmRestoreEnglishPatch
+        '
+        Me.tsmRestoreEnglishPatch.BackgroundImage = CType(resources.GetObject("tsmRestoreEnglishPatch.BackgroundImage"), System.Drawing.Image)
+        Me.tsmRestoreEnglishPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmRestoreEnglishPatch.Name = "tsmRestoreEnglishPatch"
+        Me.tsmRestoreEnglishPatch.Size = New System.Drawing.Size(176, 22)
+        Me.tsmRestoreEnglishPatch.Text = "English Patch"
+        Me.tsmRestoreEnglishPatch.ToolTipText = "Restore a backup of the English patch (if it exists)"
+        '
+        'tsmRestoreLargeFiles
+        '
+        Me.tsmRestoreLargeFiles.BackgroundImage = CType(resources.GetObject("tsmRestoreLargeFiles.BackgroundImage"), System.Drawing.Image)
+        Me.tsmRestoreLargeFiles.ForeColor = System.Drawing.Color.White
+        Me.tsmRestoreLargeFiles.Name = "tsmRestoreLargeFiles"
+        Me.tsmRestoreLargeFiles.Size = New System.Drawing.Size(176, 22)
+        Me.tsmRestoreLargeFiles.Text = "English Large Files"
+        Me.tsmRestoreLargeFiles.ToolTipText = "Restore a backup of the Large Files patch (if it exists)"
+        '
+        'tsmRestoreStoryPatch
+        '
+        Me.tsmRestoreStoryPatch.BackgroundImage = CType(resources.GetObject("tsmRestoreStoryPatch.BackgroundImage"), System.Drawing.Image)
+        Me.tsmRestoreStoryPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmRestoreStoryPatch.Name = "tsmRestoreStoryPatch"
+        Me.tsmRestoreStoryPatch.Size = New System.Drawing.Size(176, 22)
+        Me.tsmRestoreStoryPatch.Text = "English Story Patch"
+        Me.tsmRestoreStoryPatch.ToolTipText = "Restore a backup of the Story patch (if it exists)"
+        '
+        'cmsUninstallPatches
+        '
+        Me.cmsUninstallPatches.BackgroundImage = CType(resources.GetObject("cmsUninstallPatches.BackgroundImage"), System.Drawing.Image)
+        Me.cmsUninstallPatches.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmUninstallEnglishPatch, Me.tsmUninstallLargeFiles, Me.tsmUninstallStory, Me.tsmRevertECodes, Me.tsmRevertENNames})
+        Me.cmsUninstallPatches.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.cmsUninstallPatches.ForeColor = System.Drawing.Color.White
+        Me.cmsUninstallPatches.Name = "cmsUninstallPatches"
+        Me.cmsUninstallPatches.Size = New System.Drawing.Size(312, 22)
+        Me.cmsUninstallPatches.Text = "Redownload Original JP Files"
+        '
+        'tsmUninstallEnglishPatch
+        '
+        Me.tsmUninstallEnglishPatch.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
+        Me.tsmUninstallEnglishPatch.ForeColor = System.Drawing.Color.White
+        Me.tsmUninstallEnglishPatch.Name = "tsmUninstallEnglishPatch"
+        Me.tsmUninstallEnglishPatch.Size = New System.Drawing.Size(215, 22)
+        Me.tsmUninstallEnglishPatch.Text = "English Patch"
+        Me.tsmUninstallEnglishPatch.ToolTipText = "Uninstall the core English patch"
+        '
+        'tsmUninstallLargeFiles
+        '
+        Me.tsmUninstallLargeFiles.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
+        Me.tsmUninstallLargeFiles.ForeColor = System.Drawing.Color.White
+        Me.tsmUninstallLargeFiles.Name = "tsmUninstallLargeFiles"
+        Me.tsmUninstallLargeFiles.Size = New System.Drawing.Size(215, 22)
+        Me.tsmUninstallLargeFiles.Text = "English Large Files"
+        Me.tsmUninstallLargeFiles.ToolTipText = "Uninstall the English large files patch"
+        '
+        'tsmUninstallStory
+        '
+        Me.tsmUninstallStory.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.subtab
+        Me.tsmUninstallStory.ForeColor = System.Drawing.Color.White
+        Me.tsmUninstallStory.Name = "tsmUninstallStory"
+        Me.tsmUninstallStory.Size = New System.Drawing.Size(215, 22)
+        Me.tsmUninstallStory.Text = "English Story Patch"
+        Me.tsmUninstallStory.ToolTipText = "Uninstall the English story patch"
+        '
+        'tsmRevertECodes
+        '
+        Me.tsmRevertECodes.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.cmsback
+        Me.tsmRevertECodes.ForeColor = System.Drawing.Color.White
+        Me.tsmRevertECodes.Name = "tsmRevertECodes"
+        Me.tsmRevertECodes.Size = New System.Drawing.Size(215, 22)
+        Me.tsmRevertECodes.Text = "Revert E-Codes to JP"
+        Me.tsmRevertECodes.ToolTipText = """Unpatch"" emergency codes/trials to be in Japanese"
+        '
+        'tsmRevertENNames
+        '
+        Me.tsmRevertENNames.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.cmsback
+        Me.tsmRevertENNames.ForeColor = System.Drawing.Color.White
+        Me.tsmRevertENNames.Name = "tsmRevertENNames"
+        Me.tsmRevertENNames.Size = New System.Drawing.Size(215, 22)
+        Me.tsmRevertENNames.Text = "Revert Enemy Names to JP"
+        Me.tsmRevertENNames.ToolTipText = """Unpatch"" enemy names to be in Japanese"
+        '
         'frmMainv2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1086,21 +1101,7 @@ Partial Class frmMainv2
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents cmsORB As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents cmsSelectFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents cmsInstallUpdatePatches As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents cmsUninstallPatches As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents cmsRestoreBackups As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cmdTroubleshooting As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmInstallEnglishPatch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmInstallEnglishLargeFiles As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmInstallEnglishStoryPatch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmInstallGermanPatch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmInstallRussianPatch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmUninstallEnglishPatch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmUninstallLargeFiles As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmUninstallStory As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmRestoreEnglishPatch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmRestoreLargeFiles As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsmRestoreStoryPatch As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmAnalyzeInstall As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmCheckForDeletedOrEmptyFiles As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmCheckForOldOrMissingFiles As System.Windows.Forms.ToolStripMenuItem
@@ -1111,7 +1112,6 @@ Partial Class frmMainv2
     Friend WithEvents tsmResetPSO2Settings As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmResetTweakerSettings As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmTerminatePSO2Process As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tsmCheckForPSO2UpdatesWithQuantum As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnTelepipe As Button
     Friend WithEvents btnVisiphoneShortcut As Button
@@ -1119,11 +1119,6 @@ Partial Class frmMainv2
     Friend WithEvents cmsOtherTasks As ToolStripMenuItem
     Friend WithEvents tsmCheckForPrePatchData As ToolStripMenuItem
     Friend WithEvents btnPlugins As Button
-    Friend WithEvents cmsInstallFrenchPatch As ToolStripMenuItem
-    Friend WithEvents tsmInstallRussianLargeFiles As ToolStripMenuItem
-    Friend WithEvents InstallSpanishPatch As ToolStripMenuItem
-    Friend WithEvents tsmRevertECodes As ToolStripMenuItem
-    Friend WithEvents tsmRevertENNames As ToolStripMenuItem
     Friend WithEvents tsmOpenDiagnosticMenu As ToolStripMenuItem
     Friend WithEvents tsmStartChromeInCompatibilityMode As ToolStripMenuItem
     Friend WithEvents tsmConfigureTelepipeProxy As ToolStripMenuItem
@@ -1144,5 +1139,26 @@ Partial Class frmMainv2
     Friend WithEvents picLeftArrow As PictureBox
     Friend WithEvents picTweakerTan As PictureBox
     Friend WithEvents picButtonTutorialMessage As PictureBox
+    Friend WithEvents tsmUninstallEnglishPatchesNewMethod As ToolStripMenuItem
+    Friend WithEvents tsmEnableLargeAddressAware As ToolStripMenuItem
+    Friend WithEvents cmsInstallUpdatePatches As ToolStripMenuItem
+    Friend WithEvents tsmInstallEnglishPatch As ToolStripMenuItem
+    Friend WithEvents tsmInstallEnglishLargeFiles As ToolStripMenuItem
+    Friend WithEvents tsmInstallEnglishStoryPatch As ToolStripMenuItem
+    Friend WithEvents cmsInstallFrenchPatch As ToolStripMenuItem
+    Friend WithEvents tsmInstallGermanPatch As ToolStripMenuItem
+    Friend WithEvents tsmInstallRussianPatch As ToolStripMenuItem
+    Friend WithEvents tsmInstallRussianLargeFiles As ToolStripMenuItem
+    Friend WithEvents InstallSpanishPatch As ToolStripMenuItem
     Friend WithEvents tsmInstallEnglishPatchesNewMethod As ToolStripMenuItem
+    Friend WithEvents cmsUninstallPatches As ToolStripMenuItem
+    Friend WithEvents tsmUninstallEnglishPatch As ToolStripMenuItem
+    Friend WithEvents tsmUninstallLargeFiles As ToolStripMenuItem
+    Friend WithEvents tsmUninstallStory As ToolStripMenuItem
+    Friend WithEvents tsmRevertECodes As ToolStripMenuItem
+    Friend WithEvents tsmRevertENNames As ToolStripMenuItem
+    Friend WithEvents cmsRestoreBackups As ToolStripMenuItem
+    Friend WithEvents tsmRestoreEnglishPatch As ToolStripMenuItem
+    Friend WithEvents tsmRestoreLargeFiles As ToolStripMenuItem
+    Friend WithEvents tsmRestoreStoryPatch As ToolStripMenuItem
 End Class

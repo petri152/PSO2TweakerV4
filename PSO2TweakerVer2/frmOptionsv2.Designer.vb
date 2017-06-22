@@ -28,11 +28,8 @@ Partial Class frmOptionsv2
         Me.btnMainClose = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.chkInstallENAfterUpdate = New System.Windows.Forms.CheckBox()
         Me.btnTitle = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cmbENPatchOverride = New System.Windows.Forms.ComboBox()
@@ -54,11 +51,18 @@ Partial Class frmOptionsv2
         Me.TT = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnShip = New System.Windows.Forms.Button()
         Me.btnChangeLogo = New System.Windows.Forms.Button()
+        Me.chkSteamMode = New System.Windows.Forms.CheckBox()
+        Me.btnPatchLanguage = New System.Windows.Forms.Button()
+        Me.btnTweakerLanguage = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbShip = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.chkSteamMode = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cmbPatchLanguage = New System.Windows.Forms.ComboBox()
+        Me.cmbTweakerLanguage = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,30 +122,11 @@ Partial Class frmOptionsv2
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.patch_settings_box1
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Location = New System.Drawing.Point(324, 358)
+        Me.PictureBox2.Location = New System.Drawing.Point(85, 309)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(270, 194)
         Me.PictureBox2.TabIndex = 16
         Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
-        'chkInstallENAfterUpdate
-        '
-        Me.chkInstallENAfterUpdate.AutoSize = True
-        Me.chkInstallENAfterUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.chkInstallENAfterUpdate.FlatAppearance.BorderSize = 0
-        Me.chkInstallENAfterUpdate.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.chkInstallENAfterUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.chkInstallENAfterUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.chkInstallENAfterUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkInstallENAfterUpdate.ForeColor = System.Drawing.Color.White
-        Me.chkInstallENAfterUpdate.Location = New System.Drawing.Point(344, 402)
-        Me.chkInstallENAfterUpdate.Name = "chkInstallENAfterUpdate"
-        Me.chkInstallENAfterUpdate.Size = New System.Drawing.Size(141, 25)
-        Me.chkInstallENAfterUpdate.TabIndex = 17
-        Me.chkInstallENAfterUpdate.Text = "Install EN patch"
-        Me.chkInstallENAfterUpdate.UseVisualStyleBackColor = False
-        Me.chkInstallENAfterUpdate.Visible = False
         '
         'btnTitle
         '
@@ -162,70 +147,39 @@ Partial Class frmOptionsv2
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.small_button_blank
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Transparent
-        Me.Button1.Location = New System.Drawing.Point(330, 358)
+        Me.Button1.Location = New System.Drawing.Point(91, 308)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 25)
+        Me.Button1.Size = New System.Drawing.Size(132, 28)
         Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Language:"
         Me.Button1.UseVisualStyleBackColor = False
-        Me.Button1.Visible = False
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.CheckBox1.FlatAppearance.BorderSize = 0
-        Me.CheckBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.CheckBox1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.CheckBox1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.ForeColor = System.Drawing.Color.White
-        Me.CheckBox1.Location = New System.Drawing.Point(344, 449)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(153, 25)
-        Me.CheckBox1.TabIndex = 20
-        Me.CheckBox1.Text = "Install Large Files"
-        Me.CheckBox1.UseVisualStyleBackColor = False
-        Me.CheckBox1.Visible = False
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.CheckBox2.FlatAppearance.BorderSize = 0
-        Me.CheckBox2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.CheckBox2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.CheckBox2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.ForeColor = System.Drawing.Color.White
-        Me.CheckBox2.Location = New System.Drawing.Point(344, 496)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(160, 25)
-        Me.CheckBox2.TabIndex = 21
-        Me.CheckBox2.Text = "Install Story Patch"
-        Me.CheckBox2.UseVisualStyleBackColor = False
-        Me.CheckBox2.Visible = False
         '
         'Button2
         '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources._overrides
+        Me.Button2.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.small_button_blank
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button2.ForeColor = System.Drawing.Color.Transparent
-        Me.Button2.Location = New System.Drawing.Point(91, 76)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button2.Location = New System.Drawing.Point(91, 75)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(132, 25)
         Me.Button2.TabIndex = 24
+        Me.Button2.Text = "Overrides:"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'PictureBox1
@@ -325,17 +279,19 @@ Partial Class frmOptionsv2
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.small_button_blank
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button3.ForeColor = System.Drawing.Color.Transparent
         Me.Button3.Location = New System.Drawing.Point(568, 76)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(132, 25)
         Me.Button3.TabIndex = 35
+        Me.Button3.Text = "Options:"
         Me.Button3.UseVisualStyleBackColor = False
         '
         'chkPastebinUploads
@@ -512,6 +468,64 @@ Partial Class frmOptionsv2
         Me.TT.SetToolTip(Me.btnChangeLogo, "Select a custom logo to replace the PSO2 star on the main window")
         Me.btnChangeLogo.UseVisualStyleBackColor = False
         '
+        'chkSteamMode
+        '
+        Me.chkSteamMode.AutoSize = True
+        Me.chkSteamMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.chkSteamMode.FlatAppearance.BorderSize = 0
+        Me.chkSteamMode.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.chkSteamMode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.chkSteamMode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.chkSteamMode.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSteamMode.ForeColor = System.Drawing.Color.White
+        Me.chkSteamMode.Location = New System.Drawing.Point(572, 129)
+        Me.chkSteamMode.Name = "chkSteamMode"
+        Me.chkSteamMode.Size = New System.Drawing.Size(122, 25)
+        Me.chkSteamMode.TabIndex = 99
+        Me.chkSteamMode.Text = "Steam mode"
+        Me.TT.SetToolTip(Me.chkSteamMode, "If enabled, forces the Tweaker to stay open (but hidden) after launching PSO2 so " &
+        "people can see what game you're playing. ")
+        Me.chkSteamMode.UseVisualStyleBackColor = False
+        '
+        'btnPatchLanguage
+        '
+        Me.btnPatchLanguage.BackColor = System.Drawing.Color.Transparent
+        Me.btnPatchLanguage.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.dropmenu3
+        Me.btnPatchLanguage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnPatchLanguage.FlatAppearance.BorderSize = 0
+        Me.btnPatchLanguage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnPatchLanguage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnPatchLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPatchLanguage.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPatchLanguage.ForeColor = System.Drawing.Color.White
+        Me.btnPatchLanguage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPatchLanguage.Location = New System.Drawing.Point(91, 416)
+        Me.btnPatchLanguage.Name = "btnPatchLanguage"
+        Me.btnPatchLanguage.Size = New System.Drawing.Size(145, 21)
+        Me.btnPatchLanguage.TabIndex = 103
+        Me.TT.SetToolTip(Me.btnPatchLanguage, "Select the language you would like your game to be in")
+        Me.btnPatchLanguage.UseVisualStyleBackColor = False
+        '
+        'btnTweakerLanguage
+        '
+        Me.btnTweakerLanguage.BackColor = System.Drawing.Color.Transparent
+        Me.btnTweakerLanguage.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.disabled_dropmenu3
+        Me.btnTweakerLanguage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnTweakerLanguage.Enabled = False
+        Me.btnTweakerLanguage.FlatAppearance.BorderSize = 0
+        Me.btnTweakerLanguage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnTweakerLanguage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnTweakerLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTweakerLanguage.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTweakerLanguage.ForeColor = System.Drawing.Color.White
+        Me.btnTweakerLanguage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTweakerLanguage.Location = New System.Drawing.Point(91, 366)
+        Me.btnTweakerLanguage.Name = "btnTweakerLanguage"
+        Me.btnTweakerLanguage.Size = New System.Drawing.Size(145, 21)
+        Me.btnTweakerLanguage.TabIndex = 101
+        Me.TT.SetToolTip(Me.btnTweakerLanguage, "Change the language the program will use (Not yet available!)")
+        Me.btnTweakerLanguage.UseVisualStyleBackColor = False
+        '
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
@@ -550,24 +564,59 @@ Partial Class frmOptionsv2
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'chkSteamMode
+        'Label7
         '
-        Me.chkSteamMode.AutoSize = True
-        Me.chkSteamMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.chkSteamMode.FlatAppearance.BorderSize = 0
-        Me.chkSteamMode.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.chkSteamMode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.chkSteamMode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.chkSteamMode.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSteamMode.ForeColor = System.Drawing.Color.White
-        Me.chkSteamMode.Location = New System.Drawing.Point(572, 129)
-        Me.chkSteamMode.Name = "chkSteamMode"
-        Me.chkSteamMode.Size = New System.Drawing.Size(122, 25)
-        Me.chkSteamMode.TabIndex = 99
-        Me.chkSteamMode.Text = "Steam mode"
-        Me.TT.SetToolTip(Me.chkSteamMode, "If enabled, forces the Tweaker to stay open (but hidden) after launching PSO2 so " &
-        "people can see what game you're playing. ")
-        Me.chkSteamMode.UseVisualStyleBackColor = False
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(87, 390)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(154, 23)
+        Me.Label7.TabIndex = 102
+        Me.Label7.Text = "Patch Language:"
+        '
+        'Label8
+        '
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(87, 340)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(154, 23)
+        Me.Label8.TabIndex = 100
+        Me.Label8.Text = "Tweaker interface:"
+        '
+        'cmbPatchLanguage
+        '
+        Me.cmbPatchLanguage.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbPatchLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbPatchLanguage.FormattingEnabled = True
+        Me.cmbPatchLanguage.Location = New System.Drawing.Point(91, 416)
+        Me.cmbPatchLanguage.Name = "cmbPatchLanguage"
+        Me.cmbPatchLanguage.Size = New System.Drawing.Size(145, 21)
+        Me.cmbPatchLanguage.TabIndex = 104
+        '
+        'cmbTweakerLanguage
+        '
+        Me.cmbTweakerLanguage.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbTweakerLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbTweakerLanguage.FormattingEnabled = True
+        Me.cmbTweakerLanguage.Items.AddRange(New Object() {"Ship 1", "Ship 2", "Ship 3", "Ship 4", "Ship 5", "Ship 6", "Ship 7", "Ship 8", "Ship 9", "Ship 10"})
+        Me.cmbTweakerLanguage.Location = New System.Drawing.Point(91, 366)
+        Me.cmbTweakerLanguage.Name = "cmbTweakerLanguage"
+        Me.cmbTweakerLanguage.Size = New System.Drawing.Size(145, 21)
+        Me.cmbTweakerLanguage.TabIndex = 105
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(88, 440)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(265, 62)
+        Me.Label9.TabIndex = 106
+        Me.Label9.Text = "*Changes to these options will not take effect until the program is restarted."
         '
         'frmOptionsv2
         '
@@ -578,6 +627,11 @@ Partial Class frmOptionsv2
         Me.BackgroundImage = Global.PSO2TweakerVer2.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(975, 653)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.btnPatchLanguage)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.btnTweakerLanguage)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.chkSteamMode)
         Me.Controls.Add(Me.btnChangeLogo)
         Me.Controls.Add(Me.btnShip)
@@ -601,16 +655,15 @@ Partial Class frmOptionsv2
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbENPatchOverride)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.chkInstallENAfterUpdate)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSaveChanges)
         Me.Controls.Add(Me.btnMainClose)
         Me.Controls.Add(Me.btnTitle)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.cmbTweakerLanguage)
+        Me.Controls.Add(Me.cmbPatchLanguage)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -630,11 +683,8 @@ Partial Class frmOptionsv2
     Friend WithEvents btnMainClose As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents chkInstallENAfterUpdate As System.Windows.Forms.CheckBox
     Friend WithEvents btnTitle As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents cmbENPatchOverride As System.Windows.Forms.ComboBox
@@ -661,4 +711,11 @@ Partial Class frmOptionsv2
     Friend WithEvents btnChangeLogo As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents chkSteamMode As CheckBox
+    Friend WithEvents btnPatchLanguage As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents btnTweakerLanguage As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cmbPatchLanguage As ComboBox
+    Friend WithEvents cmbTweakerLanguage As ComboBox
+    Friend WithEvents Label9 As Label
 End Class

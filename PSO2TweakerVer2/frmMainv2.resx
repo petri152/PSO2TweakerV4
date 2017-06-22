@@ -240,6 +240,9 @@
         jf7hpCEMkTf2p7NWYaZ8I3887SosGF5HxCNK/RcKf3csMzZv5AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="TT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>571, 17</value>
+  </metadata>
   <data name="btnBumpedDonate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -382,143 +385,98 @@
         RU5ErkJggg==
 </value>
   </data>
+  <data name="tsmUninstallEnglishPatchesNewMethod.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="cmdTroubleshooting.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="cmsOtherTasks.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmClearSymbolArtCache.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmConfigureTelepipeProxy.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmEnableLargeAddressAware.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmInstallPSO2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="cmsInstallUpdatePatches.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="tsmInstallEnglishPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="tsmInstallEnglishLargeFiles.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="tsmInstallEnglishStoryPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="tsmInstallGermanPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="tsmInstallRussianPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="tsmInstallRussianLargeFiles.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="InstallSpanishPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
-        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="cmsRestoreBackups.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="tsmRestoreEnglishPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="tsmRestoreLargeFiles.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="tsmRestoreStoryPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
@@ -544,7 +502,59 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="cmdTroubleshooting.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="cmsRestoreBackups.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmRevertSettingsToJP.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmStartChromeInCompatibilityMode.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmCheckForPSO2UpdatesWithQuantum.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmCheckForPrePatchData.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
@@ -700,108 +710,88 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="cmsOtherTasks.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmInstallEnglishPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsmStartChromeInCompatibilityMode.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmInstallEnglishLargeFiles.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsmConfigureTelepipeProxy.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmInstallEnglishStoryPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsmRevertSettingsToJP.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmInstallGermanPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsmClearSymbolArtCache.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmInstallRussianPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsmInstallPSO2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmInstallRussianLargeFiles.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tsmCheckForPSO2UpdatesWithQuantum.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="InstallSpanishPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="tsmCheckForPrePatchData.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
-        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
-        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
-        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
-        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
-        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
-        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAN4AAACKCAIAAABKGmMBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYFJREFUeF7t0jENwDAQALEC6Ni5+8MJhPAnkcC4wZIh+Jm13++HlNtSTYrUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpN
+        otQkSk2i1CRKTaLUJEpNotQkSk2i1CRKTaLUJEpNotQkSk2iZu0DYjWmoLjt3CEAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnTelepipe.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1281,10 +1271,12 @@
   </metadata>
   <data name="lblDefaults.Text" xml:space="preserve">
     <value>{
+  "AlwaysInstall": "No",
   "Backup": "Always",
   "DeletedParserOnce": "",
   "ENPatchVersion": "Not Installed",
   "EnableBeta": "False",
+  "EnglishMD5": "None",
   "GNFieldName": "",
   "JustPrepatched": "",
   "LargeFilesVersion": "Not Installed",
@@ -1292,9 +1284,11 @@
   "Locale": "en",
   "NewENVersion": "",
   "NewLargeFilesVersion": "",
+  "NewMethodEnabled": "No",
   "OldX": "",
   "OldY": "",
   "Pastebin": "True",
+  "PatchLanguage": "EN",
   "PluginsEnabled": "",
   "PreDownloadedRar": "Never",
   "ProxyJSONURL": "",
@@ -1304,6 +1298,7 @@
   "SeenButtonTutorial": "False",
   "ShipStatus": "2",
   "SteamModeEnabled": "False",
+  "StoryMD5": "None",
   "StoryPatchVersion": "Not Installed",
   "UseIcsHost": "False",
   "WaifuLink": "",
@@ -1584,6 +1579,45 @@
   <metadata name="tmrWaitingforPSO2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 17</value>
   </metadata>
+  <data name="tsmRestoreEnglishPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmRestoreLargeFiles.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmRestoreStoryPatch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANwAAACKCAYAAADBjSRrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAYlJREFUeF7t0yEBACAQADECINHfv+XT4tTEIuzcNws0hIOQcBASDkLCQUg4CAkH
+        IeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4
+        CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLC
+        QUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBAS
+        DkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQ
+        cBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByE
+        hIOQcBASDkLCQUg4CAkHIeEgJByEhIOQcBASDkLCQUg4CAkHIeEgJByEhIPM7Afq+eLHK7/m/gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>66</value>
   </metadata>

@@ -125,7 +125,7 @@
     <Compile Include="frmDownloader.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlugins.Designer.vb">
+    <Compile Include="frmPlugins.designer.vb">
       <DependentUpon>frmPlugins.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPlugins.vb">
@@ -159,6 +159,12 @@
     <Compile Include="Helper.vb" />
     <Compile Include="Languages.vb" />
     <Compile Include="MD5Provider.vb" />
+    <Compile Include="MessageBoxCustom.designer.vb">
+      <DependentUpon>MessageBoxCustom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxCustom.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -208,6 +214,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTweaksv2.resx">
       <DependentUpon>frmTweaksv2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxCustom.resx">
+      <DependentUpon>MessageBoxCustom.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -223,11 +234,13 @@
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App.config" />
   </ItemGroup>
@@ -297,6 +310,11 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\disabled_dropmenu3.png" />
+    <None Include="Resources\Cancel button press_msgbox.png" />
+    <None Include="Resources\Cancel button normal_msgbox.png" />
+    <None Include="Resources\Cancel button hover_msgbox.png" />
+    <None Include="Resources\background_2.png" />
     <None Include="Resources\button_tutorial2.png" />
     <None Include="Resources\button_tutorial.gif" />
     <None Include="Resources\Tweaker-tan.png" />
@@ -304,7 +322,9 @@
     <None Include="Resources\rightarrow.gif" />
     <None Include="Resources\__clicked.png" />
     <EmbeddedResource Include="ddraw.dll" />
-    <Content Include="FodyWeavers.xml" />
+    <Content Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="pso2 new icon 256.ico" />
     <None Include="Resources\QUANTUMSYSTEM.png" />
     <None Include="Resources\tp2.png" />

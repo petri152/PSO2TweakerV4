@@ -65,7 +65,7 @@ Public Class FrmDiagnostic
         Dim totalString As String = ""
         totalString &= "PSO2 Directory: " & Program.PSO2RootDir & vbCrLf
         totalString &= "Current game version: " & Program.GetSetting("PSO2RemoteVersion") & vbCrLf
-        totalString &= "EN Patch version installed: " & Program.GetSetting("ENPatchVersion") & vbCrLf
+        totalString &= "Using RAISER patch: " & Program.GetSetting("NewMethodEnabled") & vbCrLf
         totalString &= "Large Files version installed: " & Program.GetSetting("LargeFilesVersion") & vbCrLf
         totalString &= "Story Patch version installed: " & Program.GetSetting("StoryPatchVersion") & vbCrLf
         totalString &= "Size of PSO2 data/win32 folder: ~" & fileSize.ToString().Remove(2, 9) & "GB"
@@ -84,7 +84,7 @@ Public Class FrmDiagnostic
             filename = fileInfo.Name
             fileSize = fileInfo.Length
             totalString &= filename
-            If filename = "GameGuard.des" OrElse filename = "pso2.exe" OrElse filename = "publickey.blob" OrElse filename = "rsainject.dll" OrElse filename = "translation.bin" OrElse filename = "translator.dll" Then totalString &= ": " & fileSize.ToString()
+            If filename = "GameGuard.des" OrElse filename = "pso2.exe" OrElse filename = "publickey.blob" OrElse filename = "rsainject.dll" OrElse filename = "translation_items.bin" OrElse filename = "PSO2ItemTranslator.dll" Then totalString &= ": " & fileSize.ToString()
 
             totalString &= " | "
         Next
@@ -121,7 +121,7 @@ Public Class FrmDiagnostic
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Dim start_info As New ProcessStartInfo("cmd.exe", "/c ping -n 5 gs016.pso2gs.net")
+        Dim start_info As New ProcessStartInfo("cmd.exe", "/c ping -n 5 patch02.pso2gs.net")
         start_info.UseShellExecute = False
         start_info.CreateNoWindow = True
         start_info.RedirectStandardOutput = True

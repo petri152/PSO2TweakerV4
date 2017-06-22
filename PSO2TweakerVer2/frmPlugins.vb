@@ -7,8 +7,7 @@ Public Class frmPlugins
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
-    Dim JSONClient As New WebClient
-    Dim pluginEntries As Dictionary(Of String, PluginClass) = JsonConvert.DeserializeObject(Of Dictionary(Of String, PluginClass))(JSONClient.DownloadString(Program.PluginURL & "plugins.json"))
+    Public pluginEntries As Dictionary(Of String, PluginClass)
     Private Sub btnPSO2Version_Click(sender As Object, e As EventArgs) Handles btnForceCheck.Click
         frmMainv2.CheckForPluginUpdates()
         Me.Close()
@@ -70,6 +69,9 @@ Public Class frmPlugins
     End Sub
 
     Private Sub frmPlugins_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim JSONClient As New WebClient
+        If Program.NewMethodJSON.Contains("pso2.acf.me.uk") Then JSONClient.Headers("user-agent") = VEDA.FuckOffKaze()
+        pluginEntries = JsonConvert.DeserializeObject(Of Dictionary(Of String, PluginClass))(JSONClient.DownloadString(Program.PluginURL & "plugins.json"))
         frmMainv2.CheckForPluginUpdates(True)
         ListView1.Clear()
         Dim localfilename As String = "nowhere"
@@ -92,10 +94,15 @@ Public Class frmPlugins
             End If
 
             If localfilename = "nowhere" Then
-                JSONClient.DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename)
-                localfilename = Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename
-                ListView1.Items.Add(item.Value.Name)
-                ListView1.FindItemWithText(item.Value.Name).Checked = False
+                If item.Value.StorePath.Contains("plugins") Then
+                    JSONClient.DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename)
+                    localfilename = Program.PSO2RootDir & "\plugins\disabled\" & item.Value.Filename
+                    ListView1.Items.Add(item.Value.Name)
+                    ListView1.FindItemWithText(item.Value.Name).Checked = False
+                Else
+                    JSONClient.DownloadFile(Program.PluginURL & item.Value.Filename, Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename)
+                    localfilename = Program.PSO2RootDir & item.Value.StorePath & item.Value.Filename
+                End If
             End If
             Label1.Text = ""
 
@@ -150,15 +157,15 @@ Public Class frmPlugins
                     File.Move(localfilename, localfilename.Replace("\disabled", ""))
                     Helper.Log("Moving " & localfilename & " to the root plugins folder (" & localfilename.Replace("\disabled", "") & ")")
                 End If
-                If localfilename = "translator.dll" Then
+                If localfilename = "PSO2ItemTranslator.dll" Then
                     If Not File.Exists(Program.PSO2RootDir & "\translation.cfg") Then
-                        File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation.bin")
+                        File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation_items.bin")
                     End If
 
                     'Start the shitstorm
                     Dim builtFile As New List(Of String)
                     For Each line In Helper.GetLines(Program.PSO2RootDir & "\translation.cfg")
-                        If line.Contains("TranslationPath:") Then line = "TranslationPath:translation.bin"
+                        If line.Contains("TranslationPath:") Then line = "TranslationPath:translation_items.bin"
                         builtFile.Add(line)
                     Next
                     File.WriteAllLines(Program.PSO2RootDir & "\translation.cfg", builtFile.ToArray())
@@ -171,10 +178,10 @@ Public Class frmPlugins
                     File.Move(localfilename, localfilename.Replace("\plugins", "\plugins\disabled"))
                     Helper.Log("Moving " & localfilename & " to the disabled folder (" & localfilename.Replace("\plugins", "\plugins\disabled") & ")")
                 End If
-                If localfilename = "translator.dll" Then
+                If localfilename = "PSO2ItemTranslator.dll" Then
                     Dim builtFile As New List(Of String)
                     If Not File.Exists(Program.PSO2RootDir & "\translation.cfg") Then
-                        File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation.bin")
+                        File.WriteAllText(Program.PSO2RootDir & "\translation.cfg", "TranslationPath:translation_items.bin")
                     End If
                     For Each line In Helper.GetLines(Program.PSO2RootDir & "\translation.cfg")
                         If line.Contains("TranslationPath:") Then line = "TranslationPath:"
@@ -220,5 +227,9 @@ Public Class frmPlugins
                 Label1.Text = "Name: " & item.Value.Name & vbCrLf & "Filename: " & item.Value.Filename & vbCrLf & "Author(s): " & item.Value.Author & vbCrLf & "Description: " & item.Value.Description
             End If
         Next
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class

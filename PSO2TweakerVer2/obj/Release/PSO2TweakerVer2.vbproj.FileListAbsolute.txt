@@ -21,3 +21,4 @@ D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweak
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.xml
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2 Tweaker.pdb
 D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.vbprojResolveAssemblyReference.cache
+D:\Dropbox\Programming\PSO2TweakerV4 Repo\PSO2TweakerVer2\obj\Release\PSO2TweakerVer2.MessageBoxCustom.resources
